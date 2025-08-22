@@ -219,5 +219,108 @@ Calculo similar a forward, pero este toma el máximo
 No suma, toma el valor máximo simplemente
 
 
+# Clase 5
+22/08/25
+
+### Backward y Forward
+
+Backward
+A traves de la recursion calcula la prob de estar en un estado por observaciones pasadas 
+
+Forward
+Ver las observaciones futuras dado un estado
+
+![[Pasted image 20250822133038.png]]
+
+### Viterbi
+Secuencia de los estados mas probables dado
+
+
+## Monte Carlo
+Conjunto de algoritmos computacionales que se basan en el muestreo aleatorio para obtener resultados numéricos a un problema
+
+*Aplicaciones*
+- Modelos matematicos (integrales con multiples dimensiones)
+- Fisicos (difusion del calor en un espacio)
+- Riesgo financiero
+
+- Aguja de bufón
+### Métodos de Monte Carlo
+- Usa la generación de números aleatorios y muestreo.
+- Utilizado cuando hay incertidumbre en los parámetros de entrada
+
+1. Define el dominio de las posibles inputs
+2. Genera inputs aleatoriamente dentro del dominio de acuerdo a alguna distribución de probabilidad
+3. Aplica computación determinista sobre los inputs
+4. Agregación final de los resultados individuales para obtener el resultado final
+
+La aproximación depende de la cantidad de datos usados. Mientras más datos mejor
+
+EJ 1) Cálculo de $\pi$ 
+
+- Definir un circulo inscrito
+![[Pasted image 20250822133741.png]]
+
+![[Pasted image 20250822133752.png]]
+
+
+EJ 2) probabilidad de obtener dos reyes consecutivos
+
+1- Prob de que no existan dos reyes consecutivos
+
+1. El dominio es mazo de 52 cartas
+2. Ordenamos el mazo y lo revolvemos
+3. Revisamos el mazo 
+4. Si tiene 2 reyes, caso exitoso
+5. Volver al punto 2
+
+Realizar n veces 
+
+## Filtros de Partículas
+
+Método de Carlos pero secuencial
+- Se va aplicando en cada t tiempo
+- Mapea o actualiza un mapa y a la vez conocer la posición de un robot desconocida
+
+En Monte Carlo el muestreo era estático
+Para lograr la actualización del muestreo de acuerdo a un entorno de inferencia bayesiano, se aplica el *resampling* muchas veces para así converger a una aproximación de la solución buscada
+
+Involucrado un estado de creencia que contiene incertidumbre y que se actualiza a medida que se observan cambios en el sistema.
+
+- *Partículas*: Estado de creencia de la variable a modelar (ej. posición de un robot=
+- *Mediciones*: Valores que llevan a una partícula a definir su estado (partícula esperaría a ver
+- *Valores de control*: Valores que llevan a una partícula a definir su estado (lo que cada partícula esperaría ver, el robot se movió a la derecha)
+- *Pesos (importancia)*: Valor cuantitativo asociado a cada partícula, que partícula es mas probable que se acerque a la medición que se han hecho
+
+1. Inicia la distribución de partículas (conjunto) en el espacio
+2. Se calcula la probabilidad proporcional de que cada partícula este representado adecuadamente al sistema basado en la observación actual.
+
+Si tenemos 5 habitaciones en la que puede estar el robot, se manda 1 partícula a cada habitación. El robot da cierta data como temperatura, se sabe que en x pieza hay calefactor, de acuerdo a esa info, sacamos que partícula es la mas probable de que este correcto. (donde esta la estufa) y se le da cierto peso
+
+3. Se le asigna un peso (Actualización) de acuerdo a su importancia en la observación
+4. Normalizan los pesos
+5. Se reasigna la distribución de puntos
+6. Se introduce ruido a los valores de la partícula (valores cercanos pero no los mismos)
+7. Se observa la evolución esperada del sistema en un paso (Actualizacion bayesiana, predicción)
+8. Volver al punto 2
+
+Actividad
+
+![[Pasted image 20250822141722.png]]
+
+
+# Clase 6
+22/08/25
+## Filtros de Kalman
+parecido a filtro de partículas, pero con datos analíticos en vez de aleatorios
+
+
+
+
+
+
+
+
+
 
 

@@ -168,3 +168,66 @@ si escribo 4.340 x 10 ^-3 dBw MALO, debiera decir 0 dBw
 
 $10^{3/10} = 1.99526 = 2 \space veces$ 
 
+# Clase 5
+22/02/25
+
+## Espectro Radioeléctrico
+
+Porción del espectro usado para telecomunicaciones, encontrado antes que el infrarrojo
+Infrarrojo -- Control remoto
+	Diodo en el extremo, donde a través de este transmite la onda infrarroja
+	
+![[Pasted image 20250822160908.png]]
+
+
+*Multi-trayectoria*: La señal rebota a cierto objeto para llegar al destino deseado, depende de la distancia.
+
+*Pathloss* Cuanto estoy perdiendo energía en función de la longitud de distancia.
+Menor longitud de onda - Mayor obstaculidad de transmisión de onda
+
+- Es infinito
+- A mayor frecuencia, más perdidas
+- A mayor frecuencia, menor tamaño de antena
+- A mayor frecuencia, mayor necesidad de linea de vista
+
+$$ \lambda = C/f$$
+$\lambda$ = Longitud de onda
+C = Velocidad de la luz = $3 \cdot 10^8$ m/s 
+$f$ = Frecuencia
+
+
+
+| Frecuencias |             | Uso                                              |
+| ----------- | ----------- | ------------------------------------------------ |
+| 3kHz        | VLF         | Comunicaciones de banda estrecha (mas de 1000km) |
+| 30kHz       | LF          | Larga distancia, sobre el horizonte              |
+| 300kHz      | MF          | Radiodifusión AM com. marítimas                  |
+| 3MHz        | HF          | Radiodifusion internacional                      |
+| 30MHz       | VHF         | Radiodifusión en FM, Radios móviles, aeronáutica |
+| 300MHz      | UHF         | Transmisión en TV, celurales, WLAN               |
+| 3GHz        | Micro-Ondas | Enlaces punto a punto, satelites, FWA, WLAN      |
+| 30-300HGz   | MM-ondas    | Servicio de ondas milimétricas                   |
+![[Pasted image 20250822164726.png]]
+
+- Por qué las transmisiones AM tienen más alcance que las WLAN?
+Estas ondas pueden rebotar en la ionosfera y regresar al suelo
+
+
+Uso del Espectro
+- Insumo esencial, finito, de complicada administración.
+- Su uso se comparte ente empresas de broadcasting
+- Clima: las gotas de agua de lluvia pueden obstruir la transmisión de señales. No afecta a señales de frecuencias bajas, sí a ondas cerca de 30-300GHz
+
+### Evolución Telefonía Celular
+
+En los comienzos de la década del 2000, el número de conexiones inalámbricas supera a las fijas.
+
+- ¿Cuál es el cuello de botella para aumentar la capacidad de red? 
+	1. Ancho de banda
+	2. Latencia y retraso de propagación
+	3. Capacidad de routers, switches, etc
+	4. Interferencias y congestión del canal
+	5. Capacidad del enlace de última milla
+		- Ley de Moore sobre el problema de acceso de última milla
+		Ultimo tramo de una conexión, desde el proovedor de servicios de internet (ISP) hasta el usuario final.
+	

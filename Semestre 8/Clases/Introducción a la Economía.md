@@ -213,7 +213,41 @@ Costo alternativo. Aunque no tenga arrendatarios, si tiene valoración alternati
 *Racional* -> Maximizando mi beneficio (en economia)
 
 
+# Clase 5
+22/02/25
 
+Control
+- Texto Economia en colores
+
+## Mercado
+
+- Fuerzas
+	- A. Smith (LRN)
+	- División del trabajo
+		Oferta y demanda de obreros, donde al dividir el trabajo, la producción se maximiza y por lo tanto el uso de recursos. De aquí viene la especialización (agrega valor tanto productivo como beneficios)
+	- Demanda y la oferta en Precio y Cantidad (Q, P)
+	- Mano invisible del mercado: Autor regularización del mercado libre
+
+Se transforma a 
+
+- Funciones
+	- *Demanda* $f(D) = \{...\}$
+		Curva que representa las cantidades de un bien o servicio que consumidores están dispuestos a adquirir de acuerdo a los precios del mercado
+	- *Oferta* $f(S) = \{...\}$ 
+
+
+La curva de demanda D representa la sumatoria de todas las demandas individuales por el bien de x producto/servicio.
+$$ Q_D = Q(P) $$
+![[Pasted image 20250822150042.png]]
+
+### Determinantes de la Demanda
+
+- Precio del bien
+- Precio de otros bienes
+- Ingreso de consumidores
+- Gustos o Preferencia de consumidores
+
+![[Pasted image 20250822151353.png]]
 
 
 

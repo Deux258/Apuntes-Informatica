@@ -296,3 +296,102 @@ Margen de tasa de interes en una operacion = $R col - R cap$
 P = Monto de dinero principal
 R = Tasa de interes
 
+# Clase 5
+22/08/25
+
+### Tasa de Interés
+
+1. *Interes simple*
+En cada periodo se carga una tasa que es la proporcion cobro por capital entregado. Usado poco o nada actualmente
+
+
+![[Pasted image 20250822115311.png]]
+
+2. *Interés Compuesto*  (mas usado actualmente)
+Si tengo un capital y cobro. Al termino del primer periodo, el deudor lo que debe es el capital y la tasa de interés por ese periodo.
+
+Si durara 1 periodo es lo que se debe al termino del 1er periodo
+Al 2do periodo, la base del interés es el capital + interés devengado 
+1er periodo 1.000.000
+2do periodo 1.100.000
+3er periodo 1.210.000
+
+![[Pasted image 20250822115340.png]]
+
+
+
+### Tasa Efectiva y Tasa Nominal
+
+#### Tasa Efectiva
+
+Si designo 1 millón por pagar capitalizado mensualmente
+Al tener capitalizaciones intermedias, la cifra va a ser mayor
+
+Cuando el plazo o periodo de definición de la tasa es igual al periodo de capitalización, decimos que la tasa de interés para una operación determinada es ==Efectiva==. 
+	periodo de capitalización es anual si tengo que pagarlo en un año.
+
+EJ) tasa nominal 12% anual en 12 meses
+Usando $(1 + Iz / Nc )^{Nc}$ = 12.68% tasa efectiva anual
+
+#### Tasa Nominal
+Cuando los periodos son diferentes en una misma operación, la tasa de interés es Nominal
+No representa intuitivamente el verdadero costo o beneficio financiero de una operación
+
+Correspondencia entre el periodo de definición de la tasa de interés y tasa de capitalización
+
+Normalmente las tasas de la vida real son Tasas Nominales, con periodos de capitalización mensuales con respecto al periodo de 
+
+EJ) Tasa nominal de 12% con periodo de capitalizacion mensual.
+12% / 12 meses = 1% mensual
+
+periodo de capitalizacion de 6 meses con respecto a la tasa 
+Z unidades de tiempo
+iz tasa de interes nominal
+C periodo de capitalizacion
+$$Nc = Z / C$$
+Ic tasa de interes
+Iz tasa de interes nominal
+Nc numero de capitalizaciones
+
+$$Ic = Iz / Nc$$
+
+Si tengo tasa anual con tasa de interes que le aplico a cada periodo
+12 meses / 3 meses
+
+Rz Tasa Efectiva a partir de una Tasa nominal Iz
+
+Tasa anual Efectiva:
+$$Rz = (1 + Iz/Nc) ^{Nc} - 1$$
+Agarro la tasa nominal dividido por el num de capitalizaciones y lo elevo a esta misma - 1
+
+#### Resumen
+
+- **Tasa Nominal**: Es el porcentaje que te dicen al año, pero dividido entre el número de periodos (como meses). Ej, sería 12% al año dividido en 12 meses, es decir, 1% por mes.
+- **Tasa Efectiva**: Es lo que realmente vas a ganar en total al final del año, tomando en cuenta que los intereses se suman cada mes. Ej, sería 12.68% al año.
+
+#### Capitalización Continua
+
+Injversion con acumulacion continua del capital en el tiempo, como las inversiones en proyectos forestales o ganaderos. Una tasa de interes no refleja la realidad de una valorizacion continua de los bienes.
+
+Si hago un prestamo a un año, si retiro antes no recibo los intereses.
+Cuando hay mercado de capitales (deposito en el campo y retiro a medio camino)
+
+#### Tasas Efectivas Equivalentes
+Dos o mas "tasas efectivas" de diferentes ==periodos de definicion== son equivalentes si, al termino de un periodo comun, tienen un mismo saldo.
+
+*rk* tasa de períodos de definición y capitalización k  
+**rw** tasa de períodos de definición y capitalización w
+
+![[Pasted image 20250822122821.png]]
+
+la forma de comparar 2 tasas efectivas es que sean efectivas ambas y buscar un mínimo común múltiplo (MCM), donde coincidan un termino de periodo en común.
+
+Nk Número de aplicaciones k
+Nw número de aplicaciones w
+$$Nk = MCM/k \space \space \space \space \space \space \space \space  Nw = MCM/w$$
+¿Cómo convierto una tasa semestral en una anual?
+
+Con la condición que los periodos de definición de tasas se encuentren expresados en unidades de tiempo consistentes, aplicando un mismo saldo S.
+$$ Rk = \space (1+ Rw)^{k/w} - 1)$$
+
+

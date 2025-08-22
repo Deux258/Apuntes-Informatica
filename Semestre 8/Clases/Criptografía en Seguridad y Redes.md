@@ -218,3 +218,106 @@ Mirar por encima del hombro. Acto tradicional de sapear directamente la pantalla
 
 ##### Man in the Middle
 
+# Clase 5
+22/02/25
+
+## Passcode/Contraseña Parte 2
+
+¿Qué es un passcode?
+mecanismo de inicio de sesión en forma de asegurar acceso a algún sitio.
+
+##### Shodan - Escritorios remotos
+
+Cada servicio para acceder a internet tiene x puertas para acceder
+a que puerta estan asociados los servicios (80, 8080, etc).
+
+Cuando busco Google: Información Indexada previamente, aprovechan de meter publicidad.
+
+##### Expiración de passwords
+No sirve de nada que expiren las password
+Los servicios en la nube de Microsoft reciben hasta 300 millones de intentos fraudulentos de inicio de sesión al día.
+
+### Control de acceso
+La autenticacion tiene que ver con la identidad del usuario
+Oauth se construyo para acceder a APIs a traves de HTTP
+SAML: Security Acces Markup Language
+
+### Credenciales
+1. Cliente
+2. API Key
+3. Servidor de API
+4. Acceso a la Base de Datos
+5. Error 401
+
+![[Pasted image 20250822102544.png]]
+
+
+###### *AWS IAM*: Identity and Access Management
+
+![[Pasted image 20250822102734.png]]
+
+
+###### *IdP* Identity Provider
+
+Servicio que almacena y verifica la identificación de los usuarios. Los IdP suelen ser servicios alojados en la nube y a menudo trabajan con proveedores de inicio de sesion unico SSO para autenticar a los usuarios
+
+![[Pasted image 20250822103022.png]]
+
+
+- Authorization Server
+Actúa como intermediario para denegar o permitir el acceso al usuario de los recursos protegidos.
+
+Emite un token de acceso al cliente. El cliente obtiene token para solicitar recursos a los recursos protegidos.
+
+### Json Web Token
+
+Header
+Payload
+Signature
+
+- Usar expiración
+- Evitar datos sensibles
+- Firmar con una clave secr4eta robusta
+- Rotar claves periódicamente
+- Usar HTTPS
+
+##### PSD2 (Payment Service Directive)
+
+Estándar europeo para pagos, adicional al PCI DSS.
+permite que terceras empresas también intervengan en los pagos. Open banking.
+
+Establece como obligatorio el 2FA Two Factor Authentication
+
+##### MFA
+
+| Yo tengo | Tarjeta   |
+| -------- | --------- |
+| Yo se    | password  |
+| Yo soy   | Biometria |
+
+##### SMS 2FA
+
+##### Rich Communication Services (RSC)
+Envia mensajes mas atractivos, usando caracteristicas que se encuentran en aplicaciones de mensajeria "Over The Top" (OTT)
+
+##### Clave Dinámica
+
+##### Tokens Fisicos / Tarjeta de Coordenadas
+Metodo obsoleto de token
+
+XOR: OR Exclusivo
+
+10101001 Valor texto que queremos cifrar
+01010101 Clave cifrado
+
+Numero resultado del Texto cifrado
+
+Si tiene alguno de los dos, retorna 0
+
+
+
+
+
+
+
+
