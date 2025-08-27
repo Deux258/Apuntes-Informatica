@@ -395,3 +395,135 @@ Con la condición que los periodos de definición de tasas se encuentren expresa
 $$ Rk = \space (1+ Rw)^{k/w} - 1)$$
 
 
+# Clase 6
+26/08/25
+
+## Tasas libres de inflación
+
+### Inflación
+Fenómeno macroeconómico donde el dinero pierde su capacidad adquisitiva. Esto ocurre por un aumento generalizado de los precios de bienes y servicios.
+- Desequilibrio entre el circulante y la disponibilidad de bienes
+- Disminución de producción
+- Presones inflacionarias del exterior
+
+Dado este fenómeno no se pueden comparar los valores de fechas distintas.
+
+P --> Inflación --> S (interes + deuda)
+Costo del Dinero
+
+##### Índice de Precios al Consumidor
+Indicador oficial del poder adquisitivo del dinero, determinado a posteriori por el instituto nacional de estadísticas *INE*. Se hacen encuestas estructuradas sobre una canasta de productos y servicios representativa del consumo medio de la población.
+
+### Tasas libres de Inflación
+Para comparar las cifras monetarias de distintas fechas:
+1. Efectuar la corrección del poder adquisitivo del dinero
+2. Aplicar la tasa de interés efectiva, libre de inflación
+
+#### Tasa de Interés Real:
+Tasa de interés que representa solo el costo del dinero, libre de efecto inflacionario.
+
+*Se aplican sobre:*
+- La corrección monetaria por inflación
+- Unidades monetarias que incorporan la variable inflación *UF* o Unidad Tributaria Mensual (UTM)
+
+Para casos especiales (exterior): Las tasas reales se aplican sobre unidades monetarias "libres" de inflación como USD, EUR
+
+Si tenemos:
+*If* : Tasa de inflación esperada del período
+*rf* Tasa de interés efectiva con inflación
+*r* Tasa de interés efectiva libre de inflación
+
+$$rf = (1+if) \space \cdot \space (1+r)-1 $$
+$$r = \frac{1+rf} { 1+if} - 1$$
+
+Interes compuesto: 
+- Tasa efectiva
+- Tasa nominal
+
+1ro transformo a tasa efectiva y luego comparo
+
+¿Qué hace que una tasa sea efectiva o nominal?
+	R: Periodo de capitalización
+	Si tengo tasa de 10% anual, si es efectivamente anual es efectiva
+	Si aumenta mensual dentro del año, es nominal
+
+Tasa, Periodo de Tasa, Periodo de Capitalización, Unidad monetaria
+
+Si una tasa de interes no incluye inflacion
+	10% con capitalizacion semestral + ITC
+
+## Valores Presente y Futuro
+
+Valores monetarios que representan la equivalencia de flujos en distintos momentos del tiempo, al incorporar el costo de "uso" del dinero representado por la Tasa de Interés
+
+- *Valor Futuro de un flujo F que ocurre ahora*
+Corresponde al valor que se tendrá acumulado luego de $n$ periodos
+$$ VF_n = F \cdot (1+r)^n$$
+- *Valor Presente de un Flujo F que ocurre en $n$ periodo*
+Inverso al Valor Futuro, por descontarse o actualizar el flujo, llevando al presente un valor que ocurre en $n$ periodo.
+$$ VP = \frac{F}  {(1+r)^n} $$
+EJ) Cuánto vale hoy lo que me va a entregar mañana
+Decrece su valor a medida que avanza el tiempo
+
+- *Flujo único y Tasa Variable*
+Valor futuro de un flujo F que ocurre actualmente, con tasa de interés variable entre periodos
+
+$$\prod _{j=1}^{n}$$ 
+
+![[Pasted image 20250826121609.png]]
+
+
+- *Flujo Distinto y Tasa Variable*
+Valor presente de una serie de Flujos $F_j$ con tasa de interés variable
+
+El valor presente de cada t flujo requiere descontarlo aplicando las tasas de interés de cada uno de los periodos 1 al t.
+
+![[Pasted image 20250826122140.png]]
+
+
+- *Flujo Distinto y Tasa Constante*
+![[Pasted image 20250826122200.png]]
+
+- *Flujo igual y Tasa Constante*
+Valor presente de una serie de flujos iguales que ocurren a l n periodo con tasa de interes constante
+
+![[Pasted image 20250826122403.png]]
+
+
+
+- *Flujos Perpetuos*
+Valor presente de una serie de flujos iguales (F) perpetuos (que ocurren del primer período al infinito) , con tasa de interés constante. Al ser los flujos de carácter perpetuo, la cantidad de períodos n tiende a  infinito
+
+## Préstamos (Créditos) y Ahorros
+Usan las mismas fórmulas de presente y futuro pero con quien presta y quien debe
+
+### Conceptos básicos
+- Moneda Base
+	Unidad monetaria usada para concretar el crédito
+- Costo del crédito
+- Plazo de pago
+- Periodos de gracia
+	- Gracia Total: Cantidad de periodos de no pago total
+	- Gracia Parcial: Pago sólo de intereses sin amortización
+- Modalidad de Pago
+	Programa de pago
+- Plazo del crédito
+	La suma de periodos de Gracia + Plazos de pago (plazo total del credito)
+
+#### Interés Vencido
+Modalidad usual, pagando el vencimiento de cada periodo de capitalización tanto para un credito de vai
+#### Interés Anticipado
+Yo pago el interes de forma anticipada, por ej si tengo 10% de interes por pagar, se descuenta al momento del préstamo
+
+### Modalidades de Pago
+
+##### Pago Vencido
+Se cancela la totalidadd de la deuda, principal + intereses al cumplirse el plazo
+##### Cuotas 
+
+Cuotas iguales de Pago con Interés sobre Saldo Insoluto
+
+![[Pasted image 20250826124223.png]]
+
+
+

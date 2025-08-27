@@ -310,16 +310,42 @@ Actividad
 
 
 # Clase 6
-22/08/25
+26/08/25
+
 ## Filtros de Kalman
-parecido a filtro de partículas, pero con datos analíticos en vez de aleatorios
+
+- Al igual que los filtros de particulas, estiman variables de entorno con datos analíticos en vez de aleatorios
+- Los errores deben distribuirse como una campana de gauss
+
+Modelo: Dinámica del estado
+La media es lo que predice el modelo, las colas la incertidumbre
+$$x_k = A \cdot x_{k-1} + B \cdot u_k + w_k $$
+
+Sensor: Mediciones
+La edia es la info que nos da el sensor
+$$z_k = H \cdot x_{k} +  v_k $$
+
+> Ambas ecuaciones son lineales
+
+Luego, la ponderación de ambas campanas genera una 3ra campana que unifica la info de ambas partes con su propia media y desviación estandar
 
 
+Q: Error asociado a la 1ra campana (modelo)
+R: Error por la 2da campana (sensor)
+K: Indicador de que campana es más importante
 
+Se le da mayor importancia al que tenga menor tasa de error
 
+1. Predice (modelo)
+2. Corrige (sensor)
 
+Problemas que pueden ser usados por Kalman:
+- Distribuciones Gaussianas
+- Sistemas lineales
+- Sistemas de tiempo discreto
 
-
+Covarianza del error (que tan buena es mi medicion):
+$$P_k = (I - K_K H) \cdot P^- _K$$
 
 
 

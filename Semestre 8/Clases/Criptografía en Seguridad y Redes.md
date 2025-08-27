@@ -314,6 +314,40 @@ Numero resultado del Texto cifrado
 
 Si tiene alguno de los dos, retorna 0
 
+# Clase 6
+26/08/25
+
+## HASH
+Forma de encriptar datos para seguridad
+
+Una función de hash $H(M)$ toma un mensaje de cualquier tamaño $M$ y retorna un valor de largo fijo $h$. El mensaje es un flujo de bits
+$$h = H(M)$$
+Este debe ser no reversible
+
+| Tipo de ataque     | Descripcion                             | Mitigacion recomendada              |
+| ------------------ | --------------------------------------- | ----------------------------------- |
+| Fuerza bruta       | Probar todas las combinaciones posibles | Usar contraseñas largas y complejas |
+| Diccionario        | Usar lista de contraseñas comunes       | Saiting                             |
+| Ataque de colisión |                                         |                                     |
+| Raimbow            |                                         |                                     |
+
+### Propiedades
+
+##### Sensibilidad
+Un cambio muy pequeño en el dato de entrada debe producir un cambio significativo de salida
+
+##### Unicidad
+El resultado de cada operacion realizado por una funcion HASH debe ser unico
+
+**PROBLEMA** Las funciones hash son de resultado fijo, por lo tanto existe una cantidad finita de soluciones posibles, donde $n$ es la cantidad de bits de la función $$ M = 2^n$$
+#### CRC32
+Código de redundancia díclica
+Usado para verificar la integridad de los datos de una transmisión, donde $n$ bits de datos se pueden considerar como los coeficientes de un polinomio. 
+EJ) Los datos 1101 pueden tratarse como $x^3 + x^2 + 1$
+
+#### Colisión 
+Dos entradas diferentes a un algoritmo genera el mismo resultado a la salida
+
 
 
 
