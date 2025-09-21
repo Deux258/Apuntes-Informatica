@@ -350,3 +350,73 @@ $$P_k = (I - K_K H) \cdot P^- _K$$
 
 
 
+# Clase 7
+02/09/25
+
+## Estimadores de Máxima Similitud
+
+Tenemos variables aleatorias y nos piden saber los parámetros 
+
+¿Qué parámetros tiene una distribución normal?
+- Media $\mu$ , Varianza 
+
+Desconocemos la media y varianza.
+¿Cómo calculamos estos valores (los más cercanos)?
+
+Esta es la base de muchos algoritmos para calcular lo mismo.
+
+### Distribuciones probabilísticas
+
+1. Definir distribución de datos como cierta
+	Por ej Distribución normal
+
+2. Ver que parámetros tiene esta distribución
+	Tenemos un conjunto de observaciones que son iid (variables aleatorias independientes e identicamente distribuidas).
+$D = 
+
+Parametros: $\mu = O1$ 
+
+
+3.  Para determinar el máximo valor de media, varianza, derivamos
+
+Funcion de Likelihood L 
+
+#### Limitaciones
+- Puede no ser único
+- Puede NO existir
+- MLE es una estimación puntual y no considera incertidumbre
+- Se ajusta demasiado a los datos observados
+- Overfitting (regresión, paradoja del cisne negro)
+
+
+Datos -> Modelo
+	 Parametros <- Entrenamiento
+
+Sirve para Machine Learning
+
+# Clase 8
+
+## Algoritmo de Expectations Maximization
+
+EJ 1) Problema: Mezcla de Gaussianas
+- Parámetros: Medias, Varanzas, Pesos
+- Observaciones (datos visibles): X = (1, 1.2, 4.8, 5.1)
+- Variables ocultas: para cada dato observado x_n, que gaussiana lo genero
+- EM:
+	- Se asigna un valor aleatorio a los parámetros
+
+MLE: $\mu, \omega$ (media, varianza) y encontrar datos ocultos (a qué gaussiana pertenece) 
+
+1. Se asigna un valor aleatorio a los parámetros
+2. 
+
+Maximiza la probabilidad de que x parametro pertenezca a y gaussiana
+
+EJ 3) HMM
+
+1. Asignamos parametros aleatorios a $\pi$, T, E
+2. E-Step: Backward forward
+3. M-Step: Maximizar parámetros
+4. Salida: valores ajustados y distribuciones de probabilidad sobre los estados en cada tiempo
+
+

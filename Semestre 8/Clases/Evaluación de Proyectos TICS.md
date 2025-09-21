@@ -527,3 +527,253 @@ Cuotas iguales de Pago con Interés sobre Saldo Insoluto
 
 
 
+
+# Clase 7
+02/09/25
+
+Idea -> Pre/Inversion -> Inversion -> Ex 
+
+BIP (Banco de proyectos) 
+
+Buena idea -> Mala ejecución
+
+- *Prefactibilidad* 
+Cuando no hay un gran inconveniente evaluando inicialmente el proyecto, 
+Se evalua el proyecto en base a informacion publicada/existente, *fuentes indirectas/secundarias*
+
+- *Factibilidad*
+Si la información disponible me indica un buen pronostico, entramos a hilar fino y a profundizar.
+Proceso más exhaustivo donde se realizan encuestas e investigación más profunda.
+
+- *Disposición a la compra*
+¿Pagarias 40k por x cosa?
+
+Las investigaciones de las áreas se estudian de forma paralela, incluyendo ingeniería.
+
+*Ingeniería Paralela*
+Se creó esta metodología para mejorar el Time To Market TTM, trabajando cada departamento de forma paralela, teniendo un punto de retroalimentación para cada parte de por medio.
+
+- TTM: Time To Market
+	Desde que tengo la idea hasta que tengo el producto
+
+## Estudio de Ingeniería del Proyecto
+
+Debe determinar el tipo de solución y recursos que permiten satisfacer mejor la necesidad, con rentabilidad y sustentabilidad.
+
+Recibe retroalimentación de los estudios de mercado, organización y costos de operación, debiendo ajustarse para ser factible y rentable.
+
+3 opciones técnicas para las 3 etapas
+- Construcción, desarrollo e instalación
+- Puesta en marcha (puesta en regimen operacional)
+- Operación normal (explotación) y cierre (si fuera el caso)
+
+> Debe cosiderar y valorar (costear) una gran variedad de recursos
+
+- Diseño del producto
+
+> Para todo ello debo costear:
+
+- Diseño de solución e integración
+- Desarrollo, pruebas, instalación
+- Sensibilizacion, capacitacion 
+- Temas legales
+- Requerimientos de confidencialidad
+
+### Investigación y Ensayos
+
+Dependiendo de lo que se hará, es posible que tengamos que investigar. Incluso si es algo nuevo, mejor hacer un prototipo para medir (benchmark) si la solución es lo que se necesita.
+
+- Conectividad disponible
+- Ineroperabilidad de componentes
+
+### Selección de Equipos
+
+##### Tipo de equipos
+- Naturaleza del Proceso
+- Escala Producción
+- Grado de automatización
+- Evaluación Económica que significa al final costo reducido
+
+- Procedencia
+- Condiciones de Credito
+- Garantias
+- Carta Gantt de:
+	- Cantidad de equipos
+	- Desembolsos necesarios
+	- Flujo de llegada
+	- Flujo de instalación
+
+### Layout y Topología
+
+- Estimación de puntos de control
+- Alimentado por el mercado
+- Flujos de procesos
+- Cómo impacta este tipo de solucion en costos, uso de recurso.
+
+Mirada amplia a como funcionara nuestra solución
+
+### Selección de Opciones Técnicas/Operativas
+
+Algunas consideraciones en generación de soluciones y la elección de alternativas, de acuerdo al objetivo, presupuesto y circunstancia
+
+1. Insumo Fijo
+	Los insumos deben ser utilizados eficientemente para maximizar las utilidades
+2. Producción Fija
+	Minimizar los costos u otros insumos
+3. Ni insumos ni Productos Fijos
+	"Maximizacion de utilidades" 
+
+#### Alternativas de Solución
+
+##### Optimización de la situación actual
+En base a un diagnóstico, si es posible, se determinará mejorar la situación actual
+Puede convertirse en importante fuente de ahorro de recursos
+
+##### Nuevas Alternativas
+Hay muchas formas de poder visualizar la solución para el proyecto. Desde ir cambiando tecnologías, personal, entre otras cosas
+
+Buscar una forma de *Objetivizar* cuando hay distintas opciones 
+
+Ponderar porque o si no no puedo determinar que punto es más importante por cumplir
+
+##### Ponderación de Atributos A, B
+
+##### Calificación de las Alternativas
+
+Como estoy dando una calificacion a como satisface el requerimiento, hay elementos que son críticos/infaltables.
+
+EJ) Taxista sin ruedas
+
+Ponderación general pero con un mínimo
+
+
+# Clase 8
+05/08/25
+
+- En cuanto al fracaso de proyectos:
+A veces fracasan por factores externos, como también por la mala evaluación del mercado, social o asignación de recursos. Cuanto más acentuado sea el cambio que produzca, mayor será el impacto sobre el proyecto.
+
+Terminando de ver el área de Ingeniería, pasamos a:
+## Mercado
+
+### Estructura del Mercado
+
+1. Clientes/Consumidores (usuarios)
+2. Canales (cómo llego a ellos)
+3. Proveedores
+4. Competidores (en qué nos diferenciamos)
+
+Se estudian los aspectos económicos que repercutan en el proyecto.
+
+### Estrategias 
+
+1. Competitiva
+2. Comercial
+3. De negocio
+4. De implementación
+
+Como promover 
+-> 
+
+### Determinación de la Demanda - 4P
+Entrega información imprescindible para comercializar mi proyecto
+
+Producto
+Precio
+Lugar
+Promoción
+
+#### Imperfecciones del Mercado
+
+##### Monopólico
+Un solo productor, distribuidor o vendedor concentra todo el poder de fijar condiciones y precios.
+##### Oligopólico
+Falta de competencia real de venta, porque hay pocos participantes en este tipo de mercados. Se suele generar por colusiones o Trust. EJ) Colusión del pollo.
+##### Monopsonio
+Un solo comprador fija los precios y/o volumenes de compra a multiples productores. EJ) Azucar de remolacha
+##### Oligopsonio
+Falta de competencia real de compra, los compradores fijan precios y/o volúmenes de compra a múltiples productores o vendedores.
+
+#### Mercado Perfecto
+
+- Producto homogéneo
+- Gran numero de compradores y vendedores
+- Libertad de entrada del mercado
+- Información perfecta
+- Ningún vendedor o comprador puede influir en el precio
+- No hay colusión
+
+#### Elasticidad de Mercado
+De acuerdo a los precios ocurre un efecto en la demanda
+
+Reacción de la cantidad de mandada ante un cambio de precio
+- Si sube de precio, baja la demanda
+
+$$ E = \frac{\delta Q/Q}{\delta P / P} $$
+### Determinación de la Demanda
+
+- Segmentacion de los consumidores
+- El comportamiento debe relacionarse con sus características propias
+	Como edad, sexo, situación familiar, ubicación
+- El comportamiento debe relacionarse también con situaciones externas al proyecto
+
+Funcion de correlacion
+Si un comportamiento de una variable independiente influye en otras variables
+
+Independiente: Cobre
+Dependiente: Dolar
+
+# Clase 9
+09/09/25
+
+## Preparación y Evaluación de Proyectos
+##### Pre- Inversión 
+El proyecto es definido, se separa y evalúa %%preinversion%%
+1. *Estudio Perfil:* Conversación / lluvia de ideas si esta buena la idea o si es viable
+2. *Estudio de Pre-factibilidad*
+3. *Estudio de Factibilidad*
+
+### Modelo de Negocio
+La información de mercado es amplia
+
+1. Mercado Consumidor
+2. Mercado Distribuidor o canales
+	Cómo haremos llegar nuestro producto o servicio a su destinatario
+3. Mercado Proveedor del proyecto
+4. Competencia sustitutos del proyecto
+
+Utilidad = Precio - MI Costo (lo fijo yo)
+
+		Dado
+
+#### Costos
+
+- *Fijos*
+Cuando hay precios fijos, a veces consigo mejor precio a largo plazo
+- *Variables*
+
+
+### Mercado Consumidor: Técnicas de Proyección de Demanda
+
+#### Métodos cualitativos
+Opinión de un experto,
+investigacion de mercado
+#### Modelos de series de tiempo (Cuantitativos / Históricos)
+Importante de forma crítica *¿es creible?*
+Regresión $f(t)$ lineal o no lineal
+Promedios móviles (seguir una tendencia que va variando en el tiempo, mejor manejar promedio)
+
+- 
+#### Metodos causales
+Correlación
+Modelos econométricos
+
+
+# Clase 10
+12/09/25
+
+
+1. Tabla resumen
+2. Pronóstico hasta 2030 (aprox)
+3. Hipótesis (Correlación de berries y fruta de pepita por ej)
+

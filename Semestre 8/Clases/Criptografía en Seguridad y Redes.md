@@ -350,6 +350,15 @@ Dos entradas diferentes a un algoritmo genera el mismo resultado a la salida
 
 
 
+# Clase 10
+12/09/25
+
+
+## Password Based Key Derivation PBKDF
+
+PRF funcion pseudo aleatoria de dos parametros con salida de longitud (ej HMAC con clave)
+
+### Blake 3
 
 
 

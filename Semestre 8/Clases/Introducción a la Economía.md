@@ -251,3 +251,141 @@ $$ Q_D = Q(P) $$
 
 
 
+
+# Clase 7
+02/09/25
+
+TEXTO SOLEMNE
+- Economia en colores
+- 
+## Función de la oferta
+### Oferta (Productores)
+
+- Precio del Bien
+$F(S / O) \space \{ \space P_X$
+
+*Px:* Precio del bien va a determinar el comportamiento de la curva de ofertas. Bien x
+
+Demanda es inversa
+A medida que aumenta el precio, consumidor disminuye su consumo
+Consumidor -> Inversamente con la gráfica de demanda
+Quiere gastar menos
+
+Oferta como Productor
+Aumenta el precio -> Aumenta la cantidad
+
+Precio del bien en funcion de la oferta es el que se mueve Sobre la curva
+
+> Se Desplaza sobre la curva
+
+- Precio del bien con Sustituto
+$F(S / O) \space \{ \space P_X$
+        $P_X{\frac{S}{C}}$
+
+*Como productor: Complementario*
+Si aumenta el precio del cuero --> Aumento la cantidad de carne a vender
+Varía el precio de piel, mas no el precio de carne (si su cantidad)
+AL CORTO PLAZO
+
+*Como productor: Sustituto*
+Si disminuye el precio del pollo
+Disminuyo la cantidad de carne que ofrezco
+Desplazo la curva de oferta hacia la izquierda, dado que varía la cantidad, pero no el precio
+
+Se desplaza la curva de la oferta horizontalmente
+
+- Tecnología
+$F(S / O) \space \{ \space P_X$
+        $P_X{\frac{S}{C}}$
+	    $Tec$
+
+A medida de que tengo mayor acceso a tecnología (automatización), me permite al mismo precio aumentar la producción.
+Movilizo la curva horizontalmente
+
+- Inversión
+$F(S / O) \space \{ \space P_X$
+        $P_X{\frac{S}{C}}$
+	    $Tec$
+	    $K$
+
+Produzco más al mismo precio (mismo efecto que tecnología)
+Desplaza la curva
+
+## Equilibrio del Mercado
+
+En el mercado operan 2 fuerzas: *Demanda $D$, Oferta $S_O$*
+En el eje X Cantidad, eje Y Precio
+
+### Punto de equilibrio del mercado
+Mano Invisible del Mercado
+En donde se interceptan la demanda y oferta (de acuerdo en cantidad y precio) 
+
+$$Q^S = Q^D$$
+$$P^S = P^D$$
+El precio y cantidad de la oferta y demanda se encuentran en equilibrio
+
+- Economías Abiertas
+
+$X$ = Exportaciones
+$M$ = Importaciones
+
+$X - M = XN$ Exportaciones netas = $BZA$ *Balanza Comercial*
+Entre lo que vende y compra el país
+
+En la medida que compras más, te endeudas con el mundo. Mientras más vendes, más deudas tendrán contigo
+
+- Exceso de Oferta
+$Q^S_1 > Q^D_1$
+
+Cuando aumento el precio del bien x $P_1$, disminuye la cantidad en demanda $Q^D$ y hay mayor oferta, mi $Q^S$ aumenta.
+
+- Exceso de Demanda
+$Q^D_2 > Q^S_2$ 
+
+Cuando disminuyo el precio del bien x, $P_2$, aumenta la cantidad en demanda $Q^D$ y hay menor oferta, mi $Q^S$ disminuye.
+
+- LEY -> Control de Precios -> Fijación de precios máximos
+*Exceso de Demanda*
+Cualquier precio menor al $P_0$
+FIja un precio $P_1$ pero la oferta nacional se irá porque no maximiza. El legislador crea una zona de ineficiencia donde todo el área por debajo del punto de equilibrio es pérdida.
+
+Solución: Estado debiera producir para saciar la demanda
+Problema: El estado sólo gana por impuestos
+
+
+
+Estimación de la Demanda -> Cuanto es la proyeccion de compra
+Variable: Precio
+Visualizo en Precio-Cantidad (curva demanda): Si la demanda es más propensa:
+Si aumento el precio, cuánto me afecta en la producción
+
+
+
+## Elasticidad DDA
+
+1. Elasticidad Precio/Demanda
+	$Q_X/P_X$
+
+2. Elasticidad Precio/Cruzada
+	 $Q_X / P\frac{S}{C}$ -> Q / P Sust/Comp
+
+3. Elasticidad Ingreso
+	$Q_X / 1\%Y$  -> Q / Y ingreso en 1%
+
+> De arriba hacia abajo:
+
++Sensible
+-Sensible
+
++Elastico
+-Elastico
++Inelastico
+
+Curva Demanda horizontal
+Curva Demanda Vertical
+
+
+# Clase 10
+12/09/25
+
+

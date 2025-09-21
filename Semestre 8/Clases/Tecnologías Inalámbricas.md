@@ -230,4 +230,215 @@ En los comienzos de la década del 2000, el número de conexiones inalámbricas 
 	5. Capacidad del enlace de última milla
 		- Ley de Moore sobre el problema de acceso de última milla
 		Ultimo tramo de una conexión, desde el proovedor de servicios de internet (ISP) hasta el usuario final.
-	
+
+
+
+
+# Clase 6
+29/08/25
+
+**Embotellamiento de Botella**
+distribución de un sistema ofrecido a los usuarios de un servicio.
+
+## Principales usos del Espectro
+
+A frecuencias más altas, menor cobertura
+Longitud de onda:
+$$ \lambda = \frac{C}{f} : Donde \space C \space = \space 3\cdot 10^8 $$
+### Evolución a la Telefonía Celular
+
+1. 1ra generación
+	Tecnología análoga
+2. 2da generación:Tecnología digital
+	- GSM
+	- CDMA: Multiples usuarios en la misma frecuencia
+	- TDMA: 
+2da generación + multimedia
+	Email, Internet, Mediciones, Localización, Seguridad
+
+3. 3ra generación: Tecnología digital
+
+###### 1ra generación
+En un inicio era sólo transmisión de voz. No habia seguridad en transmitir y comunicarse además de la baja calidad.
+
+###### 2da generación 
+Sienta las bases de los estandares masificado en GSM.Se complejiza más en relacion a las modulaciones complejas. Aparece CDMA y TDMA
+
+###### 2.5da generación 
+- Mejora en comunicación de usuarios. Envío de mensajes por texto, no solo por texto
+- GPRS: Cambio de modulación.
+- Voz: la comunicacion empieza a ser más entendible.
+- Conexión a internet en pañales
+- Email, Internet, Mediciones, Localización, Seguridad
+
+###### 3ra generación
+Estándares a nivel global, concretados por grandes empresas (3GPT): empresa dedicada a la estandarización. 2Mbit por segundo como máximo de velocidad de datos.
+- Servicios basado en imágenes
+
+Mientras más avanzan las generaciones, se reducen los costos de producción y de venta de las tecnologías.
+
+##### AMBS 
+1er standar desarrollado para tecnología celular
+- Desarrollado por "Bell Laboratories" en 1970, Estados Unidos.
+- Uso comercial en 1983.
+- Patrón de reutilización de 7 celdas
+- *Celda:* espacio donde abarco cierta cobertura para dar comunicación a los usuarios
+- Esta admite sectorización y división de celdas
+
+A las empresas se les asigna una porción de espectro para su uso de comunicación a los usuarios.
+Al ser tan grande, se debe reutilizar la frecuencia usando las celdas. Se puede lograr con clusters de celdas, distribuyendo la frecuencia completa dentro de cada celda.
+
+Por cada celda, se usa x canales de comunicación.
+Si uso el mismo canal en otra celda, habrá intermitencia.
+Cada canal tiene 1MHz, teniendo por ej 100 canales en total.
+
+*Cluster*: Conjunto de celdas (normalmente 7 celdas por cluster)
+Se reutiliza la frecuencia entre clusters
+
+*Enlace BackHole* Conexión por fibra óptica que conecta clusters en Chile
+
+- Mientras que el 3G demoró 12 años en alcanzar mil millones de usuarios, 5G supero la misma cifra en 3 años y medio, alcanzando los 2400 millones a marzo de 2025
+- 121 paises alrededor del mundo que cuenta con 5G
+
+
+# Clase 7
+02/09/25
+
+
+## LANs Inalámbricas
+
+- Nivel fisico
+- MAC
+- Ej de aplicaciones
+- Puentes inalámbricos
+##### Comparación Tecnologías Inalámbricas móviles
+
+| Tipo de Red          | WWAN (Wireless WAN)                     | WLAN (Wireless LAN)       | WPAN (Wireless Personal Area Network) |
+| -------------------- | --------------------------------------- | ------------------------- | ------------------------------------- |
+| Estandar             | 5G                                      | IEEE 802.11 Wi-Fi         | IEEE 802.15 Bluetooth                 |
+| Velocidad            | LTE: de 1kb/s hasta 1Gbps - 5G: 10 Gbps | hasta 40 Gb/s             | 2Mb/s  < 100Mb/s                      |
+| Frecuencia           | 700 MHz - 6GHz                          | Infrarrojos, 2.4GHz, 5GHz | 2,4 GHz                               |
+| Rango                | 35Km                                    | 30-300m                   | 1-100m                                |
+| Técnica Radio        |                                         |                           |                                       |
+| Itnerancia (roaming) |                                         |                           |                                       |
+
+#### Link Budget
+Nivelación de enlace *de forma lineal*
+
+$\lambda$ = Longitud de onda = $C / f$
+$P_R$ = Potencia receptor
+$P_T$ = Potencia transmisor
+$G_T$ =ganancia equipo transmisor
+$G_R$ = Ganancia equipo receptor
+$d$ = Distancia
+$n$= Exponente de Pérdida
+$$ P_R = P_T \cdot G_T \cdot G_R \cdot ( \frac{\lambda}  {4\pi d})^n$$
+
+Cuando $n$ es igual a 2 --> Modelo Friis *Máxima pérdida*
+
+Frecuencias mas bajas, mayor longitud de frecuencia, mayor tamaño de antena
+
+$P_R$ tiende a perder por $1/d^2$
+$P_R$ tiende a perder por $1/f^2$
+
+
+### Alcance de las ondas de radio en función de la Frecuencia
+
+![[Pasted image 20250902164747.png]]
+
+
+### Nivel físico en 802.11
+
+- Infrarojos
+	Sólo válidos en distancias muy cortas (10-20m) y en la misma habitación.
+
+- Radio
+	- FHSS Frecuency Hoping SpreadSpectrum
+		Sistema de bajo rendimiento, poco usado actualmente
+	- DSSS
+		Buen rendimiento y alcance. Sentó las bases para su digievolución en 802.11b (hasta 11Mb/s, 2.4GHz).
+	- OFDM
+		Original ente empleado en banda de 5GHz (menor alcance que 2,4GHz)
+		Divide en multiples subcanales (hasta 256 subportadoras), donde cada una de ellas puede ser modulada en relacion SNR mejorando la eficiencia espectral.
+
+Mayor SNR -> 16 BPM
+Menor SNR -> BPSK
+
+# Clase 8
+05/09/25
+
+Recordar:
+$$P_R = P_T \cdot G_T \cdot G_R \cdot (\frac{\lambda}{4\pi d})^n$$ 
+### Regulación del Espectro e Importancia de las bandas ISM
+
+ITU-R Regula la mayor parte del espectro: Se necesita licencia para transmitir
+
+- Divide el mundo en 3 regiones, cada una con reglas distintas. Algunos países tienen sus propias reglas
+- IEEE definio el uso de bandas ISM (Industrial Scientific Medical) para Wi-Fi y otras tecnologías sin licencia
+- Las ISM no son idénticas en todo el mundo: varían según país y región
+
+
+![[Pasted image 20250905163855.png]]
+
+
+En la banda de 2,4GHz, toda transmisión con potencias superiores a 1 mW debe emplear técnicas de espectro ensanchado para reducir interferencias
+
+Existen 2 métodos principales:
+- *Frequency Hoping (salto de frecuencia)*
+	El emisor va cambiando continuamente de canal. El receptor lo sigue (Bluetooth clásico)
+- *Direct Sequence*
+	Usa la comvolucion con llave unica para cifrar la conexión. Usa un canal de ancho mayor y convoluciona la señal con un tren de pulsos estrechos asignada a cada usuario.
+
+
+![[Pasted image 20250905163909.png]]
+
+- Frequency Hopping
+	Para combatir la interferencia, cambia a un canal que no tenga
+
+- Direct Sequence
+	Cada comunicación se encuentra cifrada, además el canal es muy ancho, transmitiendo mucha información redundante.
+
+![[Pasted image 20250905164138.png]]
+
+
+
+![[Pasted image 20250905164310.png]]
+
+
+
+#### Canales de Wi-FI en la banda de 2.4GHz
+
+![[Pasted image 20250905165001.png]]
+
+se intercalan los canales cada 5MHz de forma nacional e internacional alrededor de los 2.4GHz
+
+#### Canales DSSS Simultáneos
+
+Si se quiere usar más de un canal en una misma zona, hay que elegir frecuencias que no se solapen. El máximo es de 3 canales.
+	- EEUU y Canadá: Canales 1, 6 y 11
+	- Europa: Canales 1, 7 y 13
+
+- Con diferentes canales se pueden construir LANs inalámbricas ==idependientes== en una misma zona
+
+#### Banda de 5GHz (802.11a)
+
+IEEE definió en 1999 el estándar 802.11a en la banda de 5GHzm aprobado por la FCC de EEUU, permitiendo usar canales de mayor ancho de banda y con OFDM de hasta 54Mb/s.
+
+- No muy popular al inicio porque los equipos eran caros y el rango en 5GHz era más limitado.
+- 802.11n unificó en 2009 2,4 y 5GHz
+
+- Un equipo 802.11a NO puede interoperar directamente con uno 802.11b
+
+
+### Interferencia debida la Multitrayectoria
+
+Ocurre cuando una señal llega al receptor tanto de forma directa como reflejada en paredes, techos u objetos. La señal reflejada recorre un camino más largo y llega con retraso.
+
+![[Pasted image 20250905171007.png]]
+
+### Diversidad de Antenas
+Multiplexion espacial
+
+El equipo dispone de 2 o más antenas que reciben de manera independiente
+- En cada trama se evalúa cuál antena entrega mejor señal, y se utilizada para la recepción
+- NO sirven para ampliar cobertura, sino para mejorar la calidad de señal
