@@ -454,7 +454,9 @@ Mercenarios -> Trabaja para el que le ofrezca más plata.
 
 2. *Externalidades*
 
-Empiezo una inversión (planta fábrica)
+Cuando las acciones de alguien (empresa) afectan a otros sin pagar o recibir compensación.
+
+EJ) Empiezo una inversión (planta fábrica)
 - Desarrollo de sociedad, creo empleo y muevo la comunidad cerca de los puestos de trabajo
 
 PROBLEMA -> Contaminación de plomo
@@ -462,22 +464,17 @@ SOLUCION -> Cerrar la planta
 
 Responde el estado casi como mediador
 
-
 3. *Competencia Imperfecta* ?¿
 
 Son las que uno ve funcionar en la sociedad
 
-- Monopolio
-1 solo ofertante
-- Oligopolio
-pocos ofertantes
+- *Monopolio*: 1 solo ofertante
+- *Oligopolio*: pocos ofertantes
+- *Monopsonio*: 1 solo comprador fija los precios
+- *Polinopsonio*: Pocos compradores fijan los precios
 
-- Monopsonio
-1 solo comprador fija los precios
-- Polinopsonio
-Pocos compradores fijan los precios
-
-EJ) LATAM
+Resultado: Pérdida de bienestar social.
+EJ) LATAM, Intel incialmente con procesadores
 
 El estado debe involucrarse:
 **FNE** -> Fiscalia Nacional Económica se encarga
@@ -487,14 +484,16 @@ Cuando existan pocos ofertantes SIEMPRE se soluciona con una colusión o haciend
 Solución -> FNE
 
 
-4. *Costos de transacción*
+4. *Costos de transacción / Mercados incompletos*
 
 Mercados completos e Incompletos
 
-- ¿Cuántos estudiantes estudian con gratuidad? **
+Cuando el mercado no ofrece bienes o servicios que serían útiles y rentables
+
+- ¿Cuántos estudiantes estudian con gratuidad? 
 El privado no viene y paga mis estudios. ¿Qué gano?
 
-Yo debo completar el mercado
+Yo debo completar el mercado (como estado)
 
 EJ) Desastres naturales
 ¿Quién paga los daños? El privado NO siempre asegura todo
@@ -503,8 +502,17 @@ EJ) Desastres naturales
 
 No tengo toda la info para tomar una decisión
 
-EJ) Derechos del consumidor para biens de confianza y consumo
+EJ) Derechos del consumidor para bienes de confianza y consumo
 Normalización
+Sellos en los alimentos, ¿compro sin saber si me perjudica?
+
+6. *Desempleo e inflación*
+El mercado NO garantiza pleno empleo
+
+Crisis económicas, recesiones llevan a alto desempleo
+
+SOLUCION: Estado usa políticas macroeconómicas para estabilizar
+
 
 
 
