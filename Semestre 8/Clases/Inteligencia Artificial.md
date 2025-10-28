@@ -420,3 +420,225 @@ EJ 3) HMM
 4. Salida: valores ajustados y distribuciones de probabilidad sobre los estados en cada tiempo
 
 
+
+# Clase 12
+07/10/25
+
+## Machine Learning
+
+### Algoritmo de Clustering
+
+
+#### TIPOS DE IA
+
+1. Tipos de Aprendizaje
+	- Aprendizaje Supervisado  
+		Datos con etiquetas
+	- Aprendizaje NO Supervisado 
+		NO Etiquetadas
+	- Aprendizaje semisupervisado 
+		Con y sin etiquetas
+	- Aprendizaje por refuerzo 
+		Entorno Interaccion, interactuan con el entorno dando regalitos o no (Prueba y error)
+	
+2. Tipo de Tarea
+	- Clasificación 
+		AS
+	- Predicción
+		Valor de un departamento de acuerdo a x condiciones
+	- Agrupación
+		Aprendizaje NO Supervisado (ANS) y los agrupa 
+
+EJ para 1.)
+Dato: Manzana, Platano como imagen
+
+Tratan de encontrar patrones entre las etiquetas y los datos
+En base a los patrones, podrá identificar cuál es cual
+
+
+**K-Means**
+
+Tenemos una gráfica en N dimensiones, definiendo K como cantidad de clusters
+
+2. Calcula el promedio de los valores del cluster
+3. El centroide se va a mover por cada iteración hasta que los datos no cambien de cluster
+
+Cuando tenemos 1 cluster, hay casi infinitos errores.
+Mientras más clusters tenga, menor es la tasa de errores
+Se detiene de agregar clusters cuando la tasa de error empieza a disminuir muy poco
+
+
+07/10/25
+### Mean-Shift
+
+Los datos van migrando hacia el centro más cercano que tenga. Los clusters serán los puntos centrados, en este ejemplo 6 clusters.
+La idea es migrar los puntos a los sectores de mayor densidad.
+
+La idea es que no se especifica el valor de K a diferencia de K-means, se encuentra con T iteraciones
+
+Necesita definir un radio, Kernel (este tiene su parámetro, llamado *bandwidth*)
+
+- Radio $N(x)$: El radio que abarco de vecinos por cada dato
+- Kernel: Cómo van a influenciar los vecinos en mi (distribución de importancia)
+	- EJ) Kernel Gaussiano: los que estén más cerca les daré más importancia
+	- Kernel Uniforme: A todos los vecinos les doy la misma importancia
+	- *Bandwidth* $w_i$
+	- 
+		- Pequeño: Le doy importancia sólo a los que estén más cerca (+ Clusters)
+		- Grande: a casi todos los vecinos (- Clusters)
+
+$$ K (x, x') = e^ - \frac{||x-x'||^2}{2\delta^2}$$
+(e elevado a todo)
+
+
+Se itera N veces sobre cada dato hasta que converja:
+1. Partimos encontrando el conjunto de vecinos (tomando cualquier dato)
+	Ese dato, cuántos vecinos tiene ej: $N(x) = 3$
+2. Calcula el peso para cada vecino
+	Para el vecino 1, $w_1 = 2$
+3. Calculo $m(x)$ para normalizarlo (divido la sumatoria por el peso)
+
+
+> Útil para segmentar imágenes, también para hacer seguimientos
+
+
+*¿Cuándo usar Mean-Shift?*
+- Cuando no sé el valor de K (cantidad de clusters)
+
+### DBSCAN
+
+*Identifica Outliers*: datos atípicos
+
+Trabaja con medidas de densidad, usando dos parámetros:
+
+- Máx distancia $d$ para considerar vecinos
+- Mínimo número de puntos $n$ para una región densa
+
+Input
+
+
+Inicializar
+
+*Ventajas*
+- NO defino el numero del cluster
+- Puede tomar forma que K-Means no puede tomar (ej: carita feliz : ) )
+
+
+### Agglomerative Hierarchical Clustering
+
+Ve el cluster más cercano a otro cluster y va agrupando de menor a mayor.
+
+- Cuando se quiere visualizar la evolución de unificar los clusters
+- Usado en biología las células
+
+### GMM
+
+- Estimación de densidad en cualquier punto del plano (altura, peso)
+- *Clasificación suave* de nuevos casos (EM) 
+	- Identifica cuántas gaussianas hay
+- Detección de atípicos, puntos con densidad muy baja
+- Puede tomar formas más "elasticas", adaptandose mejor a los datos 
+
+Podemos hacer predicción de datos atípicos (su prob de pertenecer a cierta gaussiana)
+[!!!] Con los otros no se puede hacer
+
+
+
+
+
+
+# Clase 13
+10/10/25
+
+hasta ahora se veron metodos de clustering. Hoy se vera de *predicción*, algoritmo supervisado
+
+Entrenaremos el modelo con un conjunto, obteniendo datos nuevos con su etiqueta.
+
+Lo importante es que haya relacion lineal entre los datos y la etiqueta 
+	Los puntos sigan una tendencia lineal para encontrar la "recta" que siga su tendencia
+
+Dimensiones -> **Predictores**
+
+| Predictores       | Variable a predecir |
+| ----------------- | ------------------- |
+| X                 | Y                   |
+| 2                 | 5                   |
+| 3                 | 10                  |
+| ?? [10/3] (media) | 15                  |
+| 5                 | 30                  |
+
+Entrenar ->
+- Encontrar valores y parámetros
+
+
+Pendiente $Y = mx+b$
+
+En este caso: 
+- $Y$ variable a predecir
+- $x$ 1 predictor
+- $m$ 1er parametro
+- $b$ 2do parámetro
+$$ x - \mu / \delta (media) $$
+
+### Datos 
+
+| Conjunto      | ¿Para qué sirve?                         |                          |
+| ------------- | ---------------------------------------- | ------------------------ |
+| Entrenamiento | Ajustar los parámetros del modelo        |                          |
+| Validacion    | Definir Hiperparametros                  | Tasa de aprendizaje $\n$ |
+| Test          | Que tan bueno es con los datos chantados |                          |
+
+### Tutorial
+
+1. Divide datos:
+	Train / Val / Test
+	70 / 15 / 15 (sólo ve los datos de entrenamiento)
+2. Luego, elegir un conjunto de valores para cada hiperparámetro
+3. Para cada combinación
+	1. Entrenar el modelo (Train) (70 datos)
+	2. Calcular métricas de qué tan bueno es el modelo (Val) (15 datos)
+4. Nos quedamos con el mejor valor de hiperparámetros, *Reentrenando* el modelo (train + val) que mejor puntue en la validación
+5. Evaluar modelo (test) una sola vez qué tan bueno es
+
+## Regresión lineal Univariada
+Sólo 1 predictor
+
+$$y = ax+b$$
+Reescribimos la ecuación de la siguiente forma
+$$h_\theta = \theta_0 + \theta_1 x$$
+- Definimos un error y buscar los valores de $\theta$ que minimicen el error
+- Si tenemos m datos y el $i$-ésimo ejemplo del entremaniento $(x^{(i)}, y^{(i)})$ se define el error cuántico como sumatoria de ..
+
+Para disminuir la tasa de error, se usa *gradiente descendiente*
+-> Apunta siempre donde la función crece más -> Vector de derivadas
+
+
+## Regresión lineal multivariada
+
+Lo mismo pero con más variables
+
+| x   | y   |
+| --- | --- |
+| 2   | 0   |
+| 3   | 1   |
+| 4   | 0   |
+| 5   | 2   |
+
+
+# Clase 14
+14/10/25
+
+## Regresión logística
+
+Debiera usarse de una manera *actoada*. Al tenerse clasificacion esta vez, vamos a querer que los valores estan contenidos dentro de una franja. Se ve ahora como *umbral de decisión*
+
+
+Se buscan los mejores valores para $\theta_0$ y $\theta_1$
+$$h\theta(x) = \theta_0 + \theta_1x$$
+(recta creciente)
+
+$\theta_1$ dicta que tan rapido sube de 0 a 1
+$\theta_0$ mueve la curva izquierda o derecha
+
+
+

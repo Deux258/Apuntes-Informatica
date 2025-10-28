@@ -777,3 +777,126 @@ Modelos econométricos
 2. Pronóstico hasta 2030 (aprox)
 3. Hipótesis (Correlación de berries y fruta de pepita por ej)
 
+
+# Clase 12
+07/10/25
+
+Parte 2 del análisis de proyectos
+
+## Aspectos Legales
+
+Aspectos que limitan o convienen para el proyecto, restricciones para evitar problemas en la sociedad. Puede influir en las inversiones y costos de operación, por licencias, auditorías y certificaciones requeridas, también en las formas de cobro de servicios o productos.
+
+
+### Estudio de marco y Restricciones legales, sociales, etc.
+
+Dependiendo del tipo, alcance y extensión o tamaño del proyecto, habrá diversos estudios complementarios que apoyan tanto las decisiones de ingeniería, como los legales.
+Todos los que influyan en la inversion y flujo de ingresos y costos del proyecto.
+
+- Restricciones medioambientales
+- Propiedad intelectual
+- Legislaciones restrictivas
+- Tarifas de servicios o zonas
+- Beneficios tribuarios
+
+
+### Tamaño
+
+- Patente
+
+
+Estudio de tamaño o Capacidad
+
+Economia y deseconomia de escala:
+
+$$ I_t = I_0 \space [T_t / T_0]^\alpha $$
+
+
+
+| Tamaño | Costo Unitario | Utilidades |
+| ------ | -------------- | ---------- |
+|        |                |            |
+
+### Localización
+
+- Micro Localizaciones
+Regiones
+- Macro Localizaciones
+Paises, continentes
+
+Que no se caiga en entorno dependiendo de la cultura y condicion politica en la que se encuentre la locacion 
+
+
+# Clase 13
+10/10/25
+
+## Flujos y evaluación
+
+
+# Clase 17
+24/10/25
+
+
+## Evaluación Económica del Proyecto
+
+### Evaluación Económica: VAN Valor ACtual Neto
+
+
+$$VAN = \sum_{t=1}^{n} \frac{B_i - C_i}{(1+R)^i} - I_0 = 0$$
+
+Neto = Ingreso menos egresos
+
+R = TIR
+
+Si VAN > 0
+Busco una tasa menor, y para esto coloco una tasa mayor
+
+VAN -> Normal
+	 -> Ajustado
+
+*VAN Normal*: 
+Considera TODO el flujo
+
+*VAN Ajustado*
+Mismo flujo, pero Supone que todo la inversion proviene de la empresa o del inversionista
+Considera el proyecto SIN financiamiento
+
+Significa que ese financiamiento (toda la inversion la realiza la empresa)
+
+
+### PRI Periodo de Recuperacion de la Inversion
+
+a = Año inmediato anterior al flujo que se hace positivo por primera vez
+b = Inversion total
+c = Flujo de Electivo 
+d = Flujo de efectivo del año en el que se recupera la inversión
+
+$$PRI = a + \frac{(b-c)}{d} $$
+
+### Indicadores de Rentabilidad
+
+INVERTIR: 
+- Sujeto que invierte
+- Objeto
+- Costo por la renuncia
+- Esperanza o espectativa
+
+
+Financiamiento
+- Capital propio
+- Aportes de socios
+- Mercado financiero
+
+	Capital Propio
+	Recursos del inversionista que no suponen ociosos (disponibles)
+	Tiene costo equivalente a la mejor rentabilidad alternativa a la que tiene acceso el inversionista
+
+
+
+
+
+
+
+
+
+

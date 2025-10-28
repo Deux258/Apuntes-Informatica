@@ -442,3 +442,166 @@ Multiplexion espacial
 El equipo dispone de 2 o más antenas que reciben de manera independiente
 - En cada trama se evalúa cuál antena entrega mejor señal, y se utilizada para la recepción
 - NO sirven para ampliar cobertura, sino para mejorar la calidad de señal
+  # Clase 12
+07/10/25
+
+## Modelo de Programación de Gran Escala
+
+En este caso, propagamos ondas electromagnéticas
+
+Dependiendo del escenario, el canal inalambrico impone limitantes en el desempeño de los sistemas.
+
+- Niveles de obstrucción
+- Medios *cableados*: estacionarios y predecibles
+- Medio *inalámbrico*: Altamente aleatorio
+
+Mayoria de resultados son estadísticos
+
+*Multitrayectos:* 3 fenómenos físicos principales
+LOS: Linea de vista, la ruta más rápida del transmisor al receptor
+
+1. Difracción: Cuando interactua con una superficie con cambio de ángulo agudo
+2. Reflexión: Cuando llega de rebote al receptor (fenómeno por debajo del agua) con una superficie plana, donde tiene el mismo ángulo de rebote
+3. Dispersión: Existe pérdida de señal donde no hay rumbo claro
+
+
+### Modelo de Propagación en Espacio Libre
+
+No hay ningun obstaculo, LOS totalmente despejada, por lo que el modelo de fris es bastante correcto para este caso ideal. (Efective Isotropic Radiated Power)
+
+### EIRP
+Cuanto voy a estar irradiando en un escenario específico
+$$EIRP = P_T G_T$$
+Representa la máxima potencia efectiva irradiada en la dirección de la máxima ganancia de la antena, comparada respecto a una antena isotrópica (en todas las direcciones de igual forma).
+
+
+
+### Path Loss
+
+Las pérdidas por camino recorrido/trayectoria calculables según el modelo de espacio libre.
+
+$$ PL[dB] \space = \space 10 log(\frac{P_t}{P_r}) \space = \space -10 log (G_t G_r \lambda^2 / \space (4\pi)^2 d^2 L  )$$
+Si se emplean antenas isotrópicas (ganancia 0 dBi), resulta:
+
+$$ PL[dB] \space = \space 10 log(\frac{P_t}{P_r}) \space = \space -10 log (\lambda^2 / \space (4\pi)^2 d^2 L  )$$
+
+### Validez del Modelo
+
+El modelo de Friis es solo válido para espacios en campo lejano o región de Fraunhofer.
+- Definida por la banda de operación del sistema por las dimensiones de la antena empleada en la transmisión de la señal
+
+La región de Fraunhofer corresponde a una distancia desde el Tx superior a $d_f$, donde $d_f$ está dado por 
+
+$$d_F = \frac{2D^2}{\lambda} \space , \space d_F >> \lambda$$
+
+
+
+
+# Clase 15
+17/10/25
+
+## Modelos de Gran Escala
+
+¿Cobertura?
+
+### Friis $n=2$
+$$P_R = P_T + G_T + G_R + 10 \cdot log_{10}(\lambda / 4 \pi d)^2$$
+Pasa a $$P_R = P_T dBm + G_T dB + G_R dB + 10 \cdot 2 \cdot  log_{10}(\lambda / 4 \pi ) - 10 \cdot 2 \cdot log_{10}(d)$$
+### 2 Rayos $n > 2$
+
+$n > 2 , n = 4 ; d > dc$
+$$dc = \frac{4h_t * h_r }{ \lambda} $$
+
+![[Imagen de WhatsApp 2025-10-17 a las 16.22.32_2c01ce43.jpg]]
+
+
+
+### 10 Rayos $n<2$
+Situaciones de encajonamiento 
+
+Aprovecho el entorno, logrando atravesar más obstáculos (además de LOS y línea de piso)
+
+$$P_R = P_T \cdot G_T \cdot G_R \cdot (\frac{h_T \cdot h_R}{d^2})^2$$
+donde: $G_L$ Ganancia de Linea de vista
+$$G_L = \sqrt{G_{LT} \cdot G_{LR}}$$
+
+$G_R$ Ganancia de Rebote
+$$G_R = \sqrt{G_{RT} \cdot G_{RR}}$$
+
+### Fernel: Pérdida por Difracción / Filo de Cuchillo
+
+![[Imagen de WhatsApp 2025-10-17 a las 16.38.26_00e975f6 1.jpg]]
+
+
+PIRE
+Maxima potencia variada respecto a una antena isotrópica
+
+Si analizo en d[m], la potencia cae logarítmicamente
+
+ERROR de mediciones = $Datos - Curva \space de \space ajuste$
+
+**Shadowing** = Condicion de sombra oculto por cierto obstáculo
+Variable Aleatoria de $Gauss$ en formato lineal
+
+G = \[0, $\sigma^2$]
+
+- Friis NO indica cuándo hay Shadowing
+
+### Path Loss Simplificado
+
+> Si hago múltiples mediciones a la misma distancia, **elimino el** **SHADOWING**
+
+$$P_R(d0) = P_T \cdot G_T \cdot G_R \cdot (\frac{\lambda}{4\pi})^n \cdot \frac{1}{d0^n}$$
+$P_R(d0) \space y \space \frac{1}{d0^n}$ las únicas variables en la ecuación, tal que:
+
+$K = P_T \cdot G_T \cdot G_R \cdot (\frac{\lambda}{4\pi})^n$
+
+$$K = P_R(d0) \cdot d0^n$$
+$$PR(d) = P_R (d0) \cdot (\frac{d0}{d})^n $$
+
+Si promedio los resultados, *elimino los efectos de pequeña escala*
+
+![[Imagen de WhatsApp 2025-10-17 a las 17.08.19_e7641982.jpg]]
+
+
+
+
+# Clase 17
+24/10/25
+
+
+
+
+*Macroceldas*
+Antena que se encuentra a una altura considerable, por encima de los principales obstaculos. Mayor probabilidad de tener linea de vista LOS con el receptor. 
+
+*Microceldas*
+Antena con altun
+
+
+
+
+
+
+
+
+
+
+### 4ta: Modelando el Canal de Propagación
+
+- Modelo de respuesta a impulso del canal inalámbrico
+
+la respuesta al impulso $h(t)$ corresponde a la salida de un sistema frente a un impulso unitario $\delta(t)$.
+
+Si de un impulso recibo multiples impulsos, es la misma señal pero con retraso generado por multitrayectoria
+Cuantifico cómo están llegando los multitrayectos, cuánto son los retardos?
+
+- Si hay mucho retardo, mi medio de comunicación hay deformaciones
+
+Depende de la distancia y velocidad del emisor la cantidad de retardo y potencia de impulso
+
+
+
+
+
+

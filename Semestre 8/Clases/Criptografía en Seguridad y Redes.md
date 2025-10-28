@@ -364,3 +364,153 @@ PRF funcion pseudo aleatoria de dos parametros con salida de longitud (ej HMAC c
 
 
 
+
+# Clase 11
+30/09/25
+
+Métodos de Cifrado Moderno
+	Cifrado en flujo -> A5, RC4
+	Cifrado en bloque -> Clave secreta
+				-> Clave pública
+
+Cifrado de Bloque
+- Método ECB (Electronic Code Book)
+- Método CFB (Cipher Feedback)
+- Método OFB (Output Feedback)
+- Red de Feistel
+
+- DAta Encryptiuon Standard
+
+## Cifrado Simétrico
+
+### DES
+
+Ejecuta 16 rondas 
+
+#### Blowfish
+- Algoritmo de cifrado simetrico diseñado en 1993 como alternativa de DES
+- largo variable desde 32 bits a 448 bits
+- No tiene patente
+
+
+### *Algoritmo*
+
+**Expansión:** La mitad del bloque de 32 bits se expande a 48 bits por permutación de expansión, duplicando algunos de los bits
+
+**Mezcla:** El resutado se combina con una subclave usando XOR. 16 subclaves se derivan de la clave inicial por generación de subclaves
+
+**Sustitución** Tas mezclarlo con la sub-clave el bloque dividido en 8 
+
+**Permutación** Las 32 salidas de la S-cajas se mezclan
+
+Generación de sub llaves
+
+Se seleccionan 56 bits de la clave de los 64 iniciales por elección permutada 1 (PC-1). los ocho bits restates pueden descartarse
+
+¿Porqué estos valores?
+- DES seria menos seguro con menos de 16 rounds
+- No sería mas seguro con más rondas
+- Las cajas-S fueron modificadas por la NSA para ser inseguras a largo plazo (20 años demoró en romperse)
+
+### Como romper DES
+
+1. Fuerza bruta $2^{56}$ intentos
+
+
+# Clase 13
+10/10/25
+
+## Cifrado Simétrico PT2
+
+
+
+Definiciones
+### DRM
+
+### *Estado actual de los algoritmos*
+
+| Algoritmo             | Estado actual            | Uso recomendado                          |
+| --------------------- | ------------------------ | ---------------------------------------- |
+| DES                   | Obsoleto desde 1999      | No usar                                  |
+| 3DEs                  | Desautorizado desde 2023 | Solo en sistemas heredados               |
+| AES-128               | Vigente                  | Aplicaciones estandar                    |
+| AES-256               | Recomendado              | Proteccion de datos sensibles            |
+| ChaCha20              | En expansion             | Moviles, VPN, TLS                        |
+| RC6, Serpent, Twofish | Finalistas AES 2000      | Investigacion y aplicaciones específicas |
+
+- ¿Cuál usar actualmente, SSL o TLS?
+
+- [!!!] Padding como ejercicio
+
+
+# Clase 14
+14/10/25
+
+### AEAD
+Cifrado autenticado con datos asociados
+
+Proporciona confidencialidad, integridad y autenticidad a los datos. 
+Cifra el mensaje y crea un codigo de autenticacion MAC para el mensaje cifrado y los datos no cifrados (integridad y autenticidad)
+
+
+- Modos
+- AES-GCM
+- AES-CCM
+- ChaCha20-Poly1305
+- OCB (Offset Codebook)
+- EAX
+
+
+#### ChaCha20-Poly1305
+
+Cifrado de flujo diseñado en
+Usado para 
+
+
+### Cifrado intermitente
+
+Tecnica de cifrado parcial usada por algunas variantes de ransomware y malware moderno. En lugar de cifrar todo el archivo completo, solo se cifran partes específicas del archivo o bloques de datos.
+
+Para:
+- Acelerar el proceso de cifrado en grandes volúmenes
+- Evadir detección de antivirus o EDR
+- Provocar daño parcial pero profundamente critico, para que el archivo no sea accesible.
+
+
+
+Seguridad en la MAC
+
+## IEEE 802.1AEdk-2023
+
+Enmienda reciente al estandar IEEE 802.1AE (MACsec) que introduce mejoras para extender la seguridad.
+
+ChaCha20 más rápido que 
+AES-GCM
+
+# Clase 17
+24/10/25
+
+## Cifrado homomórfico
+
+1. Usuario -> Envia el dato usuario -> Dato cifrado
+2. Dato cifrado -> Se realiza la operacin sin desfifrarlo -> Dato procesado y cifrado (SERVIDOR)
+3. SERVIDOR -> Se devuelve el dato cifrado -> Usuario
+
+Más seguro que cifrado NO homomórfico
+
+### Lattice-based cryptografy
+
+Lattice -> Algo que conecta toda la existencia
+
+Se debe encontrar el punto más cercano a otro. Es tán dificil que se conoce como Shortest Vector Problem SVP.
+Problema matematico intratable, alternativa más seria para la era post-cuántica
+
+
+## JSON web Tokens
+
+Tokens firmados digitalmente y la criptografía usada para generar la firma puede variar.
+
+
+### Benchmarks
+
+

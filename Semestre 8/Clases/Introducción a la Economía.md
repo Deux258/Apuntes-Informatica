@@ -389,3 +389,193 @@ Curva Demanda Vertical
 12/09/25
 
 
+# Clase 12
+07/10/25
+
+## Subsidio
+Gasto social que sale de los impuestos
+
+En el mercado: 
+- Productor
+- Consumidor
+
+Subsidios -> Distorsionador -> Ineficiencia (igual que impuestos)
+
+
+# Clase 15
+17/10/25
+
+#### PRESENTACION !!!!!!!
+
+3 partes
+1. Presentacion del tema (contexto) 2 min
+2. Evolucion (4-5 min)
+3. Cómo opera en términos económicos (estabilidad de la moneda caso del banco)
+
+Evidencias prácticas de la materia
+Puntos importantes de investigación
+
+## Fallos de Mercado
+
+Cuando no logra responder ante las necesidades de las personas,
+no es capaz de proveer productos y servicios
+- Costos de transacción muy altos
+- No logra ser muy atractivo para el privado
+
+Si el mercado falla, el estado interviene. NO siempre lo resuelve.
+
+### La regulación del Estado
+Cuándo interviene existen puntos identificables
+
+1. *Bienes públicos*
+
+EJ) Plazas públicas -> Privado NO está a cargo
+	- No existe beneficio
+	- Valor a cobrar sería tan alto que no habría demanda -> Muy costoso
+	- Mantención
+
+Alguien tiene que verlo porque o si no
+-  Se pone fea
+- Delincuencia, basura, mal cuidado
+
+NADIE sale perjudicado. Si no se ocupa el bien publico, no castiga el bien que disfruta el otro.
+
+EJ) Faros (San antonio el mas \$\$)
+
+Si finanzo un faro, ¿cómo restrinjo su uso para otros barcos?
+Ningún barco se ve menospreciado por el uso del faro
+
+EJ) Ejercito
+Defensa nacional.
+
+Mercenarios -> Trabaja para el que le ofrezca más plata.
+- No hay seguridad que me provea a mí solamente
+- Costos muy altos de transacción
+
+2. *Externalidades*
+
+Empiezo una inversión (planta fábrica)
+- Desarrollo de sociedad, creo empleo y muevo la comunidad cerca de los puestos de trabajo
+
+PROBLEMA -> Contaminación de plomo
+SOLUCION -> Cerrar la planta
+
+Responde el estado casi como mediador
+
+
+3. *Competencia Imperfecta* ?¿
+
+Son las que uno ve funcionar en la sociedad
+
+- Monopolio
+1 solo ofertante
+- Oligopolio
+pocos ofertantes
+
+- Monopsonio
+1 solo comprador fija los precios
+- Polinopsonio
+Pocos compradores fijan los precios
+
+EJ) LATAM
+
+El estado debe involucrarse:
+**FNE** -> Fiscalia Nacional Económica se encarga
+
+**!!!!**
+Cuando existan pocos ofertantes SIEMPRE se soluciona con una colusión o haciendo cartel (coludido).
+Solución -> FNE
+
+
+4. *Costos de transacción*
+
+Mercados completos e Incompletos
+
+- ¿Cuántos estudiantes estudian con gratuidad? **
+El privado no viene y paga mis estudios. ¿Qué gano?
+
+Yo debo completar el mercado
+
+EJ) Desastres naturales
+¿Quién paga los daños? El privado NO siempre asegura todo
+
+5. *Asimetrías de Información*
+
+No tengo toda la info para tomar una decisión
+
+EJ) Derechos del consumidor para biens de confianza y consumo
+Normalización
+
+
+
+
+# Clase 18
+
+#### Control 3: SOLO TEXTO
+Preguntas parecidas a las que envió el profesor
+
+## Cuentas Nacionales
+
+### Medición del Nivel de Actividad Económica
+
+- Producto Interno Bruto (PIB)
+Valor total de la producción corriente de bienes y servicios finales dentro del territorio nacional durante un período dado.
+
+
+$\sum$ $P$ (año) * $Q$ (año)
+
+PIB 
+	-> REAL 
+	-> NOMINAL precios corrientes 
+
+*REAL*
+Año base: $P$ año base * $P$ año a estudiar
+Eliminar el efecto inflación dada las condiciones inusuales que se pueden dar en la economía 
+
+*NOMINAL*
+
+
+### Medición del PIB por el lado del *Gasto*
+
+- Todos los bienes que una economía produce se gastan
+- Agente económico -> realiza el gasto 
+
+- PIB (*Economía abierta*) =
+$$Y = C + I + G + XN $$
+C = Consumo
+I = Inversión
+G = Gasto del Gobierno -> Compras que hace el estado
+XN = Exportaciones Netas
+
+*Economía Cerrada*
+$$Y = C + I + G $$
+X = Exportaciones
+M = Importaciones
+
+*Balanza comercial*
+X > M = + XN
+X < M = - XN
+X - M = XN
+
+- (G) Gasto del Gobierto => Compras que hace el estado
+- (C) Consumo privado => Ingresos autónomos 
+
+
+
+Transferencia directa del estado a la persona 
+Becas
+
+*Demanda total* = $C + I + G$
+
+Falla del Mercado
+Pensión -> Jubilación
+
+
+
+
+
+
+
+
+
+

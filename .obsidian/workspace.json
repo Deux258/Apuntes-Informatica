@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Semestre 8/Clases/Criptografía en Seguridad y Redes.md",
+                "file": "Semestre 8/Clases/Tecnologías Inalámbricas.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Criptografía en Seguridad y Redes"
+              "title": "Tecnologías Inalámbricas"
             }
           },
           {
@@ -64,7 +64,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -213,13 +213,17 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "faf976156dedae6c",
+  "active": "625fb0d59350828f",
   "lastOpenFiles": [
+    "Semestre 8/Clases/Criptografía en Seguridad y Redes.md",
+    "Semestre 8/Clases/Evaluación de Proyectos TICS.md",
+    "Semestre 8/Clases/Inteligencia Artificial.md",
+    "Semestre 8/Clases/Introducción a la Economía.md",
+    "Semestre 8/Chanchitos/Resumen RSNS - Cap 1.md",
     "Semestre 8/Ayudantías/AY - Criptografía en Seguridad.md",
     "Semestre 8/Ayudantías/AY - Introducción a la Economía.md",
     "Semestre 8/Ayudantías/AY - Tecnologías inalámbricas.md",
     "Semestre 8/Clases/Tecnologías Inalámbricas.md",
-    "Semestre 8/Clases/Criptografía en Seguridad y Redes.md",
     "Semestre 8/Chanchitos/Resumen RSNS - Cap 3.md",
     "Semestre 8/Imágenes/Tecnologías Inalámbricas/Pasted image 20250822160908.png",
     "Semestre 8/Imágenes/Tecnologías Inalámbricas/Pasted image 20250905171007.png",
@@ -229,11 +233,7 @@
     "Semestre 8/Imágenes/Tecnologías Inalámbricas/Pasted image 20250905163909.png",
     "Semestre 8/Imágenes/Tecnologías Inalámbricas/Pasted image 20250905163855.png",
     "Semestre 8/Imágenes/Tecnologías Inalámbricas/Pasted image 20250902164747.png",
-    "Semestre 8/Clases/Introducción a la Economía.md",
-    "Semestre 8/Clases/Inteligencia Artificial.md",
-    "Semestre 8/Clases/Evaluación de Proyectos TICS.md",
     "README.md",
-    "Semestre 8/Chanchitos/Resumen RSNS - Cap 1.md",
     "Untitled 1.md",
     "Semestre 8/Imágenes/Evaluación de Proyectos/Pasted image 20250911221138.png",
     "Semestre 8/Imágenes/Evaluación de Proyectos/Pasted image 20250911221452.png",
