@@ -642,3 +642,63 @@ $\theta_0$ mueve la curva izquierda o derecha
 
 
 
+
+
+# Clase 18
+28/08/25
+## ANNs 2
+
+Redes
+
+1. Capa de entrada
+2. Ultima capa: Capa de salida
+
+Todo lo que esté entre las capas son capas ocultas, en este caso 2
+
+Hace una propagación hacia delante y atrás, son para actualizar los pesos (lo veremos como una función)
+
+input: 784 elementos
+output: 10 datos (vectores) con sus probabilidades, la suma de todos es = 1
+Parámetro: Pesos y Sesgos
+Para ajustar los parámetros: 784 * 16 = 12544 perillas a ajustar
+
+EJ) Imagen de 23x23 pixeles
+Cada pixel va entre \[0,1]
+
+En la red inicialmente tendrá un valor aleatorio (para todas las capas)
+
+*¿Cómo mejorar el proceso para evitar resultados malos?*
+
+Tener medicion de errores (vimos 2): 
+- Error cuadrático medio MSE: $(h_\theta - y)^2$ visto en clase: $(y - h_\theta)^2$
+- 
+
+*¿Cuántas capas ocultas son necesarias para reconocer cualquier funcion existente?*
+- Basta sólo 1 capa oculta para resolver todos los problemas
+*¿Porqué no se hace?*
+- Necesitaría demasiadas neuronas en 1 sola capa, muchísimos parametros. es mejor tener mas capas pero menos neuronas para evitar mayor cantidad de neuronas
+
+Puedo definir funcionalidades por capas, divide y venceras
+
+
+Para cambiar el valor que yo quiero (por ej quiero que reconozca 2 y tengo un valor de 0,2)
+- Peso
+- Sesgo
+- a -> Valor de la neurona anterior
+Cómo modifico la neurona anterior?
+Modifico el peso y sesgo de todas las conexiones anteriores **Back Propagation**
+
+
+### Gradiente forma general
+
+$$\frac{AL}{Aw^{(l)} _{ij}} = \delta_i^{(l)} \cdot a_j^{(l-1)} $$
+
+Nada mas que transmitir el error hacia atrás y ver el peso
+
+
+
+
+
+
+
+
