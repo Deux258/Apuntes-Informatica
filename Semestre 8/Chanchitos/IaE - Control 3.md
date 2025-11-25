@@ -331,3 +331,7 @@ c) ¿Debería retrasarse la edad de jubilación?
 
 
 **c) Muestre el nivel de producción de un monopolio del Estado al que se le dio instrucciones de que se limitara a no tener pérdidas. ¿Qué diferencia hay entre este nivel de producción y el nivel eficiente y el nivel de producción de un monopolio privado? Muéstrelo gráficamente.
+
+
+
+

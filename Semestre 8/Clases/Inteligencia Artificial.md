@@ -695,10 +695,229 @@ $$\frac{AL}{Aw^{(l)} _{ij}} = \delta_i^{(l)} \cdot a_j^{(l-1)} $$
 
 Nada mas que transmitir el error hacia atrás y ver el peso
 
+# Clase 19
+04/11/25
+
+Sabiendo la influcencia de cada neurona, se puede ajustar los parámetros
+
+EJ) Se obtuvo resultado, teniendo cierto error asociado 
+Esperado 1
+Da 0,4
+
+Vemos la influencia cuál es la influencia de cada neurona.
+Si digo que x neurona tiene mucha más influencia que la otra, modifico la primera
+
+Corrijo más mientras más influencia tenga. Realmente ajustamos el peso
+
+
+## DIseños ANN
+TIpo Feed-Forward
+
+> ¿Que se desea conseguir con la ANN?
+- Generar
+- Clasificar
+- Predecir
+
+- ¿Cuál es el Input y cómo representarlo? EJ: Foto con pixeles
+- ¿Output esperado?
+- Conjunto de capas necesarias y núm de neuronas
+
+*Para clasificación*
+¿Función de activación? 
+Para binario ->  Sigmoide
+MultiClase -> Softmax
+
+*Clasificar o predecir con etiquetas?* SUPERVISADO
+
+Datos imágenes -> CNN
+Secuencias/Tiempo/texto -> RNN
+Tabulares -> MLP
+
+
+*Descubrir estructura sin etiquetas?* NO Supervisado -> **Generativas**
+	Autoencoder/embeddings + Clustering
+
+### MLP 
+
+ANNs compuestas de perceptrones (lo visto ya). Siempre va a tener capa de entrada, salida y 1 o más capas ocultas.
+Siempre van a estar todas las neuronas conectadas.
+
+*Capas ocultas*  Neuronas siempre tienen funciones de activación
+
+- La más usada es *Relu*
+- Para binario ->  Sigmoide
+- MultiClase -> Softmax
+
+#### ¿Cuántas capas ocultas usar?
+
+Se puede con 1. ¿Para qué mas? La capacidad radica en la estructura que se le.
+
+Aumentar la cantidad de capas trae mejoras en algunos casos
+
+2 beneficios:
+1. Reducir cantidad de parámetros - Se entrena más rápida la red
+2. Aproxima de mejor forma funciones NO lineales complejas
+
+R: Si son problemas simples (Regresión lineal), con 1 capa basta
+Si se recomiendan 2-3 capas
+
+Para la cantidad de neuronas se va testeando dependiendo de la necesidad del problema
+- Si hay muchas: sobreajuste
+- SI hay muy pocos: Subajuste
+
+### CNN
+
+Pioneras en visión por computador. (Que una máquina sea capaz de reconocer videos/fotos).
+
+*Si ya habia MLP, para que CNN?*
+MLP NO tiene la noción de la estructura de la imagen, por lo que si giras un poco la imagen cagó el reconocimiento.  Mejor tener capas que entienda toda la estructura de la imagen.
+
+*¿Cómo lo logra?* 2 tipos de capas adicionales
+- Convolucionales 
+- Pooling
+
+Se colocan en un inicio (como cuando se ing)
+
+Orden
+1. Convolucionales  -> Parametros ajustar (kernel)
+2. Pooling
+3. Convolucional
+4. Pooling
+5. MLP
+
+La red aprende por su propia cuenta (a nivel 1, convolucional)
+
+1. Lo que hace (1) es detectar patrones.
+2. Reducir Dimensionalidad
+ me gusta el pene
 
 
 
+### RNN -> Predecir
+
+Es capaz de procesar secuencias y cuenta con memoria en base a lo que ya proceso
+
+X_i corresponden a datos de entrada
+
+- ingresan a las capaz internas y dan una salida 
+- h_o es la salida y se envia a la siguiente unidad de procesamiento (bifurcasion)
+- ayuda a la red a tener un contexto alimentandose de la salida anterior (feedback nigga)
+
+Lo realiza de forma recursiva 
+
+"resumen significativo: busca reducir la informacion anterior para obtener una salida mas resumida "
+
+Como se entrenan estas redes?
+
+es igual a una MLP PERO con un termino adicional ->
+
+-back propagation
+
+problemas: 
+
+- escala mal en secuencias largas
+- explosion y desaparacion de gradiente
+
+### LSTM
+
+como RAM -> Para leer, escribir y borrar
+
+### GAN
+
+Identifica cosas falsas como idea principal
+
+Llega a un punto de entrenamiento donde se entrena tanto que empieza a confundir los reales de los falsos
+
+Genera imágenes a partir de ruido -> FALSA
+Discriminador dicta cuál es real y cuál es falsa
+
+Error  = 1 - \% de ser falso
+
+Real = 
+
+### AE - AutoEncoder
+NO Supervisado
+
+Extrae con un vector lo mas importante de la imagen a un decodificador 
+y a partir de z, tiene que crear una imagen lo más parecido al original
+
+Para quitar ruido de imágenes, detección de anomalías
+
+Variación -> VAE
+
+Sirve para generar data sintética
+Z Ahora es una distribución gaussiana, lo que entra es una variable aleatoria de dicha distribución para APRENDER
+AL final se logra tener Z que pertenezcan a x distribución gaussiana para ignorar el encoder
+SOLO usar decoder
+
+Con esto nos aseguramos de que se obtengan imagenes coherentes
+
+Verdad: No funciona muy bien que digamos (imágenes borrosas)
 
 
+# Clase 20
+07/11/25
+
+Clase pasada:
+
+Casos de uso
+- MLP: Aproximar datos
+- CNN: Imágenes
+- RNN: Cuando habia dependencia de orden, retroalimento con salida de anteriores 
+- GAN: Generar datos nuevos
+- AE: Restaurar (quitar ruido) de imagen
+- VAE: Detectar anomalías
+
+## Árboles de Decisión
+
+Pertenece a los algoritmos clásicos de Machine Learning. Sirve para *clasificacion* y *regresion*
+
+Para clasificacion
+- KNN
+- Logistica
+- SVM
+
+Para regresion
+- KNN
+- Regresion Lineal
 
 
+Arbol donde: Tomar decisión en base a una condición
+Respuesta: SI - NO
+Si cambio el orden, cambian las respuestas, empezando con las condiciones que excluyan mas
+
+Trazan lineas para que los datos queden lo mas puros posibles -> que solo sean de una clase
+
+Regresión
+Condicion 
+
+### Entropía H
+Proporción de los datos
+
+$$H(s) = \sum_{c e C} -p(c) log_2(p(c))$$
+Si hay sólo datos puros, mi entropia es de 0
+
+-p(c)5 (total)
+
+H = lados que hay, en el ejemplo $H_1$ y $H_2$
+
+Entropia la usamos para saber la Ganancia 
+
+Escogemos la que de mayor ganancia, que indica diferencia entre la entropia padre y entropia hijo
+
+
+### Índice de Impureza de Gini (G)
+
+Mide el grado de mezcla o diversidad en la distribucion de clases de un conjunto de datos. Va entre 0 y 0.5
+Mientras más alto, más contaminado esta
+
+#### Reducción de Gini
+Diferencia de entropias pero con Gini
+Random Fores usa Gini
+
+
+Algoritmos
+- ID3 (clasificacion) -> Entropia
+- CART (Clasificacion y regresion) -> Indice Gini
+
+### ID3 - Algoritmo

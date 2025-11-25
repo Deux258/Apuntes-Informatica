@@ -518,3 +518,45 @@ Tokens firmados digitalmente y la criptografía usada para generar la firma pued
 Firma
 Simetrico
 Asimétrico
+
+# Clase 21
+14/11/25
+
+## TLS vs SSL
+
+### TLS
+Sucesor moderno y más seguro que SSL
+Usa HMAC (Hash MAC)
+
+1. Cliente Hola
+2. Servidor Hola
+3. Servidor Certifica
+
+#### TLS Fingerprint
+Envia un msje para saber que version de TLS quiere usar, algoritmos de cifrado, extensiones a usar al servidor.
+
+Sirve para reconocer quien se esta conectando incluso si
+	- Cambia de IP
+	- Usa un VPN
+	- Finge ser otro navegador
+
+
+JA3 toma las huellas digitales a traves de TLS y JA3S
+Obtiene trafico de forma pasiva
+#### JARM
+Funciona enviando activamente 10 paquetes TLS Client Hello al servidor
+
+
+
+### SSL
+Protocolo de seguridad obsoleto 
+Usa MAC 
+
+Entidades Certificadoras ya no duran 3 años, duran a lo mas 1 año.
+
+#### JA3 SSL Fingerprint
+Certifica la huella del certificado
+
+
+
+

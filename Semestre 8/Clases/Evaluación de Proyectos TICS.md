@@ -891,6 +891,7 @@ Financiamiento
 	Recursos del inversionista que no suponen ociosos (disponibles)
 	Tiene costo equivalente a la mejor rentabilidad alternativa a la que tiene acceso el inversionista
 
+VAN y 
 
 
 
@@ -899,4 +900,17 @@ Financiamiento
 
 
 
+
+# Clase 19
+04/11/25
+
+CONTROL - Martes 18/11 -> Capitulo 8
+
+
+# Clase 21
+14/11/25
+
+- Indicadores de Rentabilidad
+	- VAN: Valor Actual Neto
+	- PRI: Periodo Recuperacion de Inversión
 

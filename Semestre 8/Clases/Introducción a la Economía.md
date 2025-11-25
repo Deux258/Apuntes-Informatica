@@ -565,7 +565,7 @@ X > M = + XN
 X < M = - XN
 X - M = XN
 
-- (G) Gasto del Gobierto => Compras que hace el estado
+- (G) Gasto del Gobierto => Compras que hace el estado - Bienes y servicios
 - (C) Consumo privado => Ingresos autónomos 
 
 
@@ -579,6 +579,114 @@ Falla del Mercado
 Pensión -> Jubilación
 
 
+# Clase 19
+04/11/25
+
+TODOS LOS CALCULOS
+- Pib nominal
+- Deflactor del pib
+- Inflacion
+- Lo que alcancemos a ver el viernes sobre empleo y desempleo
+
+
+Consumo Total = Consumo Interno + Gasto 
+$$CT = C + G$$
+
+Gasto del gobierno ¿Qué es?
+- Mobiliario
+- Activos fijos 
+- Institucionalidad
+
+###### Ingresos NO Autonomos
+
+*Transferencias del Gobierno* Depósitos como hace cualquier otra persona
+Directas
+- PGU
+Indirectas
+- Subsidio
+
+Ingreso Total = Ingresos Autónomo + Ingreso NO Autónomo
+> ¿Porqué es un ingreso y no consumo?
+
+Como hago transferencia al consumidor, lo considero como gasto
+
+Quien revisa si los gastos del gobierno estan bien -> Contraloria
+
+### Inversión Privada
+Los privados NO hacen juego en la bolsa para nuestro caso.
+Aquel que genera formacion bruta de capital fijo.
+
+Necesito capital fijo para tener stock. Yo invierto algo de largo plazo porque lo voy a explotar constantemente. Esto le sirve al país.
+Voy a una cuenta contable y veo cómo ha ido la construcción y otras obras para saber el crecimiento del país.
+
+Demanda Interna = $C + G + I$
+
+PIB = $C + I + G + (X - M)$
+
+> Con qué se compara el crecimiento del pais?  
+
+con PIB Real
+
+Recesión económica
+si 3 meses seguidos cayendo en Imacec
+
+X días hábiles
+- PIB - Producción
+- Productividad
+
+*Politicas Económicas*
+- Contracíclicas
+	- Momento de crisis, trato de fomentar la economía.
+- Cíclicas
+	- Restringia e iba con el ciclo
+
+Política Fiscal
+Política Monetaria
+
+Expansivas
+	+ Gasto
+	 - Tasa Politica Monetaria
+Restrictivas
+	- Gasto
+	+ Tasa Politica Monetaria
+
+
+
+# Clase 20
+07/11/25
+
+## Empleo
+
+P.E 4\%
+Ocupados y Desocupados
+
+Ocupados implica que existe empleo. Dado cierto crecimiento se espera que hayan más ocupados.
+Pleno empleo si está en 4\%, que es el valor actual de este.
+
+Si hay más ocupados, el consumo debiera aumentar
+
+### Población Total
+
+¿Cuánta gente está disponible para trabajar?
+- S/E
+	- Estudiantes
+	- Jubilados
+	- Amas de casa
+
+Disponible para trabajar:
+- Activos *PEA*
+	- Ocupados
+	- Ocupados Informales
+	- Desocupado
+		- Sin empleo
+		- Buscando 
+		- Disponible
+
+- Inactivos *PEI*
+
+
+*Tasa de Ocupacion*   $$\frac{ Ocupados} { OC + DES + inactivo}$$
+ *Tasa de Desocupacion* $$ \frac{Desocupados}{Fuerza \space Trabajo \space (FT)}$$
 
 
 

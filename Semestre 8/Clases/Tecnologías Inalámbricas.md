@@ -605,3 +605,112 @@ Depende de la distancia y velocidad del emisor la cantidad de retardo y potencia
 
 
 
+
+
+# Clase 19
+04/11/25
+
+## Causas de los desvanecimientos
+
+### 1. Multitrayectoria
+
+Presencia de objetos reflectantes y dispersores
+
+### 2. Velocidad del móvil (efecto Doppler)
+
+Movimiento relativo entre la estación base y el móvil, provoca modulación de frecuencia aleatoria por efectos dopplet
+
+### 3. Velocidad de objetos aledaños 
+
+Variación temporal del efecto Doppler sobre componentes MT
+
+### 4. Ancho de Banda de transmisión
+
+El canal MT tiene un acnho de banda que no es plano, tiene "muescas" a ciertas frecuencias que además varían en el tiempo.
+
+
+### *Efecto Doppler*
+
+Ensanchameiento doppler resulta ser entonces:
+
+Cuando me acerco al transmisor
+Corrimiento Doppler > 0 
+Angulo $\theta$ < 90° 
+
+Cuando me alejo del transmisor
+Corrimiento Doppler < 0
+Angulo $\theta$ > 90*
+
+## Modelo de Respuesta a Impulso
+
+Envia un impulso al medio y escucha cuantos impulsos recibe. Con esto se puede modelar como seria 
+
+Medio Ideal
+Envio 1 impulso $\delta(t)$, recibo un impulso como respuesta.
+
+Tiene una respuesta plana infinita en frecuencia
+
+Siempre estaremos en n medio con deformaciones dado que el medio de comunicación no es ideal.
+
+### Perfil de Potencia
+Power Delay Profile
+
+Nos indica cómo varía los impulsos que fueron enviados en un medio de comunicación en instantes diferentes.
+
+
+Cuando está normalizado, el peak está en 0 dBm
+Depenediendo de la precisión, los peaks tambien pueden ser sumas de señales recibidas por MT que hayn llegado al mismo tiempo
+
+
+### Parámetros de caracterización
+#### Mean Excess Delay
+Parámetro que se calcula con 
+Si a un canal se le aplica un pulso de muy corta duraación, aproximable a un impulso, en base a la respuesta se define mean excess delay o retardo medio extra
+
+
+**Poner formulita**
+
+#### RMS Delay Spread
+
+Hace una media geometrica entre tao^2 dividido por la sumatoria de potencias 
+
+#### Maximum Express
+Cuantificar la duracion de los retardos. Depende de un umbral, considerando los peak pro encima de cierto umbral
+
+#### Ancho de Banda de Coherencia
+Rango de frecuencia donde no ingresaremos deformaciones, mas bien calcula promedios.
+
+#### *Tiempo de Coherencia*
+Tiempo que demoro entre impulsos
+Tiempo que el canal mantiene las estadísticas
+Si es igual de largo que ambas tecnicas
+ O perdiendo 2 paquetes o recibiendo los 2, dos veces
+
+si $T_C$ es mayor, mi medio es más cercano a ser ideal
+
+## Tipos de fading de Pequeña Escala
+
+*Multitrayectoria*
+1. Fading plano
+2. Fading Selectivo en Frecuencia
+
+*Doppler*
+1. Fading Rapido
+2. Fading Lento
+
+|                                                       | Fading Lento $Ts < Tc$<br>Doppler                      | Fading Rapido $Ts > Tc$<br>Doppler                          |
+| ----------------------------------------------------- | ------------------------------------------------------ | ----------------------------------------------------------- |
+| Fading Plano $Bs < Bc$<br>Multitrayectoria            | La señal se atenua uniformemente y el canal es estable | La señal se atenúa uniformemente - Canal cambia rápido      |
+| Selectivo en Frecuencia $Bs > Bc$<br>Multitrayectoria | La señal se distorsiona en frecuencia - Canal estable  | La señal se distorsiona en frecuencia - Canal cambia rápido |
+
+
+# Clase 20
+07/11/25
+
+## Propagación Pequeña Escala
+
+## Dinámica del Canal
+
+
+
+
