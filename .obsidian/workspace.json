@@ -4,50 +4,35 @@
     "type": "split",
     "children": [
       {
-        "id": "acb61c5dc5b176c3",
+        "id": "01baff7fffc4c47e",
         "type": "tabs",
         "children": [
           {
-            "id": "fe8b30933db55d53",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Pasted image 20251123154759.png"
-              },
-              "icon": "lucide-image",
-              "title": "Pasted image 20251123154759"
-            }
-          },
-          {
-            "id": "71c9b34ff52e74a4",
-            "type": "leaf",
-            "state": {
-              "type": "canvas",
-              "state": {
-                "file": "Semestre 8/Chanchitos/Chanchito S2 TI.canvas",
-                "viewState": {
-                  "x": 3241.60415047637,
-                  "y": 1393.4997901792005,
-                  "zoom": -0.4844229178155676
-                }
-              },
-              "icon": "lucide-layout-dashboard",
-              "title": "Chanchito S2 TI"
-            }
-          },
-          {
-            "id": "826492049af4f7b7",
+            "id": "d873a0214b02e737",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Semestre 7/Ayudantias/Comunicaciones Digitales AY.md",
+                "file": "Semestre 8/Chanchitos/S2 Intro a la Economia.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Comunicaciones Digitales AY"
+              "title": "S2 Intro a la Economia"
+            }
+          },
+          {
+            "id": "d48ca895efc66bee",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Semestre 8/Chanchitos/Chanchito S2 IA - Machine Learning.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Chanchito S2 IA - Machine Learning"
             }
           }
         ],
@@ -172,13 +157,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Preguntas SOLEMNE Comunicaciones Digitales.md",
+                "file": "Semestre 8/Chanchitos/Chanchito S2 IA - Machine Learning.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Preguntas SOLEMNE Comunicaciones Digitales"
+              "title": "Outline of Chanchito S2 IA - Machine Learning"
             }
           }
         ],
@@ -186,8 +171,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -200,40 +184,41 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "71c9b34ff52e74a4",
+  "active": "d48ca895efc66bee",
   "lastOpenFiles": [
-    "Semestre 8/Imágenes/Introducción a la Economía/Imagen de WhatsApp 2025-10-28 a las 12.18.53_114a7d6d.jpg",
+    "Pasted image 20251125113737.png",
+    "Pasted image 20251125113646.png",
+    "Pasted image 20251125113630.png",
+    "Pasted image 20251125104626.png",
+    "Pasted image 20251125104505.png",
+    "Semestre 8/Imágenes/Inteligencia Artificial/Pasted image 20251125001625.png",
+    "Semestre 8/Chanchitos/Chanchito S2 IA - Machine Learning.md",
+    "Semestre 8/Imágenes/Inteligencia Artificial/Pasted image 20251125003118.png",
+    "Semestre 8/Imágenes/Inteligencia Artificial/Pasted image 20251125003006.png",
+    "Semestre 8/Imágenes/Inteligencia Artificial/Pasted image 20251125002858.png",
+    "Semestre 8/Imágenes/Inteligencia Artificial/Pasted image 20251125002815.png",
+    "Semestre 8/Imágenes/Inteligencia Artificial/Pasted image 20251125002701.png",
+    "Semestre 8/Chanchitos/S2 Intro a la Economia.md",
+    "Semestre 8/Chanchitos/Resumen RSNS - Cap 3.md",
+    "Semestre 8/Chanchitos/Resumen RSNS - Cap 1.md",
     "Semestre 8/Chanchitos/Presentacion ECONOMIA.md",
-    "S2 Intro a la Economia.md",
-    "Semestre 7/Chanchitos/Chanchito SD S2.canvas",
+    "Semestre 8/Chanchitos/IaE - Control 3.md",
+    "Semestre 8/Chanchitos/Cripto - C2 Chanchito.md",
     "Semestre 8/Chanchitos/Chanchito S2 TI.canvas",
-    "Semestre 8/Imágenes/Tecnologías Inalámbricas/Pasted image 20251123144645.png",
-    "Semestre 8/Imágenes/Tecnologías Inalámbricas/Pasted image 20251123230832.png",
-    "Semestre 8/Imágenes/Tecnologías Inalámbricas/Pasted image 20251123201100.png",
-    "Semestre 8/Imágenes/Tecnologías Inalámbricas/Pasted image 20251123195742.png",
-    "Semestre 8/Imágenes/Tecnologías Inalámbricas/Pasted image 20251123195447.png",
-    "Semestre 8/Imágenes/Tecnologías Inalámbricas/Pasted image 20251123194633.png",
-    "Semestre 8/Imágenes/Tecnologías Inalámbricas/Pasted image 20251123194244.png",
-    "Semestre 8/Imágenes/Tecnologías Inalámbricas/Pasted image 20251123193530.png",
-    "Semestre 8/Imágenes/Tecnologías Inalámbricas/Pasted image 20251123193523.png",
-    "Semestre 8/Imágenes/Tecnologías Inalámbricas/Pasted image 20251123192958.png",
     "Semestre 8/Chanchitos/Chanchito C3 Proyecto en TICs.md",
-    "Semestre 7/Ayudantias/Comunicaciones Digitales AY.md",
     "Untitled.base",
+    "Semestre 8/Clases/Criptografía en Seguridad y Redes.md",
+    "Semestre 8/Clases/Inteligencia Artificial.md",
+    "Semestre 7/Ayudantias/Comunicaciones Digitales AY.md",
+    "README.md",
+    "Semestre 7/Chanchitos/Chanchito SD S2.canvas",
     "Semestre 8/Ayudantías/AY - Tecnologías inalámbricas.md",
     "Semestre 8/Ayudantías/AY - Introducción a la Economía.md",
     "Semestre 8/Ayudantías/AY - Criptografía en Seguridad.md",
     "Semestre 8/Chanchitos/Chanchito S2 TI.md",
-    "Semestre 8/Chanchitos/Cripto - C2 Chanchito.md",
-    "Semestre 8/Chanchitos/Resumen RSNS - Cap 1.md",
-    "README.md",
-    "Semestre 8/Chanchitos/IaE - Control 3.md",
     "Semestre 8/Clases/Introducción a la Economía.md",
     "Semestre 8/Clases/Tecnologías Inalámbricas.md",
-    "Semestre 8/Clases/Criptografía en Seguridad y Redes.md",
     "Semestre 8/Clases/Evaluación de Proyectos TICS.md",
-    "Semestre 8/Clases/Inteligencia Artificial.md",
-    "Semestre 8/Chanchitos/Resumen RSNS - Cap 3.md",
     "Untitled 1.md",
     "Semestre 8/Chanchitos",
     "Semestre 8/Laboratorio/LAB Criptografía en Seguridad.md",
@@ -249,7 +234,6 @@
     "Semestre 8/Laboratorio/desktop.ini",
     "Semestre 7/Preguntas SOLEMNE Comunicaciones Digitales.md",
     "Semestre 7/Clases/Comunicaciones Digitales.md",
-    "Semestre 7/Clases/Sistemas Distribuidos.md",
     "Semestre 7/Chanchitos/Chanchito GO S1.canvas",
     "Semestre 7/Resumen Actividad TTL.canvas",
     "Semestre 7/Actividades puntuales/Resumen Actividad TTL.canvas",
