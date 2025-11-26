@@ -21,6 +21,31 @@ A su vez, se separan en 3 tipos de algoritmos:
 ###### ¿Por qué diferenciarlos?
 Se deben ajustar según las restricciones del problema (entrada/salida) y verificar su correcta operación, dependiendo del contexto.
 
+
+# RESUMEN
+
+### Clasificación
+
+| Algoritmo           | Categoria de Aprendizaje   |
+| ------------------- | -------------------------- |
+| Regresión Logística | Supervisado                |
+| KNN                 | Supervisado                |
+| SVM                 | Supervisado                |
+| ANN                 | Supervisado (generalmente) |
+| Decision Trees      | Supervisado                |
+### Precicción/Regresión
+
+
+| Algoritmo        | Aprendizaje |
+| ---------------- | ----------- |
+| Regresión Lineal | Supervisado |
+| KNN              | Supervisado |
+| SVM              | Supervisado |
+| Artificial       |             |
+
+
+
+
 # Aprendizaje NO Supervisado
 
 ![[Pasted image 20251124230601.png]]
