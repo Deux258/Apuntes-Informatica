@@ -8,63 +8,61 @@
         "type": "tabs",
         "children": [
           {
-            "id": "57e8bd8c50ef1d6b",
+            "id": "b17d23ab184082ce",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Semestre 8/Clases/Evaluación de Proyectos TICS.md",
+                "file": "Semestre 9/Clases/Internet de las Cosas.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Evaluación de Proyectos TICS"
+              "title": "Internet de las Cosas"
             }
           },
           {
-            "id": "42c874e081b94833",
+            "id": "ce78b6623c00aba2",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "Semestre 8/Laboratorio/LAB Criptografía en Seguridad.md",
-                "mode": "source",
-                "source": false
+                "file": "Semestre 9/Imagenes/Data Science/Pasted image 20260309132008.png"
               },
-              "icon": "lucide-file",
-              "title": "LAB Criptografía en Seguridad"
+              "icon": "lucide-image",
+              "title": "Pasted image 20260309132008"
             }
           },
           {
-            "id": "625fb0d59350828f",
+            "id": "3b5bad8f0dbb5d57",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Semestre 8/Chanchitos/IaE - Control 3.md",
+                "file": "Semestre 9/Clases/Algoritmos Exactos y Metaheurísticas.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "IaE - Control 3"
+              "title": "Algoritmos Exactos y Metaheurísticas"
             }
           },
           {
-            "id": "cc50069b72d7c753",
+            "id": "763e27eca01f32ab",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Semestre 8/Clases/Inteligencia Artificial.md",
+                "file": "Semestre 9/Clases/Internet de las Cosas.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Inteligencia Artificial"
+              "title": "Internet de las Cosas"
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -87,7 +85,7 @@
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
-              "title": "Files"
+              "title": "Explorador de archivos"
             }
           },
           {
@@ -204,66 +202,66 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "bases:Create new base": false,
-      "switcher:Open quick switcher": false,
-      "graph:Open graph view": false,
-      "canvas:Create new canvas": false,
-      "daily-notes:Open today's daily note": false,
-      "templates:Insert template": false,
-      "command-palette:Open command palette": false
+      "switcher:Abrir selector rápido": false,
+      "graph:Abrir vista gráfica": false,
+      "canvas:Crear nuevo lienzo": false,
+      "daily-notes:Abrir la nota de hoy": false,
+      "templates:Insertar plantilla": false,
+      "command-palette:Abrir paleta de comandos": false,
+      "bases:Crear nueva base": false
     }
   },
-  "active": "42c874e081b94833",
+  "active": "763e27eca01f32ab",
   "lastOpenFiles": [
-    "Semestre 8/Clases/Introducción a la Economía.md",
-    "Semestre 8/Chanchitos/IaE - Control 3.md",
-    "Semestre 8/Clases/Inteligencia Artificial.md",
-    "Semestre 8/Chanchitos/Resumen RSNS - Cap 1.md",
-    "Semestre 8/Imágenes/Introducción a la Economía/Imagen de WhatsApp 2025-10-28 a las 12.18.53_114a7d6d.jpg",
-    "Semestre 8/Clases/Criptografía en Seguridad y Redes.md",
+    "Semestre 9/Clases/Internet de las Cosas.md",
+    "Semestre 9/Imagenes/Data Science/Pasted image 20260316132045.png",
+    "Semestre 9/Imagenes/Data Science/Pasted image 20260316131459.png",
+    "Semestre 9/Imagenes/Data Science/Pasted image 20260312132004.png",
+    "Semestre 9/Imagenes/Data Science/Pasted image 20260309133739.png",
+    "Semestre 9/Imagenes/Data Science/Pasted image 20260309133414.png",
+    "Semestre 9/Imagenes/Data Science/Pasted image 20260309132403.png",
+    "Semestre 9/Imagenes/Data Science/Pasted image 20260309132008.png",
+    "Semestre 9/Imagenes/Data Science/Pasted image 20260309131501.png",
+    "Semestre 9/Imagenes/Data Science",
+    "Semestre 9/Imagenes/Algoritmos exactos/Pasted image 20260316144056.png",
+    "Semestre 9/Imagenes/Algoritmos exactos/Pasted image 20260312145854.png",
+    "Semestre 9/Imagenes/Algoritmos exactos",
+    "Semestre 9/Clases/Data Science.md",
+    "Semestre 9/Clases/Arquitecturas Emergentes.md",
+    "Semestre 9/Clases/Arquitectura de Software.md",
+    "Semestre 9/Clases/Algoritmos Exactos y Metaheurísticas.md",
+    "Semestre 9/Clases",
+    "Semestre 8/Imágenes/Laboratorio/LAB Criptografía en Seguridad.md",
+    "Semestre 8/Imágenes/Laboratorio",
+    "Semestre 8/Chanchitos/aprendizaje supervisado IA c4.pdf",
+    "Semestre 8/Chanchitos/C4 IA.md",
+    "Semestre 8/Chanchitos/ANNs IA c4.pdf",
+    "Semestre 8/Laboratorio/LAB Criptografía en Seguridad.md",
+    "Semestre 8/Laboratorio",
+    "Semestre 9/Imagenes/Internet de las cosas",
+    "Data Science",
+    "Semestre 9/Imagenes",
     "Semestre 8/Clases/Evaluación de Proyectos TICS.md",
+    "Semestre 8/Clases/Inteligencia Artificial.md",
+    "Semestre 8/Chanchitos/IaE - Control 3.md",
+    "Semestre 8/Clases/Introducción a la Economía.md",
+    "Semestre 8/Chanchitos/Resumen RSNS - Cap 1.md",
+    "Semestre 8/Clases/Criptografía en Seguridad y Redes.md",
     "Semestre 8/Clases/Tecnologías Inalámbricas.md",
     "Semestre 8/Ayudantías/AY - Tecnologías inalámbricas.md",
     "Semestre 8/Ayudantías/AY - Criptografía en Seguridad.md",
     "Semestre 8/Ayudantías/AY - Introducción a la Economía.md",
     "Semestre 8/Chanchitos/Resumen RSNS - Cap 3.md",
-    "Semestre 8/Imágenes/Tecnologías Inalámbricas/Pasted image 20250822160908.png",
-    "Semestre 8/Imágenes/Tecnologías Inalámbricas/Pasted image 20250905171007.png",
-    "Semestre 8/Imágenes/Tecnologías Inalámbricas/Pasted image 20250905165001.png",
-    "Semestre 8/Imágenes/Tecnologías Inalámbricas/Pasted image 20250905164310.png",
-    "Semestre 8/Imágenes/Tecnologías Inalámbricas/Pasted image 20250905164138.png",
-    "Semestre 8/Imágenes/Tecnologías Inalámbricas/Pasted image 20250905163909.png",
-    "Semestre 8/Imágenes/Tecnologías Inalámbricas/Pasted image 20250905163855.png",
-    "Semestre 8/Imágenes/Tecnologías Inalámbricas/Pasted image 20250902164747.png",
     "README.md",
     "Untitled 1.md",
-    "Semestre 8/Imágenes/Evaluación de Proyectos/Pasted image 20250911221138.png",
-    "Semestre 8/Chanchitos",
-    "Semestre 8/Laboratorio/LAB Criptografía en Seguridad.md",
-    "Semestre 8/Imágenes/Tecnologías Inalámbricas",
     "Semestre 8/Imágenes/Untitled.md",
-    "Semestre 8/Imágenes/Introducción a la Economía",
-    "Semestre 8/Imágenes/Evaluación de Proyectos",
-    "Semestre 8/Imágenes/Criptografía en Seguridad",
     "Semestre 7/Clases/Ingeniería de Software.md",
-    "Semestre 7/PDF/Ingeniería de Software.pdf",
-    "Semestre 7/PDF",
-    "Semestre 7/Nueva carpeta",
-    "Semestre 8/Laboratorio/desktop.ini",
-    "Semestre 8/Laboratorio",
     "Semestre 7/Preguntas SOLEMNE Comunicaciones Digitales.md",
     "Semestre 7/Clases/Comunicaciones Digitales.md",
-    "Semestre 7/Clases/Sistemas Distribuidos.md",
-    "Semestre 7/Ayudantias/Gestion Organizacional AY.md",
     "Semestre 7/Chanchitos/Chanchito SD S2.canvas",
-    "Semestre 7/Ayudantias/Comunicaciones Digitales AY.md",
-    "Semestre 7/Chanchito Ing Software.md",
-    "Semestre 7/Ayudantias/Sistemas Distribuidos AY.md",
     "Semestre 7/Chanchitos/Chanchito GO S1.canvas",
-    "Semestre 7/Actividades Clases.md",
     "Semestre 7/Resumen Actividad TTL.canvas",
     "Semestre 7/Actividades puntuales/Resumen Actividad TTL.canvas",
-    "Semestre 7/Actividades puntuales/Categoria.md",
     "Untitled 1.canvas"
   ]
 }
