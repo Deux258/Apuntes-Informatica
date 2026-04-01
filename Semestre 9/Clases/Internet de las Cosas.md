@@ -256,9 +256,88 @@ Monitoreo de:
 - Estado de animales (movilidad, temperatura)
 - Seguridad perimetral
 - Seguridad de alimento/liquidos
-- Seguimiento en tambos
+- Seguimiento en tambos (leche)
 - Monitoreo de cámaras frigoríficas
 - Seguimiento de cosechas manuales
+
+### Salud
+Monitoreo de:
+- Parámetros en pacientes ambulatorios
+- Seguimiento de equipos
+- Localización de personal en hospitales
+- Medición de calidad de medio ambiente
+- Monitoreo de gases medicinales
+- Control de acceso
+- Trazabilidad de exámenes
+- Paneles de información / turneros
+- Seguimiento de acciones en hogares de tercera edad
+- Seguridad en hogares de tercera edad
+- Medición de performance en equipos de rehabilitación y entrenamiento
+
+### Hogar / Oficinas
+- Cámaras
+- Control de acceso
+- Control de aire acondicionado / iluminación
+- Control de riego
+- Botones para compra automática
+- Monitoreo de consumo de servicios (gas, luz, electricidad)
+- Monitoreo de mascotas (seguimiento, temperatura)
+- Reporte de finalización de ciclos (edificios) (lavado, secado, microondas)
+- Control de temperatura de agua para baño
+- Reposición de insumos (máquinas de autoservicio, seguimiento de vencimientos, logística)
+
+
+# Clase 5
+23/03/26
+
+Ej de espejo entrenador a traves de IA
+# Clase 6
+26/03/26
+
+## Nodo - Hardware
+
+Los nodos de forma estandar tienen estos componentes:
+- Un mismo nodo puede tener multiples sensores
+- Configuraciones dependen del fabricante y de la tecnología a usar
+
+![[Pasted image 20260326102434.png]]
+
+El controlador puede ser un *CISC* (x86) o *RISC* (arm)
+Complex instructions set
+
+- Un *DSP* para preprocesar info de señales de ancho de banda por ej
+- Una *FPGA* para desarrollo
+- Un *ASIC* para productos masivos y de alta performance
+
+DSP -> más eficiente en sumas y productos
+Muy eficiente para 1 tarea en especial
+ASIC -> cuando no encuentro ni una wea para hacer
+
+### Algunos ejemplos
+- ATMEL AVR 
+- ESP32 (pycom)
+- ARM Cortex M3
+- ATMEL ATMEGA
+- Nordic 
+
+### Radio
+La radio tiene determinadas capacidades:
+- Interfaz: Bit, byte, paquetes?
+- Banda de frecuencias? 433MHz, 2.4GHz..
+- Multiples canales?
+- Velocidad de datos?
+- Rango?
+
+![[Pasted image 20260326111017.png]]
+
+
+
+
+
+
+
+
+
 
 
 

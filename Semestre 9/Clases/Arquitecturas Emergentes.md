@@ -61,3 +61,16 @@ LAMP: Linux, AMP, MySql, P
 
 
 
+# Clase 6
+26/03/26
+
+## Servicios
+
+### Cloud
+
+1. SaaS: Usuarios finales
+2. PaaS: Desarrolladores de software
+3. Iaas: Arquitectos de red, Administradores de IT
+
+
+

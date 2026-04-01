@@ -240,6 +240,365 @@ NO es random, pero no tengo ningún otro dato para relacionar y difiere sistemat
 3. Inconsistencia de formato
 
 
+# Clase 4
+19/03/26
+
+## Preprocesamiento de Datos Pt. 2
+breve resumen:
+
+Pasar los datos de
+realidad -> *sensor* -> Dataset
+
+### Problemas con los Datos
+
+Existen 3 tipos de problemas:
+1. Datos faltantes
+2. Datos incorrectos
+3. Datos inútiles (o poco útiles)
+#### 3. Datos inútiles
+
+1. Features completamente concentrados
+2. Outliers Unidimensionales y Multidimensionales
+3. Skewed numerical features
+4. Multi-colinealidad
+5. Informacion Leakage
+
+##### 1. Features concentrados
+
+Por qué no me sirven datos demasiado centralizados?
+-> Por la entropía, no me da información relevante
+
+**SOLUCIÓN** 
+- Matar la variable
+
+##### 2. Outliers
+Son datos atípicos (no malo). En muchos casos es exactamente lo que se busca
+
+**SOLUCIÓN**
+- Eliminar la variable
+- Mantener y tener cuidado con las normalizaciones (ej: min_max_scaler)
+
+> Unidimensional:
+
+Diagnóstico unidimensional
+- Visual con boxplots
+- IQR
+
+
+![[Pasted image 20260319133254.png]]
+
+> Multidimensional:
+
+Diagnóstico Multidimensional:
+- Isolation Forest
+- ECOD
+
+![[Pasted image 20260319133321.png]]
+
+
+##### 3. Atributos Numéricos de alta Asimetría
+PROXIMAMENTE
+
+##### 4. Multi Colinealidad
+La covarianza entre 2 variables dividido en la desviación estandar de una variable multiplicado por la desviacion estandar de la otra.
+
+![[Pasted image 20260319134208.png]]
+
+Tipos de correlaciones:
+
+![[Pasted image 20260319134333.png]]
+
+
+Básicamente son características que estan muy correlacionadas entre sí.
+NO confundir con una alta correlación contra la variable target en un modelo supervisado, eso es deseable.
+
+Diagnóstico
+- Matriz de correlaciones
+- Scatterplot
+
+**SOLUCIÓN**
+- Dejar sólo una de las variables correlacionadas
+- Reducción dimensional
+
+##### 5. Information Leakage
+De todos los problemas que pueden tener los datos, ESTE es el peor
+-> Culpa del data science
+
+Cuando aparece un dato que no debería de estar ahí porque se agregó externamente.
+Pasa en un modelo supervisado cuando tenemos variables predictoras xl que son dependientes del target Y
+
+Es decir:
+$$ Y = F(x) + E \space donde \space X = {x1, x2, x(Y)}, ..., xn $$
+
+Si aparece un dato Y, depende del target 
+
+Diagnóstico
+- Modelo sospechosamente bueno
+- Feature Importance
+
+**SOLUCIÓN**
+- Eliminar variables xl
+- Jugar con los tiempos (skip) del modelo entre las variables X e Y
+
+> ¿Cómo saber si tiene alguna relacion el modelo con Y?
+
+1. Correlación entre X e Y (se mueven a la misma dirección)
+2. Si el atributo es categórico -> $X_i ^2$ (dependencia)
+3. Si el X, Y es numérico -> Probar con Test Fisher o K-S
+
+$Y$ NO depende de las variables dependientes como lo son x
+Importante saber interpretar en base al contexto
+
+Cuando uno tiene un modelo que involucra el tiempo
+- Entreno con datos del pasado para predecir el futuro
+
+
+
+# Clase 5
+23/03/26
+
+En una gráfica Madurez en función del tiempo:
+1. Descriptiva
+2. Diagnostica
+3. Predictiva
+4. Prescriptiva
+## Análisis exploratorio de datos EDA (clases pasadas)
+
+> Cálculo de estadísticas
+
+- Media
+- Moda
+- Varianza
+- Desviación típica
+- Q1, Q2, Q3 = P25, P50, P75
+- Observaciones duplicadas
+- Nulos etc..
+
+## Estudio de Distribuciones
+
+### 1. Modalidad
+1. Modalidad
+2. Bimodal
+3. Trimodal
+
+![[Pasted image 20260323132530.png]]
+
+> Skewness o Asimetría
+
+![[Pasted image 20260323132518.png]]
+
+#### Kurtosis
+
+![[Pasted image 20260323132736.png]]
+
+#### Atributos numéricos de Alta Asimetría
+Datos Inútiles
+
+Corresponde a casos donde la distribución de los datos está cargada hacia la izquierda (alta asimetría)
+
+Diagnóstico:
+- Histograma
+- Skewness
+
+**SOLUCIÓN**
+- Logaritmo: $Log(X_i + k)$
+- Box-cow, Ext. Yeo-johnson
+
+### 2. Análisis Exploratorio de Datos
+¿Cuáles son las relaciones entre variables?
+
+![[Pasted image 20260323133322.png]]
+
+Los categóricos no los puedo meter aquí, por lo que creo valores relacionales
+
+![[Pasted image 20260323133446.png]]
+
+> Relación con el objetivo
+
+![[Pasted image 20260323133858.png]]
+
+
+Pero realmente, ¿Qué es lo que yo quiero predecir?
+-> Depende de los datos. Los datos siempre mandan sobre el modelo
+
+### 4. Análisis y Construcción del Target
+
+Preguntas
+- ¿Qué queremos hacer?
+- Tenemos el label? Cuánto tenemos
+	Datasets
+- Si no tenemos datos, los podemos comprar, conseguir?
+- Revisar desvalance de clases
+- Revisar temporalidad de los labels
+
+Undersampling vs Oversampling
+
+![[Pasted image 20260323135521.png]]
+
+
+# Clase 6
+26/03/26
+## Transformación de Datos
+
+> Preprocesamiento -> Datos limpios
+> Transformación -> Alimentar un modelo
+
+Es la etapa del proceso de Machine Learning, posterior al Análisis Exploratorio de Datos y al Srub o limpieza, donde se acomodan los datos para que un modelo los reciba de la mejor forma posible.
+
+![[Pasted image 20260326131113.png]]
+
+Sesgo <--> Varianza
+Interpretabilidad <--> Performance Predictivo
+
+Preprocesamiento (eliminar)
+Transformar (agregar)
+
+- Variables Categórica Nominal
+- 
+### Variables Categórica Nominal
+
+Teniendo Categórica Nominal (ej: color) -> transformarlo de una forma "legible" para el modelo
+
+- One-hot Encoder
+- Dummy encoding (elimina la redundancia, ej elimina la columna que sobra)
+
+### Variables Categóricas Ordinales
+- Ordinal Encoding
+
+| Original Encoding | Ordinal Encodign |
+| ----------------- | ---------------- |
+| Poor              | 1                |
+| Good              | 2                |
+| Very Good         | 3                |
+| Excellent         | 4                |
+
+- Target Encoding
+
+![[Pasted image 20260326132320.png]]
+![[Pasted image 20260326132331.png]]
+
+Reemplaza el valor categorico por un numero, mejorando el modelo
+
+### Atributos numéricos de Alta simetría
+
+![[Pasted image 20260326133114.png]]
+
+
+
+¿Como saber si mejora o empeora el modelo?
+Por el tipo de distribución
+
+Probablemente al inicio el modelo no esté correctamente implementado, si no que tiene que ejecutarse 300-500 veces para q funcione correctamente
+
+Box-Cow
+
+![[Pasted image 20260326133214.png|697]]
+
+Yeo-Johnson (pan de dios)
+
+![[Pasted image 20260326133202.png]]
+
+El eje x no es nada, dificil sacar interpretacion para el humano, pero más fácil para el sistema
+
+### Transformación de Variables Numéricas
+Transformaciones típicas en variables numéricas:
+- Distribuciones Asimétricas
+- Normalización y Escalamiento 
+	- Min Max Scaler
+
+$$ \frac{ x - x_{min}}{x_{max} - x_{min}}$$
+![[Pasted image 20260326134626.png]]
+
+Problemas: Outliers -> el máximo sería gigante, por lo tanto dañaria la gráfica
+
+- Estandarización
+
+![[Pasted image 20260326134805.png]]
+
+![[Pasted image 20260326134906.png]]
+
+PROBLEMA: La distribucion podria no tener nada que ver con la normalización
+
+![[Pasted image 20260326135456.png]]
+
+![[Pasted image 20260326135919.png]]
+
+
+- Ser su propio jefe
+Euristicas / Algoritmos propios 
+EJ) RFM
+
+![[Pasted image 20260326140612.png]]
+
+
+
+
+
+# Clase 6
+30/03/26
+
+## Modelos de Clasificación - Machine Learning
+
+![[Pasted image 20260330132730.png]]
+
+### Supervisado
+1. Clasificación
+2. Regresión
+3. Forecasting
+### No Supervisado
+
+1. Clustering
+2. Dimensionality Reduction
+
+
+#### Clasificación
+
+##### *Regresión Logística*
+Genera una curva sigmoide
+
+Estima la probabilidad de que una observación pertenezca a una clase usando la función sigmoide (logit)
+El algoritmo ajusta los betas para que se asemejen a la recta
+
+![[Pasted image 20260330133429.png]]
+
+
+##### *K-Nearest NeighBors (KNB)*
+
+Clases que estén cerca (Parecido a lo visto en IA)
+Clasifica un punto basandose en los K vecinos más cercanos (métricas de distancia) en el espacio de características
+
+![[Pasted image 20260330133605.png]]
+
+
+##### *Support Vector Machines - SVM(IA)* 
+
+Encuentra un hiperplano optimo para separar clases en datos complejos. El hiperplano puede no ser lineal
+
+Transformo el espacio por kernels -> Agregamos una dimensión para separar los planos
+
+![[Pasted image 20260330133905.png]]
+
+![[Pasted image 20260330133917.png]]
+
+
+
+##### *Random Forest*
+Abren sus ramas por entropía 
+Construye múltiples arboles de decisión aleatorios y combina sus predicciones para mejorar la precisión y reducir el sobre-ajuste
+
+![[Pasted image 20260330135129.png]]
+
+##### *Gradient Boosting*
+
+Basado en árboles de decisión, donde cada árbol aprende de los errores del anterior, Se denominan modelos ensamblados
+- XGBoost
+- Light GBM
+
+![[Pasted image 20260330135148.png]]
+
+
+
+
 
 
 

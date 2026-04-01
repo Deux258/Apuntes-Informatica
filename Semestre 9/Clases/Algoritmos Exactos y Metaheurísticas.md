@@ -325,6 +325,318 @@ Con lo anterior, podemos aplicar técnicas de preproceso para CSP/COP
 Arco consistencia -> Pregunto si hay algun valor que cumpla la restriccion entre 2 nodos antes de ver el nodo consistencia
 
 
+# Clase 4
+19703/26
+
+## Problemas Continuos
+
+### Elementos de los problemas
+- Variables y dominios
+- Función objetivo
+- Una o más restricciones
+
+Para esto, se busca generar técnicas que resuelvan este tipo de problemas
+
+**Técnicas**
+-> *Interval Branch & Bound*
+Tecnicas complejas que resuelvan problemas continuos (muy complejos)
+
+Para los problemas infinitos, el computador tiende a aproximar a finitos
+Probablemente falle
+
+Tienes que pensar que el computador siempre está aproximando, por lo que se toma con "pinzas" las soluciones otorgadas como *rango de soluciones*
+
+### En busca del óptimo global
+La única forma de tener una técnica completa -> Búsqueda a través de árboles
+
+No puedo hacer asignaciones a variables!! los dominios son continuos
+*Gran problema*: Tengo que mostrar en la solución que el computador otorga un resultado aproximado
+
+### Aritmética de Intervalos
+Aritmética especial que sirve para manipular colecciones de valores
+
+**Sobreestimar**: Cuando yo agrego más valores de lo que realmente toma 
+
+![[Pasted image 20260319144820.png]]
+
+Suma: [0,12] Sobreestimado: [-1, 13]
+
+Uso los rangos completos para evaluar los restricciones. Tengo que usar un intervalo de valores
+
+![[Pasted image 20260319144920.png]]
+
+[0, 25] + [-6, 10] + [4, 4] = [3, 39]
+
+#### Algunos Conceptos Clave
+
+- Ancho del intervalo wid(x)=ub(x)-lb(x). Ejemplo: wid([-3,9])=9-(-3)=12
+
+La idea para solucionar continuos, divide el espacio de búsqueda en áreas
+
+![[Pasted image 20260319145421.png]]
+
+Azul: Soluciones factibles
+Amarillo: Soluciones infactibles
+El óptimo global del problema es la estrella
+
+uno parte creando nodos dividiendolo *Bisección* (entre 1 y 2) es binaria. Divido el dominio de x
+
+¿Qué variable tengo que elegir para dividir?
+- Tratas de dividir donde los problemas nuevos sean mas simples que el completo
+
+Heurística de selección variable 
+-> El problema es que mira la información actual simplemente
+
+2. Los marcos negros se llaman *filtrados*, elimina de manera continua todos los valores que están fuera
+
+Busco soluciones que estén dentro del rango establecido para encontrar los límites
+
+*Bound*: Cortar o podar
+
+DIBUJO
+
+### Bisección
+
+- Consiste en dividir el dominio de una de las variables en el punto medio, creando 2 nuevos nodos (cajas)
+- Se buscan esencialmente 2 cosas
+	1. Al dividir que los nuevos problemas sean más fáciles de resolver que el original
+	2. Fallar rápido en la búsqueda
+- Existen actualmente 3 tipos de Heurísticas:
+	1. Largest-First
+	2. Round-Robin
+	3. Basadas en Smear
+
+### Upper Bounding
+Buscar soluciones para podar"
+
+Usar metaurística dentro de cada nodo, soluciones factiles (mínimos locales)
+
+### Selección de Nodo
+Técnicas de aprendizaje 
+
+### Software
+- *Ibex*: Librería de código abierto en C++
+
+> 3 técnicas importantes de búsqueda:
+### Beam-Search
+Técnica incompleta
+- Busca las K mejores, sólo los nodos más prometedores se consideran en cada nivel del árbol
+- Usa el parámetro w, el cual representa el número de  "beams" que consideramos
+
+¿Cómo las elige? Algún tipo de decisión (tema de investigación)
+### Monte Carlo Tree Search
+Técnica incompleta
+- Usado en juegos en tiempo real, problemas de optimizacion como transporte, scheduling, entre otros.
+Toma un nodo prometedor, expande una decisión y a partir de eso hago una simulación y propago esa respuesta
+
+### A-Star
+> Google Maps
+
+
+# Clase 5
+23/03/26
+
+## Algoritmos de Aproximación / Metahurística
+
+Algoritmos Greedy: Deterministas y Estocásticos
+
+### Técnicas de Resolución
+Área donde ya no hay garantía de optimización 
+-> Ya no hay problemas con el espacio de búsqueda (*tradeoff*)
+
+- El tiempo de cómputo es mucho menor
+- *Técnica Estocástica*: Aleatorio
+	- Positivo: Busca distintas áreas del problema
+	- Negativo: No me garantiza buen resultado
+
+> Ejecuto muchas veces, no tengo garantizado resultado pero puede buscar en espacios enormes.
+
+- Se puede adoptar a cualquier problema
+
+![[Pasted image 20260323144046.png]]
+
+
+> Algoritmos de Búsqueda Incompletos:
+
+*Heurística*: Ordenado
+
+- Diseñado para un problema en específico
+- Usan algún info del problema
+- Para resolver un problema rápidamente
+
+Siempre llega a la solución y termina ahi
+
+*Metaheurísticas*: Desordenado
+
+Esquema general  que busca por zonas prometedoras para encontrar la solución
+
+- [Trayectoria]: Una solución que cambia en el tiempo. Cuando llega explota. haciendo una búsqueda exhaustiva
+- [Población]: Hay varias que se mueven en el espacio. Sirve para explorar más pero son significativamente más costosos
+
+- Usan heurísticas para buscar/construir soluciones
+
+**PROBLEMA**: Requiere de tiempo para poder ajustar sus parámetros
+
+
+> Existen 2 tipos de técnicas incompletas:
+1. [Constructivas]
+	- No requieren de una solución inicial
+	- Van construyendo una solución asignando iterativametne valores a las variables del problema
+	- Manejan soluciones parciales (hecho a la mitad)
+Parten de nada y construyen a medias
+
+2. [Preturbadoras]
+	- Requieren de varias soluciones iniciales (o 1).
+	- Modifica una solución: Aplico un movimiento -> o función de vecindario
+	- Maneja soluciones completas
+Parten de algo ya construido para solución completa
+
+
+#### Que hace un greedy
+Encontrar rápidamente una solución lo más rápido posible Para dsp pasárselo a una técnica perturbadora
+
+Evitar determinista para un metaheuristico poblacional,
+
+**PROBLEMA**: Se centra en la foto del momento, me perjudica a largo plazo.
+
+### Requisitos Para Greedy
+
+- *Representación*: Interpretación de la estructura de la solución
+- *Función de Evaluación o Miope*: Tengo que ver lo que tengo en el momento porque no veo más allá
+
+-> Determinista: Siempre llega a la misma solución
+-> Estocástico: Asignar probabilidad en base a ganancia (random pero electivo)
+
+
+### GRASP
+Metaheurística de Trayectoria
+
+1. Es un Greedy Estocástico
+2. Búsqueda local: Algoritmo que solo hace explotación (Hill- Climbing)
+3. Cuando construyo la solución, exploto hasta un punto donde no mejoro más
+4. Empiezo nuevamente la búsqueda local
+5. Tengo que guardar en memoria la mejor solución para no hacer cualquier cosa
+- Barato
+- (-) Pierde información
+
+Básicamente Greedy -> GRASP
+
+¿Cuándo me detengo? -> Tiempo o Iteraciones o que se estanque
+
+### !!! A tomar en cuenta
+Metaheurística, Árbol.
+
+- Metaheurística -> Cuando el problema es dificil y el espacio es grande
+- Árbol -> Problema pequeño pero complejo
+- Siempre los greedy llega a una solución buena pero ciega (no mira más allá)
+
+
+
+# Clase 7: Charla ricolina
+30/03/26
+
+## Estrategias Adaptativas de Reinicio y Clustering Para Branch And Bound Mediante Q-Learning
+
+- Problemas de Optimización Numérica con Restricciones (NCOP)
+
+### Interval Branch And Bound
+Dibujo exotico del profe
+-> Sirve para problemas infinitos
+
+1. Seleccion del nodo
+2. Bisección
+3. Fittro y Poda
+4. Upper Bounding
+
+### Reinicio + Clustering
+*Posible solución*: Reinicio adaptativo que interviene durante la ejecución de B&B cuando hay signos de bajo rendimiento, usando algoritmos de agrupamiento
+
+### Reorganización del Buffer
+
+Envuelvo y trato de descartar N nodos en 1 solo paso en vez de revisar los N nodos uno por uno para posiblemente no encontrar solución alguna. El problema es saber cuándo ocuparlo o cuando saber que está correcto.
+
+Vuelvo a empezar desde un punto intermedio para un nuevo espacio de búsqueda, con tal de investigar de otra forma el espacio de búsqueda.
+No conviene envolver todo, sino con un criterio ojala acotado
+
+*PROBLEMAS*
+1. Al ojo: Valores arbitrarios reactivos (basados en criterios heuristicos), designados a       K-Means cada vez que se reinicia
+2. DB-Scan: Alto costo computacional
+3. Se podría juntar de nuevo los espacios descartados como si fueran los espacios a buscar, sensible a *Outliers*
+
+### Estado del Arte
+Aprendizaje de Politicas internas
+- Seleccion de nodos
+- Poda Agresiva
+- Selección de Variables de Ramificación
+
+Busca optimizar la ruta de búsqueda en cada paso, usando ML para mejorar las heurísticas.
+
+## Aprendizaje Reforzado
+Rama de la IA en la que un agente aprende a tomar decisiones mediante la interacción con un entorno dinámico. 
+
+- No requiere de dataset - No es supervisado
+- Modelado a través de los procesos de decisión de Markov.
+- Aprende mientras soluciona
+
+Agente -> Ambiente -> Accion -> Recomensa 
+
+### Q-Learning
+Recompensa acumulada por las acciones
+
+- Aprendizaje por diferencia temporal que busca maximizar la función Q -> utilidad de realizar una accion especifica en un estado determinado
+
+Para el contexto del problema es reiniciar o no, y los estados se refieren a cosas del problema que me dicen si reinicio o no.
+
+#### Propuesta
+(foto exotica)
+
+
+### Procesos de Decisión de Markov
+
+1. Estados
+	- Tasa de estancamiento
+	- Tamaño del buffer
+	- Calidad de rendimiento
+	- Eficiencia inmediata
+2. Acciones
+	- Continuar busqueda 
+	- Reiniciar
+3. Recompensa/Castigo
+	- Mejora de UB
+	- Convergencia
+	- Outliers
+	- Costo por paso
+	- Reinicio activado
+	- Rechazo de Hulls
+
+
+### Recompensas
+Diseñada para entrenar al agente a priorizar la calidad y velocidad, forzando la eficiencia. Si es valor negativo castigo pal agente
+
+- Overfitting -> Evito generalización
+- Random Seed
+- No hay receta para crear estados para saber si están buenos 
+- Hiperparámetros
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
