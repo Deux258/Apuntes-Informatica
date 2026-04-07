@@ -493,7 +493,7 @@ Parten de algo ya construido para solución completa
 
 
 #### Que hace un greedy
-Encontrar rápidamente una solución lo más rápido posible Para dsp pasárselo a una técnica perturbadora
+Encontrar rápidamente una solución lo más rápido posible Para dsp pasárselo a una técnica *perturbadora*
 
 Evitar determinista para un metaheuristico poblacional,
 
@@ -619,26 +619,106 @@ Diseñada para entrenar al agente a priorizar la calidad y velocidad, forzando l
 - Hiperparámetros
 
 
+# Clase 7
+02/04/26
+
+- Hill-Climbing Mejor-Mejora
+- Hill-Climbing Alguna-Mejora
+- Restarts en Hill-Climbing
+## Recordar
+
+### Metaheuristicas
+no garantiza encontrar la mejor solucion pero el tiempo computacional es razonable para encontrar la solución.
+
+Se aplican a distintos dominios como biologia, fisica, produccion, data mining, etc.
+Si el problema es facil, aweonao si usas metaheuristicas.
+
+Aplicar para todo en adelante:
+- *Exploración* / Diversificación
+	Busca zonas prometedoras, busco lugares buenos donde haya soluciones.
+- *Explotación* / Intensificación
+	Busco en una zona particular/centrada buenas soluciones intensamente (ya no exploro)
 
 
+![[Pasted image 20260402144330.png]]
+
+Después de explotar, ¿Qué hago?
+-> Si se estanca, definir hiperparámetros
+-> Cambiar algo del algoritmo para escapar y explorar otros puntos del dominio
+
+## Hill Climbing
+Búsqueda local. MH de trayectoria o solución única. Solamente explora.
+La idea es mejorar a partir de una solución ya construida.
+
+*Perturbativas*: La solución ya está construida
+*Constructoras*: 
+
+- Hill Climbing es perturbativa
+- A través de operadores de movimiento, se va mejorando dicha solución, buscando que el valor de la función objetivo de dicha solución sea mejor que la solución actual.
+- Busco la solución más cercana 
+
+> ¿Cómo manejar soluciones infactibles?
+
+Necesito función objetivo, aplico *penalización* $f_{obj} - \theta (x)$
+-> Penalizo según cuantas restricciones se están contradiciendo
 
 
+### Búsqueda local
+
+![[Pasted image 20260402145740.png]]
+
+No hay derivada porque computacionalmente es muy caro
+
+### *Receta*
+
+necesito
+- Una función objetivo  que mida la calidad de solución
+- Uno o más movimientos que permita recorrer el vecindario (lo invento yo) 1 o más
+	- Un criterio para seleccionar la variable que se va a modificar
+	- Un criterio para elegir un valor para esa variable seleccionada
+Más de 1 operador de movimiento me da variación
+
+- A través de operadores de movimiento, se va mejorando la solucion
+- elijo la mejor (aplicando función objetivo)
 
 
+## Hill Climbing Mejor-Mejora
+
+1. *Inicialización*: Crear una solución a partir de algún criterio heurístico o aleatorio
+2. Mientras no se cumpla el criterio de parada (no hay mejora, tiempo, iteraciones)
+	1. Genero vecindario a partir del movimiento elegido y conservar la mejor solución del vecindario como solución actual
+3. Mostrar solución + valor F.O. + tiempo
+
+La mejor del vecindario
+
+## Hill Climbing Alguna-Mejora
+
+Genero vecinos de a uno y la primera que genere mejor me muevo ahí
+
+1. En algunas ocasiones nos encontraremos con problemas en el que el vecindario de una solución es muy grande
+2. En tal caso, solo generamos el vecindario hasta el punto de encontrar la primera solución que mejore la actual
+
+## Hill Climbing con Restart
+
+Para evitar estancarse con optimos locales, recomienzo el algoritmo con una nueva solución cuando este se encuentre estancado.
+
+Cada vez que hago restart se olvida de la memoria, desde 0
+
+La idea es aplicar un greedy estocastico para tener resultados variados, no determinista
+
+### Escape de óptimos locales
+Además del restart, la otra forma de escapar es aceptar soluciones que empeoren la calidad de la solución actual
+
+*PROBLEMA*: Puedo entrar en un ciclo
+SOLUCIÓN -> [Tabu Search] Para evitar ciclos
 
 
+##### Ejercicio para reflexionar un sábado/domingo en la tarde, ojalá con brisket
 
+-  Supongamos que tenemos el problema de las 4-Reinas y queremos encontrar una solución, pero usando una técnica como Hill Climbing.
+-  ¿Cómo lo haría?
 
-
-
-
-
-
-
-
-
-
-
+Problema de satisfacción -> Hay que inventar F.O. para llegar a realizar Hill Climbing
 
 
 

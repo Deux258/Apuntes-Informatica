@@ -599,6 +599,41 @@ Basado en árboles de decisión, donde cada árbol aprende de los errores del an
 
 
 
+# Clase 8
+02/04/26
+
+## Medidas de Performance
+
+### Curva ROC y AUC
+Dudar cuando la curva es demasiado perfecta
+
+**ROC**
+Es la representación gráfica de la habilidad de un modelo para distinguir entre las dos clases. 
+
+**AUC**
+Representa qué también el modelo distingue entre clases en comparación con un modelo aleatorio. Un valor de AUC = 0.5 indica un desempeño similar al azar, mientras que AUC = 1 sugiere una excelente capacidad de discriminación.
+
+![[Pasted image 20260402135322.png]]
+
+¿maximizar o minimizar?
+En todos los casos busco maximizar 
+
+Accuracy -> Maximizar
+Precision -> Maximizar
+Recall -> maximizar
+F1 Score -> maximizar
+
+### Binary Cross Entropy
+
+Mide la precisión de un modelo al comparar las probabilidades predichas con las clases verdaderas matemáticamente
+
+Se calcula sumando el logaritmo  negativo de las probabilidades predichas para cada clase verdadera. Especialmente útil porque penaliza fuertemente las predicciones erróneas con alta certeza.
+
+![[Pasted image 20260402135830.png|473]]
+
+
+
+
 
 
 
