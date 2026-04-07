@@ -12,12 +12,12 @@
             "id": "b17d23ab184082ce",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "image",
               "state": {
-                "file": "Semestre 9/Apuntes/Resumen_ArquitecturaSoftware.pdf"
+                "file": "Semestre 9/Imagenes/Arquitectura de Software/Pasted image 20260406224011.png"
               },
-              "icon": "lucide-file-text",
-              "title": "Resumen_ArquitecturaSoftware"
+              "icon": "lucide-image",
+              "title": "Pasted image 20260406224011"
             }
           },
           {
@@ -204,18 +204,18 @@
       "bases:Crear nueva base": false
     }
   },
-  "active": "b17d23ab184082ce",
+  "active": "faf976156dedae6c",
   "lastOpenFiles": [
+    "Semestre 9/Apuntes/Resumen_ArquitecturaSoftware.pdf",
     "Semestre 9/Apuntes/Control 1 Arq Soft.md",
     "Semestre 9/Ayudantías/AY Arquitectura de Software.md",
-    "Semestre 9/Apuntes/Resumen_ArquitecturaSoftware.pdf",
-    "Pasted image 20260406230552.png",
-    "Pasted image 20260406230519.png",
-    "Pasted image 20260406224852.png",
-    "Pasted image 20260406224730.png",
-    "Pasted image 20260406224520.png",
-    "Pasted image 20260406224124.png",
-    "Pasted image 20260406224011.png",
+    "Semestre 9/Imagenes/Arquitectura de Software/Pasted image 20260406230552.png",
+    "Semestre 9/Imagenes/Arquitectura de Software/Pasted image 20260406230519.png",
+    "Semestre 9/Imagenes/Arquitectura de Software/Pasted image 20260406224852.png",
+    "Semestre 9/Imagenes/Arquitectura de Software/Pasted image 20260406224730.png",
+    "Semestre 9/Imagenes/Arquitectura de Software/Pasted image 20260406224520.png",
+    "Semestre 9/Imagenes/Arquitectura de Software/Pasted image 20260406224124.png",
+    "Semestre 9/Imagenes/Arquitectura de Software/Pasted image 20260406224011.png",
     "Semestre 9/Imagenes/Algoritmos exactos/Pasted image 20260402144330.png",
     "Semestre 9/Imagenes/Algoritmos exactos/Pasted image 20260402135830.png",
     "Semestre 9/Imagenes/Algoritmos exactos/Pasted image 20260402145740.png",
