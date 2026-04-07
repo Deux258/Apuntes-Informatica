@@ -4,47 +4,55 @@
     "type": "split",
     "children": [
       {
-        "id": "acb61c5dc5b176c3",
+        "id": "9ba4954106a5fe7c",
         "type": "tabs",
+        "dimension": 50.122549019607845,
         "children": [
           {
             "id": "b17d23ab184082ce",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "Semestre 9/Clases/Algoritmos Exactos y Metaheurísticas.md",
-                "mode": "source",
-                "source": false
+                "file": "Semestre 9/Apuntes/Resumen_ArquitecturaSoftware.pdf"
               },
-              "icon": "lucide-file",
-              "title": "Algoritmos Exactos y Metaheurísticas"
+              "icon": "lucide-file-text",
+              "title": "Resumen_ArquitecturaSoftware"
             }
           },
           {
-            "id": "1a3cd93ffc42c20d",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Semestre 9/Imagenes/Data Science/Pasted image 20260330132728.png"
-              },
-              "icon": "lucide-image",
-              "title": "Pasted image 20260330132728"
-            }
-          },
-          {
-            "id": "53e5742e89945267",
+            "id": "d4878486c5ff74aa",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Semestre 9/Apuntes/SmartRoller.md",
+                "file": "Semestre 9/Ayudantías/AY Arquitectura de Software.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "SmartRoller"
+              "title": "AY Arquitectura de Software"
+            }
+          }
+        ]
+      },
+      {
+        "id": "acb61c5dc5b176c3",
+        "type": "tabs",
+        "dimension": 49.877450980392155,
+        "children": [
+          {
+            "id": "e291e9fe17ca4a8e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Semestre 9/Apuntes/Control 1 Arq Soft.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Control 1 Arq Soft"
             }
           }
         ]
@@ -198,24 +206,25 @@
   },
   "active": "b17d23ab184082ce",
   "lastOpenFiles": [
-    "Pasted image 20260402145740.png",
-    "Pasted image 20260402144330.png",
+    "Semestre 9/Apuntes/Control 1 Arq Soft.md",
+    "Semestre 9/Ayudantías/AY Arquitectura de Software.md",
+    "Semestre 9/Apuntes/Resumen_ArquitecturaSoftware.pdf",
+    "Pasted image 20260406230552.png",
+    "Pasted image 20260406230519.png",
+    "Pasted image 20260406224852.png",
+    "Pasted image 20260406224730.png",
+    "Pasted image 20260406224520.png",
+    "Pasted image 20260406224124.png",
+    "Pasted image 20260406224011.png",
+    "Semestre 9/Imagenes/Algoritmos exactos/Pasted image 20260402144330.png",
+    "Semestre 9/Imagenes/Algoritmos exactos/Pasted image 20260402135830.png",
+    "Semestre 9/Imagenes/Algoritmos exactos/Pasted image 20260402145740.png",
+    "Semestre 9/Apuntes/SmartRoller.md",
     "Semestre 9/Clases/Arquitectura de Software.md",
+    "Semestre 9/Clases/Algoritmos Exactos y Metaheurísticas.md",
     "Semestre 9/Clases/Arquitecturas Emergentes.md",
     "Semestre 9/Clases/Data Science.md",
-    "Pasted image 20260402135830.png",
-    "Semestre 9/Imagenes/Data Science/Pasted image 20260402135322.png",
     "Semestre 9/Ayudantías/AY Arquitecturas Emergentes.md",
-    "Semestre 9/Apuntes/SmartRoller.md",
-    "Semestre 9/Ayudantías/AY Arquitectura de Software.md",
-    "Semestre 9/Imagenes/Data Science/Pasted image 20260330132728.png",
-    "Semestre 9/Clases/Algoritmos Exactos y Metaheurísticas.md",
-    "Semestre 9/Imagenes/Data Science/Pasted image 20260330133905.png",
-    "Semestre 9/Imagenes/Data Science/Pasted image 20260330135148.png",
-    "Semestre 9/Imagenes/Data Science/Pasted image 20260330135129.png",
-    "Semestre 9/Imagenes/Data Science/Pasted image 20260330133917.png",
-    "Semestre 9/Imagenes/Data Science/Pasted image 20260330133605.png",
-    "Semestre 9/Imagenes/Data Science/Pasted image 20260330133429.png",
     "Semestre 9/Clases/Internet de las Cosas.md",
     "Semestre 9/Apuntes",
     "Semestre 8/Clases/Tecnologías Inalámbricas.md",
@@ -236,14 +245,12 @@
     "Semestre 8/Chanchitos/C4 IA.md",
     "Semestre 8/Chanchitos/ANNs IA c4.pdf",
     "Semestre 8/Laboratorio/LAB Criptografía en Seguridad.md",
-    "Semestre 8/Laboratorio",
     "Semestre 8/Chanchitos/IaE - Control 3.md",
     "Semestre 8/Chanchitos/Resumen RSNS - Cap 1.md",
     "Semestre 8/Clases/Criptografía en Seguridad y Redes.md",
     "Semestre 8/Chanchitos/Resumen RSNS - Cap 3.md",
     "README.md",
     "Untitled 1.md",
-    "Semestre 8/Imágenes/Untitled.md",
     "Semestre 7/Chanchitos/Chanchito SD S2.canvas",
     "Semestre 7/Chanchitos/Chanchito GO S1.canvas",
     "Semestre 7/Resumen Actividad TTL.canvas",

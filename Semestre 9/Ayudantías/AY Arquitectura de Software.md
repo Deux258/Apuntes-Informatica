@@ -44,7 +44,8 @@ Se expande tanto que son distintos servicios completamente independientes que ha
 - [p] Escalabilidad e independencia de servicios
 - [c] Altísima complejidad de monitoreo y comunicación
 
-EJ) Netflix. Un micro-servicio se encarga de portadas, otro de recom*Ventaja*ddddxendaciones, cobro, vídeo. Si falla el de recomendaciones, igual puedes ver películas
+EJ) Netflix. Un micro-servicio se encarga de portadas, otro de recompensas 
+*Ventaja*ddddxendaciones, cobro, vídeo. Si falla el de recomendaciones, igual puedes ver películas
 
 ### Capas
 Se puede usar como forma de organizar en secuencia y niveles de abstracción. Describe más la estructura interna del código, complementario
