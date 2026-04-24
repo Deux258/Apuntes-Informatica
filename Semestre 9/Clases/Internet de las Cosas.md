@@ -331,6 +331,135 @@ La radio tiene determinadas capacidades:
 ![[Pasted image 20260326111017.png]]
 
 
+# Clase 7
+09/04/26
+
+## Nodo - Hardware
+
+La radio tiene determinadas capacidades:
+
+- Interfaz: Bit, Byte, Paquetes?
+- Banda de frecuencias? -> 433MHz, 868Mhz, 915MHz, 2.4GHz
+- Multiples canales
+- Velocidades de datos
+- Rango
+
+Necesitamos mandar la menor cantidad posible de información
+1. Por recursos
+2. Cantidad de paquetes transmitidos al mismo tiempo en la red
+
+![[Pasted image 20260409061717.png]]
+
+- Escuchar es muy caro, por eso hay que ser eficiente
+- El uso eficiente del espectro es importante
+- Para asegurar que llegue bien el paquete tengo que protegerlo, trato de asegurar el envio de paquete en el espectro utilizado
+
+En este caso, todos conviven en el mismo espectro con X cantidad de redes
+
+- Tiene que ser tanto el uso del espectro como para interferir el envio de paquetes (aun no llegamos a ese punto)
+
+
+
+-> Las telefonicas tienen uso de espectros fijas exclusivas para ellas
+-> También para IoT
+
+![[Pasted image 20260409063641.png]]
+
+![[Pasted image 20260409063656.png]]
+
+
+### Performance de la Radio
+
+- Modulación
+- Figura de Ruido
+- Ganancia
+- Sensibilidad
+- Sensado de Portadora
+- Rango de voltaje de alimentación
+
+
+# Pre-Solemne 1
+13/04/26
+
+6 preguntas de desarrollo
+
+1. Para un sistema de logística basado en gestión de flotas de vehículos, analice brevemente las sgtes caracteristicas
+
+	Disponibilidad de Energía en el tiempo
+	Patrón de funcionamiento
+	Mantenimiento
+	Escalabilidad:
+	- Si yo puedo reproducir a un costo racional y poder manejar la capacidad para soportar la escalabilidad. 
+	- ¿Hace falta mirar los 300 sensores al mismo tiempo en el mapa?
+	- Puedo tener dispositivos híbridos
+
+> Uno busca la aplicación primero para pasar a la tecnología a utilizar después
+
+2. Considerando el mismo sistema de gestión de flotas de vehículos, diseñe una arquitectura adaptada a este problema y describa brevemente sus funciones
+
+- Variedad de móviles a seguir ¿Qué tipo de flota?
+	- Flota de camiones internacional, tren, autos
+- ¿Cómo capturamos la info?
+	Sensores como:
+	- Ubicación: GNSS, GPS, Galileo
+	- Captura de localización -> Wifi, bluetooth
+- Capa de conectividad
+- Servidores para bases de datos, procesamiento
+- Visualización - Interfaz para cliente
+- Posible incentivo
+
+3. Describa 4 aplicaciones de la IoT en las siguientes áreas (una aplicación por área)
+
+- Entretención
+- Industria
+- Salud
+- Hogar
+
+> Interfaz de usuario: Simbología fundamental para los seres humanos
+	necesita un extra para medir algo o dar info de algo
+
+Entretención: Controles de consolas, realidad virtual (audífonos no cuenta), Volantes de conducción
+
+Industria: Sensor de gases (para botellas, si se puede usar o no)
+Analizador de frecuencias, gases, que detecten
+
+Salud: Refrigerador inteligente (con rfid), medidor de presión, medidor de sangre, timbres para avisar que están en habitaciones (múltiples puntos para sensorar), Detector de oxígeno
+
+Hogar: Smarthome (sensor de movimiento, luces), aspiradora automática, aire acondicionado, detección de fuga de gas o agua
+
+> Describir porqué es un IoT
+
+4. ¿Cómo se logra reducir el consumo de comunicación en un nodo de IoT? Describa brevemente el método
+
+- Mandando sólo lo necesario -> Compactar la información
+- Enviar en un momento y dormir el resto del tiempo
+
+4. ¿Cuál es la función del controlador en un dispositivo de IoT?
+
+- Procesar
+- Se monitorea a si mismo
+- Actualiza la info de un lado a otro
+
+6. ¿Por qué se usan múltiples canales para un ancho de banda ?
+
+- Para evitar interferencia
+- Para resilencia
+- Para evitar saturación
+- Canales pilotos para enviar mensajes para todos
+- El resto del tiempo selecciono 1 canal para comunicarme con mis vecinos o con el destinatario especificado
+- Diversidad de recurso para transmitir simultaneamente entre distintos IoT
+- Los anchos de banda son muy pequeños por lo que no hace falta uno grande
+
+EJ) Bluetooth en el metro, un canal en específico para no escuchar lo mismo que el resto de personas
+
+
+
+
+
+
+
+
+
 
 
 

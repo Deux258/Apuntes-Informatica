@@ -246,7 +246,7 @@ Pertenece a un grupo de técnicas clasificadas como Look-Ahead
 Se basa en la idea de mirar hacia delante en el arbol de busqueda, para ver si al hacer una instalacion hace imposible asignarle valor a otra variable no instanciada
 
 - Disminuye el trashing
-- A pesar de que podrían existir menos nodos en el árbol, se podrían eventualmente realizar más chequeos a comparacio de otras técnicas
+- A pesar de que podrían existir menos nodos en el árbol, se podrían eventualmente realizar más chequeos a comparación de otras técnicas
 
 ![[Pasted image 20260316144056.png]]
 
@@ -370,6 +370,8 @@ Uso los rangos completos para evaluar los restricciones. Tengo que usar un inter
 #### Algunos Conceptos Clave
 
 - Ancho del intervalo wid(x)=ub(x)-lb(x). Ejemplo: wid([-3,9])=9-(-3)=12
+
+### Interval Branch & Bound
 
 La idea para solucionar continuos, divide el espacio de búsqueda en áreas
 
@@ -702,9 +704,10 @@ Genero vecinos de a uno y la primera que genere mejor me muevo ahí
 
 Para evitar estancarse con optimos locales, recomienzo el algoritmo con una nueva solución cuando este se encuentre estancado.
 
-Cada vez que hago restart se olvida de la memoria, desde 0
+Cada vez que hago restart se olvida de la memoria, *desde 0*
 
 La idea es aplicar un greedy estocastico para tener resultados variados, no determinista
+> SOLO EXPLOTA
 
 ### Escape de óptimos locales
 Además del restart, la otra forma de escapar es aceptar soluciones que empeoren la calidad de la solución actual
@@ -719,6 +722,159 @@ SOLUCIÓN -> [Tabu Search] Para evitar ciclos
 -  ¿Cómo lo haría?
 
 Problema de satisfacción -> Hay que inventar F.O. para llegar a realizar Hill Climbing
+
+
+# Clase 8
+06/04/26
+
+> Mejora de HC!!
+## Tabu Search
+Tiene lista tabu que permite aceptar movimientos que empeoraran la solucion actual para encontrar algo mejor.
+
+Puede salir del optimo local para buscar el optimo global
+
+Largo para que pueda explorar más cc                                                                                                       
+
+# Clase 9
+09/04/26
+
+Algoritmos:
+## Simulated Annealing (SA)
+De Trayectoria
+
+Escapa del óptimo local con probabilidades. Inspitado en termodinámica
+
+- Inspirado en el trabajo Metropolits et al. 1953 en el campo de termodinámica estadística
+
+La idea es cuando algo tiene cambio de temperatura, la energía se empieza a mover (átomos) y a medida que baja la temperatura llega a un punto de equilibrio. Se lleva esta idea a algoritmo.
+
+La gracia es que acepta cosas peores. A través de una probabilidad dada por 2 cosas:
+- Temperatura
+- Calidad de F.O.
+
+Dado ambos existira  una probabilidad de posible mejor solución 
+
+### Idea
+- Permite movimientos a soluciones que empeoren la F.O para escapar de óptimos locales.
+
+### Probabilidad de Aceptación y Temperatura
+Distribución de Boltzmann
+
+![[Pasted image 20260409144132.png]]
+
+En base al $\Delta$ acepto cosas malas
+
+Cuando T es muy alto, la prob tiende a 1
+T es bajo, la prob tiende a 0
+
+- A cierta temperatura, hago varios intentos de nuevas soluciones
+- La temperatura siempre va decayendo con ciertos tipos de reglas
+- Lo ultimo no me asegura que sea lo mejor. Guardo el mejor individuo en base al vecindario que yo creé (como tabu search)
+
+### Algoritmo general
+
+1. Se genera la solución inicial (greedy aleatorio)
+2. Se repite N iteraciones manteniendo la misma temperatura
+3. Si yo mejoro la solucion actual, puedo cambiar la temperatura (posibilidad)
+
+Cuando defino temperatura mínima y se llega a esta, el algoritmo termina
+
+Decisiones:
+- Temperatura inicial
+- Condicion de equilibrio
+- Temperatura minima
+- Cuánto baja la temperatura (update)
+
+Si quiero configurar es mucho mas caro pq tengo que modificar variables
+
+
+### *Ingredientes de SA*
+- Todo lo que tiene HC
+	- Representación
+	- Evaluación
+	- Operadores de vecindario
+- Función de prob de aceptación (Boltzmann)
+- Temperatura inicial y final
+- Proceso de enfriamiento: Clave para la eficiencia y efectividad del algoritmo
+	Importante que dure harto
+
+### Aceptación de movimientos
+La prob de aceptacion de un movimiento que no mejora l solución actual es:
+
+$$ P(\Delta_{obj}, T) > R$$
+R num aleatorio entre 0 y 1
+
+T alta -> Me muevo aceptando soluciones malas
+T baja -> Me muevo solo si tengo una mejora (poca prob a moverme a soluciones malas)
+
+### Estado de Equilibrio
+2 mecanismos para saber cuándo actualizar temperatura
+
+**Estándar:** Tener un numero N. Despues de N iteraciones modifico la temperatura
+
+¿Cuántas iteraciones? -> debo analizar el vecindario para decidir. 
+
+**Adaptativo/Técnica Online:** Depende de la F.O. Puede cambiar según los parámetros que encuentre.
+
+Técnica Online -> Cuando empiezo a buscar algo en durante una ejecución
+Técnica Offline -> Definido desde el inicio
+
+### Enfriamiento
+Tenemos 2 condiciones sobre la temperatura
+
+- T>0 para todo i
+- El límite cuando i -> $\infty$ de $T_i$ debe ser 0.  
+
+La temperatura se puede actualizar de 3 formas:
+
+![[Pasted image 20260409150349.png]]
+
+Si la geometrica le doy un valor muy alto, puede que demore mucho en buscar posible solución.
+
+### Condiciones de Término
+
+- Llegar a una temperatura final (popular) tiene que ser baja por ej 0.01
+- Tiempo
+- N iteraciones
+- Estancamiento
+
+¿Cómo yo digo que tan bien o mal funciona mi técnica?
+-> Promedio
+-> Variación estándar
+-> Gráfico de iteraciones vs Función objetivo
+
+> Múy util cuando es discreto, con continuas no funciona tan bien
+
+
+## Otros algoritmos: ILS
+Son de nicho, usado muy poco, de trayectoria
+
+Dada una solución $s'$, se aplica una perturbación (random-walk) y a esa solución nueva aplico búsqueda local.
+
+-  Cuando llego al espacio nuevo, aplico búsqueda local HC $s''$
+- Veo si cumple con los criterios
+- Si $s''$ es mejor que $s'$, voy al nuevo. Si no me quedo donde mismo y aplico otra perturbación.
+- Es *random* pero *simple*
+
+## LNS - Large Neighborhood Search
+Destroy and repair. *Restart con información parcial*
+
+Destruye la solución y reconstruye. 
+- Hago un greedy y construyo una solución en x espacio de búsqueda.
+- Cuando llego al optimo global, aplico método que destruye parte de la solución que tengo 
+- Cuando aplico greedy a la solución incompleta, llego a otra cosa. 
+- Básicamente mejoro la solución que tenía existente con el nuevo greedy
+
+![[Pasted image 20260409152329.png]]
+
+
+
+
+
+
+
+
+
 
 
 

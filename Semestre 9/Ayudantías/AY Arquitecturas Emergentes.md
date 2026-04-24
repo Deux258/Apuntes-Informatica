@@ -18,6 +18,7 @@ Diseñado por Philippe Kruchten. Te dice como diseñar un sistema lo más limpio
 2. Vista de despliegue
 3. Vista de procesos
 4. Vista física
+5. Vista observador
 
 ### Vista lógica
 Describe las funciones y estructura lógica del software. Muestra módulos o clases y sus interacciones principales. No necesito ser un crack para saber lo que necesita el sistema.
@@ -112,15 +113,15 @@ EJ) Google drive, gmail, netflix, Spotify
 
 ## Características de la Nube
 
-- Autoservicio bajo demanda 
+- *Autoservicio bajo demanda* 
 	No necesita intervención directa
-- Elasticidad
+- *Elasticidad*
 	Se puede escalar automáticamente la capacidad, hacia arriba (más potencia) o hacia los lados (más nodos)
-- Pago por uso
-- Acceso Constante
+- *Pago por uso*
+- *Acceso Constante*
 	Acceso desde cualquier lugar con conexión a internet
 	*DNS*: Si tu pones www.google.cl te envía a distintos ips a través del país, tiene sus propios servidores DNS para redireccionar a servidores con menor uso por ej.
-- Multi - Tenacy
+- *Multi - Tenacy*
 	Múltiples usuarios comparten la misma infraestructura de forma aislada y segura
 
 ## Sistemas de Arquitectura
@@ -137,9 +138,9 @@ EJ)
 - Compute Engine
 
 No tengo que estar pagando la licencia 
-Problema: Tengo que instalarlo desde otro país, necesito a alguien que esté encargado de la instalación de infraestructura 
+Problema -> Tengo que instalarlo desde otro país, necesito a alguien que esté encargado de la instalación de infraestructura 
 
--> Sistema a ocupar mucho porque cuando hagamos pruebas es más barato contratar IaaS
+- [p]  Sistema a ocupar mucho porque cuando hagamos pruebas es más barato contratar IaaS
 
 ### PaaS - Plataforma como Servicio
 
@@ -235,4 +236,112 @@ Sistema y gestación de datos a gran escala
 - [p] Pago por uso
 - [p] Alta disponibilidad y redundancia
 - [p] Integración con IA y servicios avanzados
+
+
+# Ayudantía 3
+08/04/26
+
+## Cloud pepe
+
+### ¿Dónde desplegar?
+
+- On-Premise -> en tu empresa
+- Data center externo
+- Cloud provider (AWS, Google cloud, Azure)
+
+### Elección de Región !!
+
+1. Conformidad legal
+2. Disponibilidad
+3. Latencia
+4. Precio
+
+> Elegir mal la región puede afectar rendimiento, costo y cumplimiento legal.
+### Regiones y Zonas de Disponibilidad !!
+
+Región -> Conjunto de zonas
+Zona -> Centro de datos
+
+## Modelo de Responsabilidad Compartida
+
+Ordenado qué tanto soy responsable yo, desde totalmente responsable a casi nada de desponsabilidad mia.
+
+1. On-Premises: Lo hago todo yo
+2. IaaS
+3. PaaS: 
+4. SaaS: SAP
+5. FaaS: Funcionalidad (gmail)
+
+Siempre sera clasificación y contabilidad de datos los que manejo yo, no la empresa externa.
+
+
+![[Pasted image 20260422103539.png]]
+
+
+## IAM - Gestión de Accesos
+IAM controla quién puede acceder a qué.
+
+- Usuarios
+- Grupos
+- Políticas
+
+Genera grupos que pueden llamarse x, generando politicas de acceso
+
+## Cómputo - EC2
+Es como arrendar un computador en la nube
+
+- Máquinas virtuales
+- Configuración: CPU, RAM, red
+
+![[Pasted image 20260422103448.png]]
+
+## Ciclo de Vida de instancias
+
+*Estados*:
+- Pendiente: Cuando estan iniciando y prueban si funciona o no
+- Ejecutándose: 
+- Detenida !!: Mantenimiento y soporte (hace perder dinero)
+- Terminada
+
+1. Planificación Inicial
+2. Análisis detallado
+3. Diseño estructural
+4. Desarrollo principal
+5. Integración de pruebas
+6. Implementación práctica
+7.  Mantenimiento y Soporte
+
+![[Pasted image 20260422103659.png]]
+
+## Almacenamiento
+Existen 3 tipos
+
+1. Bloque (EBS)
+	- Disco duro
+	- Persistente
+2. Objeto (S3) 
+	- Archivos
+	- Escalable
+3. Archivo
+	- Similar a carpetas
+
+
+# Ayudantía 4 - Solemne 1
+15/04/2 6
+
+## Pregunta 1
+Arquitectura en Capas
+
+Piden: Arquitectura Seguro, escalable y disponible 24/7
+
+- Diseñar solución usando el modelo 4+1
+
+a. Presente la vista lógica con entidades, atributos y relaciones clave
+
+
+
+
+
+
+
 

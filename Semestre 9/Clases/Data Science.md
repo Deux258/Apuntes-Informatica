@@ -196,7 +196,7 @@ Numérico
 - Continuos (infinito)
 
 Categórico
-- Ordinal: Si no lo puedo ordenar
+- Ordinal: Si lo puedo ordenar
 - Nominal: NO lo puedo ordenar
 
 ### Problemas con los Datos
@@ -631,6 +631,177 @@ Se calcula sumando el logaritmo  negativo de las probabilidades predichas para c
 
 ![[Pasted image 20260402135830.png|473]]
 
+
+
+# Clase 12
+09/04/26
+
+## ForeCasting
+Predicción del futuro 
+
+## Series de Tiempo
+Son una categoría de Machine Learning enfocada en analizar y predecir *datos secuenciales*.
+
+A diferencia de los modelos tradicionales, el orden de los datos es fundamental. Para hacer predicciones, estos modelos aprenden patrones de la serie histórica y consideran tendencias, estacionalidad y fluctuaciones aleatorias.
+
+> App de Clima
+
+- Implica analizar datos que cambian con el tiempo y aplicar modelos estadísticos para predecir patrones y tendencias futuras.
+- Los datos se ordenan cronológicamente creando una relación secuencial.
+- Cada observación depende de observaciones anteriores
+
+## Componentes
+
+1. *Tendencia*
+	Dirección o tendencia positiva o negativa a lo largo del tiempo
+2. *Estacionalidad*
+	Patrones que se repiten en intervalos fijos dentro de una serie de datos
+3. *Ruido*
+	Info impredecible de los datos que se escapa de conceptos como la tendencias y estacionalidad
+
+![[Pasted image 20260409131758.png]]
+
+imagen: Estacionalidad, tendencia, ruido
+
+### Estacionariedad
+
+- Media y varianza se mantiene constante
+- No hay tendencia ni estacionalidad
+- Autocorrelación constante
+
+![[Pasted image 20260409132259.png]]
+
+
+-> La varianza no es constante
+
+### Diferenciación
+Transformar la serie en una que representa los cambios (incrementos o decrementos) entre periodos consecutivos
+
+
+![[Pasted image 20260409135404.png]]
+
+Resumen:
+- Darse cuenta del tipo de problema
+- Si no tiene tiempo, es regresión (al menos q tenga clasificacion)
+
+# Clase 13
+13/04/26
+
+
+## Nodos / Unidad para Funciones de Activación
+
+![[Pasted image 20260413133453.png]]
+
+![[Pasted image 20260413133503.png]]
+
+
+- Reset Gate
+- Actualización
+- Candidata
+- Salida
+
+## Redes Neuronales
+
+
+![[Pasted image 20260413133703.png]]
+
+
+
+### LSTM
+
+![[Pasted image 20260413135217.png]]
+
+- Olvido (forget, f)
+- Sigmoide
+n 
+
+
+
+
+
+# Pre-Solemne 1
+16/04/26
+
+
+1. Entendiendo que estos son los datos oficiales de la compañía financiera, cuál de las
+siguientes afirmaciones es correcta.
+
+A) Al no pertenecer a una fuente validada como Kaggle o UCI ML Repository esta
+información no debería usarse para desarrollar un modelo, y sería recomendable
+acceder a nuevos datos a través de de una API.
+R: medio feka
+
+B) Sería inutil realizar un EDA y preprocesamiento ya que es la data oficial así que
+incluso si hay errores debemos usar esta.
+R: Se puede visualizar al menos
+
+C) Podemos solicitar al departamento de de T.I de la compañía que desarrolle nuevas
+variables de necesitarlas en el modelo.
+R: El que tiene responsabilidad de analisis, tambien de modificarlo
+
+D) Sería recomendable realizar un EDA para poder descartar problemas en la data, en
+caso de encontrarlas podemos realizar las transformaciones nosotros como
+analistas.
+R: *CORRECTO*. Es recomendable
+
+E) Deberíamos realizar data augmentation con IA generativa para hacer denoising de la
+data.
+R: Baiteo historico
+
+
+
+2. Ud realiza una revisión de los datos que le provee la institución financiera, y
+encuentra que el rango de la variable edad hay algunos casos con 126 años. ¿Cuál
+sería su conclusión al respecto?
+
+A) Son outliers unidimensionales, revisaría si hay relación con la variable
+objetivo usado K-S antes de eliminar la variable
+R: Muy buena práctica, pero el dato por defecto es 1/1/1900
+
+B) Son outliers multidimensionales usaría isolation forest para confirmarlos y los
+eliminaría
+C) Son datos fuera de rango, los trataría como un valor nulo e imputaría usando
+K-NN (K nearest Neighbors)
+*CORRECTO*
+
+D) Son datos correctos, no por ser un número grande significa que está mal,
+sobre todo temas de crédito no es bueno discriminar por edad
+E) Son datos nulos de tipo MNAR imputaría por la media
+
+
+
+![[Pasted image 20260416132238.png]]
+
+
+R: A
+
+![[Pasted image 20260416132734.png]]
+
+R:D
+
+
+![[Pasted image 20260416133058.png]]
+![[Pasted image 20260416133117.png]]
+
+R: B (no queremos ids en los modelos)
+
+A: No necesariamente hay data leakash
+C: Super buena práctica, pero no es para este caso. 
+D: Es categórico pero sigue siendo ID - Agarra una categorica, compara en la distribución y coloca un número optimo en vez de la categoría como tal
+
+![[Pasted image 20260416134137.png]]
+
+R: B
+
+![[Pasted image 20260416135728.png]]
+
+R: E
+
+Un poquito de esto y más de esto -> *Desbalance de clases*
+A: Target 1 y 0, Categorías (si es perrito o no), por lo que no es razonable plantearlo como target numérico
+B: Si, pero no puedo usar accuracy porque el modelo miente, dice que estamos bien cuando este se encuentra desbalanceado (por la proporción). Si fuera 50/50 tendría sentido accuracy
+C y D: 
+E: F-1 Score es promedio entre precision y recall (recall lo contrario a precisión)
 
 
 

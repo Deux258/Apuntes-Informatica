@@ -60,7 +60,6 @@ Django es la raja
 LAMP: Linux, AMP, MySql, P
 
 
-
 # Clase 6
 26/03/26
 
@@ -71,6 +70,29 @@ LAMP: Linux, AMP, MySql, P
 1. SaaS: Usuarios finales
 2. PaaS: Desarrolladores de software
 3. Iaas: Arquitectos de red, Administradores de IT
+
+
+# Pre-Solemne 1
+16/04/26
+
+## Containers vs VM
+
+VM
+1. App
+2. Bibliotecas
+3. *SO Invitado*
+4. Hipervisor
+5. Sist operativo de host
+6. Servidor
+
+Containers
+1. App
+2. Bibliotecas
+3. Modo docker
+4. Sist Operativo
+5. Servidor
+
+- ECS -> Instancia contenedor de clusteres 
 
 
 
