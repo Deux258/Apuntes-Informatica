@@ -869,11 +869,88 @@ Destruye la solución y reconstruye.
 
 
 
+---
+
+# Clase 11
+11/05/26
+
+## Algoritmos Evolutivos Pt. 2
+
+Todos parten de conjunto de soluciones iniciales $P_0$. La idea es que la poblacion vaya mejorando con el tiempo (generaciones).
+Mejoran con 2 operadores, Cruzamiento y Mutación
+
+La idea es que aquellos que tengan fines buenos tienen mayor prob de cruzamiento e ira mejorando hasta encontrar la solución óptima.
+
+### *Pseudocódigo general*
+
+1. Genero una población inicial N
+2. Evalúo todos los individuos de la pob. Guardo la mejor solución.
+3. Mientras no se cumpla el criterio de término (converge)
+	1. Elijo 2 individuos
+		1. Torneo
+		2. Ruleta
+	2. Defino si se hará mutación (probabilidad) con los hijos creados en 1.
+	3. Agrego hijos a la nueva población.
+	4. Cuando se tengan N nuevos individuos:
+		1. Generaciones++, reemplazar población (segun criterio)
+		2. Actualizar a mejor solución
+		3. Volver a 1.
+	5. Se entregan los resultados de la ejecución.
 
 
+Ahora vemos algoritmos de nicho, como:
+
+### Differential Evolution (DE)
+Solo sirve para *problemas continuos*. Corresponde a otro algoritmo evolutivo. Menos popular que GA pero que muestra buenos resultados en optimización continua
+
+Al igual que GA, DE genera una población inicial de soluciones $P_0$ de tamaño $k$. Cada individuo corresponde a un vector real $x_{ij}$ de dimensión $D$.
+
+Cada individuo es codificado como un vector de números de punto flotante. Cada elemento del vector $x_{ij}$ es generado aleatoriamente en el rango $x^j_l, x^i_u$ lo que representa el *lower y upper bound* de cada variable.
 
 
+La recombinación/cruzamiento funciona de forma distinta a GA. Este se basa en un operador que realiza una combinación lineal.
 
+- Mayor costo por más cantidad de variables a tener en cuenta
+
+![[Pasted image 20260511145822.png]]
+
+- Elige una dimensión de forma aleatoria
+- El potencial es que trabaja con soluciones que son continuas
+
+
+![[Pasted image 20260511145626.png]]
+
+- Si la nueva solucion tiene mejor fitness la remplazo y si no la mantengo
+
+
+## Algoritmos de Coevolución Cooperativa
+
+Problema en común que beneficia a todos, donde se toma la estrategia de "evolucionar" en conjunto.
+
+Puedo tener un problema grande que lo pueda dividir en pequeñas partes resolviendolo con distintas metaheuristicas para construir una solución más grande. [!!] No se ve mucho
+
+*PROBLEMAS*: Sincronización, paralelización, costo computacional
+
+¿Dónde aplicarlo? -> Redes neuronales o donde pueda paralelizar
+
+
+### Scatter Search 
+(no se abrevia) Algoritmo super caro evolutivo que hace búsqueda local. Algoritmo de población + trayectoria. Entrega soluciones muy buenas
+
+Solucion de tamaño 100 y de este saco 10 individuos *conjunto de referencia* para mantener diversidad
+
+1. Poblacion inicial
+2. Poblacion mejorada 
+	Búsqueda local - Hill Climbing para cada individuo - Genero 100 soluciones
+3. Reference set
+	De esos 100 tomo 10
+4. Subsets
+	Todas las combinaciones las cruzo y evaluo si son mejores que las que ya tenia
+5. Generated solution
+6. Improved generated solution
+	Búsqueda local
+7. Vuelvo al punto 3 
+	Se pierden las 90 soluciones que trabajé inicialmente
 
 
 

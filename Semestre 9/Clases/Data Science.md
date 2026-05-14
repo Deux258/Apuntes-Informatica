@@ -804,6 +804,110 @@ C y D:
 E: F-1 Score es promedio entre precision y recall (recall lo contrario a precisión)
 
 
+---
+
+# Clase 14
+30/04/26
+
+La que determina que algoritmo usar o modelo es a través de la F.O.
+
+Modelos NO Supervisados:
+1. Clustering
+2. Reducción Dimensional
+3. Reglas de Asociación
+
+## No Supervisado - *Clustering*
+
+Agrupar datos similares en función de sus características o patrones. No existe target para este tipo de modelos.
+
+## Modelos Típicos para Clustering
+
+### K-Means
+Algoritmo de clustering. Basado en distancias *sensible a outliers*.
+La primera iteración 
+
+### Hierarchical Clustering (Jerarquico)
+
+Enfoque jerarquico que trata cada punto de datos como un clúster individual y fusiona iterativamente los pares mas cercanos hasta formar un unico gran cluster. No requiere K inicialmente.
+
+
+### DBSCAN
+
+El más fuerza bruta pero el más efectivo para realizar segmentaciones asimétricas.
+Agrupa puntos densamente empaquetados en el espacio continuo y marca como ruido os puntos aislados en reguines de baja densidad. (*covid*)
+
+- Epsilon: El radio de busqueda topologica
+- minPoints: Densidad minima requerida dentro del minimo requerido dentro del radio Epsilon para formar un núcleo
+
+> No tiene problema de Outliers
+
+### SOM / Mapas de Kohonen
+
+Asigna clusteres a grupos de daos con patrones similares a traves de arquitectura de redes neuronales artificiales.
+
+Mapea datos de alta dimensionalidad en una cuadricula bidimensional, preservando la topologia original del espacio de características
+
+#### Requerimientos
+- Mecanismos: Aprendizaje Competitivo (neuronas compiten por activarse)
+- Casos: Extracción de características complejas, reconocimiento de patrones
+
+Cartografia que trata de capturar x topologia.
+
+### Neural Network Clustering
+
+
+
+# Clase 15
+11/05/26
+
+## Métricas de Clustering
+
+### Métrica del Codo - Elbow Plot
+No se llama codo -> WCSS
+
+Es el punto de inflección de la curva entre la cantidad de clusters K y la norma de las distancias a la media en cada cluster.
+
+Sumatoria de la distancia de cada centroide para cada cluster, por lo que itero
+_NO se puede hacer con DBSCAN_
+
+### Silueta
+Funciona para todos
+Revisa 2 cosas: Calidad del cluster y qué tan bueno es el clúster consigo mismo
+
+Calcula la bondad de ajuste de un modelo de clustering al comparar la distancia intracluster respecto de las distancias intercluster.
+
+- Si están todos los puntos mezclados, el resultado < 0 (menor)
+
+### Callinsky Harabanz
+Criterio de la Razón de Varianza.
+Es la razón entre la dispersión entre clústeres y la dispersión dentro de cada clúster.
+
+- Mientras más alto sea el valor, mejor es la calidad de los clusters
+
+$$CH = \frac{Varianza \space Inter-Cluster (Separacion)}{Varianza \space Intra-Cluster (Cohesion)} $$
+
+
+Inter-Cluster -> Separacion de diferentes clusters
+Intra-Cluster -> Cohesion dentro de un mismo cluster
+
+> Mientras más abajo mejor
+
+Es *unbound* -> Mientras más alto el valor mejor, NO tengo un valor perfecto
+
+### Davies-Bouldan
+Calcula la similitud promedio entre cada cluster y su cluster más parecido.
+Lo ideal es que los grupos sean lo más distintos posibles entre sí. Una similitud baja es el resultado óptimo (0).
+
+$$R = \frac{Dispersion \space Intra-Cluster}{Separacion \space Inter-Cluster} $$
+
+Si hay un óptimo al cual llegar = 0
+
+
+
+
+
+
+
 
 
 

@@ -454,10 +454,185 @@ EJ) Bluetooth en el metro, un canal en específico para no escuchar lo mismo que
 
 
 
+---
+
+# Clase 9
+30/04/26
+
+## Estructura de Dirección IPv6
+
+Prefijo de red (64 bits) identificador de interfaz (64 bits) derivada del MAC (EUI-64)
+
+Tipos de dirección 
+
+### Ventajas de IPv6 sobre IPv4
+
+Mayor tamaño de dirección y espacio de direcciones
+Cuanto más eficiente es el metodo, más rápido 
+
+Dirección global única por dispositivo + IPSec integrado + SLAAC = *despliegue masivo de dispositivos IoT sin configuración manual*.
+
+SLAAC -> Configuración automática 
+
+
+### Autoconfiguración en IPv6: SLAAC
+
+Puede configurar su propia dirección sin servidor DHCP
+
+1. Genra dirección link local (fe80::) a partir del MAC (EUI-64)
+2. Escucha Router Advertisement *RA* del router
+3. Extrae el prefijo de red del RA
+4. Combina el prefijo + identificador de interfaz (64 bits del MAC)
+5. Realiza *DAC* Duplicate Address Detection
+6. Dirección global lista para usar
+
+### Coexistencia  IPv4/IPv6: Dual Stack y Tunneling
+
+La transición de IPv4 a IPv6 es gradual.
+
+1. *Dual-Stack*: El dispositivo ejecuta [ambas pilas] simultáneamente. Usa IPv6 si el dispositivo lo soporta, IPv4 en caso contrario. El mecanismo más simple y preferido
+2. *Tunneling*: Paquetes IPv6 [encapsulados dentro] de paquetes IPv4 para cruzar redes que solo entienden IPv4
+3. *Translation* (NAT64): Traduce entre IPv4 e IPv6. Necesario cuando un host IPv6-only habla con uno IPv4-only
+
+Los nuevos IoT vienen con *IPv6 integrado* de fábrica
+
+### Reto: MTU
+
+IPv6 requitere MTU $\geq$ 1280 bytes. 
+IEEE 802.15.4 tiene MTU de solo 127 bytes
+
+6LoWPAN resuelve esto con compresión y fragmentación de cabecera
+
+
+### Encaminamiento: OSPF y OLSR
+
+El encaminamiento determina el *camino óptimo* que siguen los paquetes de origen a destino a través de múltiples redes.
+
+#### OSPF
+- Protocolo de estado de enlace
+- Cada router conoce la topología completa
+- Algoritmo de Dijkstra para camino más corto
+- Estándar en redes empresariales e Internet
+
+#### OLSR
+Versión optimizada para redes móviles ad-hoc (MANET). Precursor de RPL usado en IoT.
+
+#### RPL: El Routing de IoT
+
+Routing Protocol for Low Power and Lossy Networks
+Es el protocolo de enrutamiento diseñado específicamente para IoT
+
+### Fragmentación de Paquetes
+
+La fragmentación divide paquetes grandes en fragmentos en el MTU del enlace subyacente. 
+
+#### IPv4
+- Cualquier router puede fragmentar
+- Al destino final se reensambla
+- *DF* Dont Fragment: Prohíbe fragmentación
+
+#### IPv6
+- Los routers *NO* fragmentan 
+- el origen debe haber PMTUD
+- Si paquetes muy grande -> ICMPv6 "Packet Too Big"
+- MTU mínimo: 1280 bytes
+
+### TTL: Time To Live
+Previene que los paquetes circulen indefinidamente si hay bucles de enrutamiento
+
+- IPv4: Campo TTL de 8 bits (0-255)
+- IPv6: Campo Hop Limit (mismo concepto)
+- Cada router decrementa el TTL en 1
+- Si TTL = 0 -> Paquete descartado
+- Se envía ICMPv4/ICMPv6 "Time Exceeded" al origen
+
+*Traceroute*: Usa paquetes con TTL = 1, TTL = 2 para descubrir cada salto en el camino al destino. Mide latencia por salto y revela la topología.
+
+
+# Clase 10
+11/05/26
+
+## TCP: Transmision Control Protocol
+
+TCP crea circuitos virtuales entre gost y garantiza:
+
+- *Fiabilidad*: Retransmision de paquetes perdidos
+- *Orden*: reordenacion de segmentos desordenados (diversos caminos que puede tomar)
+- *Control de flujo*: el receptor regula la velocidad
+- *Control de congestión*: adaptación a la red
+- *Multiplexación*: multiples conexiones por IP
+- *Stream-oriented*: lectura como flujo de bytes continuo
+
+> Si hay indice de perdida de paquetes, bajo mi flujo de transmision
+
+Se pierden porque tenemos enlaces inalambricos (cosa que no existia en la creacion de TCP)
+
+#### El precio de la fiabilidad
+TCP es *heavyweight*: requiere 3 paquetes solo para establecer una conexión (3-way shandshake) antes de enviar cualquier dato util. (ponerse de acuerdo entre transmisor y receptor)
+
+#### ¿Cuándo usarlo?
+Cuando la perdida de datos es inaceptable
+- Transferencia de archivos
+- Navegacion web
+- Correo electronico
+- Bases remotas
+
+No es el más eficiente para streaming, pero sigue siendo de los más usados
+
+- No me interesa cuando hay paquetes repetidos o priorizo velocidad.
+- No todos los protocolos son simétricos 
+
+
+### Control de Flujo y Congestión
+
+#### Control de flujo (Flow Control)
+Previene que el emisor desborde al receptor
+-> Nos permite ajustarnos al flujo que tenemos
+
+- El receptor anuncia su window size disponible
+- El emisor no puede enviar más que window size bytes sin ACK
+
+#### Congestion Control
+Previene el colapso de la red por sobrecarga
+
+- Algoritmos: Slow Start, Congestion Avoidance, Fast Retransmit/Recovery
+- Detecta congestion por perdida de paquetes o ECN
+- reduce la ventana de congestión (cwnd) ante pérdidas
+
+
+### Fiabilidad y Retransmisión en TCP
+TCP garantiza entrega fiable mediante:
+
+1. Numero de secuencia
+2. ACK acumulativo
+3. Retransmision por timeout
+4. Fast Retransmit
+5. Reordenacion
+
+### *Problemas en redes IoT*
+Las pérdidas son por ruido radio, no por congestión
+
+- Latencia variable (puede ser enorme - latencia de 1 día)
+- Alta tasa de pérdida (10-20%)
+- Desconexiones frecuentes
+
+
+## UDP
+
+### Los 4 campos de UDP
+
+1. Puerto Origen
+2. Puerto Destino
+3. Longitud
+4. Checksum
+
+### CoAP en UDP
+CoAP http para IoT -> misma idea de url, puedo direccionar a un nodo determinado
 
 
 
-
+# Clase 11
+14/05/26
 
 
 

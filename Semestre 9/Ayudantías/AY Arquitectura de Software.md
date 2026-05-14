@@ -181,3 +181,58 @@ relacionados a este."
 R: FAKE: Porque los microservicios no se relacionan entre sí a diferencia de SOA. La idea es que sean lo más independientes posibles.
 
 
+
+----
+
+# Ayudantia 5
+
+## Patrones
+
+Solucion que me da alguien, buenas prácticas al final, la recomendada (dan la idea).
+Puedo tener distintos patrones segun queramos construir las cosas.
+
+### Pizarrón
+Espacio común donde se obtienen datos y se dejan resultados.
+
+Cada uno escribe en la pizarra, no se comunican entre si.
+
+Hay un *controlador* que determina si hay suficiente evidencia o no. El que gestiona
+Va regulando lo que hacen los demás
+
+- Flexible
+- Procesamiento paralelo
+- Construcción independiente
+
+### Repositorio
+Lo vimos como arquitectura pero también es patrón del diseño.
+
+Separo la lógica del diseño con cómo almaceno los datos. Interfaz para acceder a los datos tratando como objeto los datos. Tipo interfaz. Accedo a los datos de forma centralizada.
+
+EJ) Una app movil que consume datos de multiples fuentes. 
+-> La app no sabe si el dato viene de una base de datos interna o de un servicio web
+
+
+### Tuberías y Filtros
+Ideal para sistemas que procesan flujos de datos, diseñado para forma *secuencial*.
+
+Tubos (pipes) -> Lugares por donde viaja 
+Filtro (filter) -> Transforma la entrada en salida (como una función)
+
+- Cada filtro es independiente y muy separado
+- El tubo no altera los datos
+
+### Patrón de Capas
+Separa las capas de forma secuencial con distintos niveles de abstracción.
+
+EJ) 
+1. Capa de interfaz de usuario
+2. Aplicacion
+3. Interfaz sistemas externos
+4. Acceso a datos
+5. Datos
+
+
+
+
+
+

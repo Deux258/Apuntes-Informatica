@@ -25,17 +25,14 @@
             "id": "538e96e23fdf2deb",
             "type": "leaf",
             "state": {
-              "type": "canvas",
+              "type": "markdown",
               "state": {
-                "file": "Semestre 9/Chanchitos/S1 Arq de Software.canvas",
-                "viewState": {
-                  "x": 40,
-                  "y": 286.00526315789466,
-                  "zoom": -1.3814291066360243
-                }
+                "file": "Semestre 9/Clases/Internet de las Cosas.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-layout-dashboard",
-              "title": "S1 Arq de Software"
+              "icon": "lucide-file",
+              "title": "Internet de las Cosas"
             }
           }
         ],
@@ -96,8 +93,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 244.5,
-    "collapsed": true
+    "width": 244.5
   },
   "right": {
     "id": "5c10ad70d326b028",
@@ -192,6 +188,12 @@
   "active": "538e96e23fdf2deb",
   "lastOpenFiles": [
     "Semestre 9/Ayudantías/AY Arquitectura de Software.md",
+    "Semestre 9/Clases/Algoritmos Exactos y Metaheurísticas.md",
+    "Pasted image 20260511145626.png",
+    "Pasted image 20260511145822.png",
+    "Semestre 9/Clases/Data Science.md",
+    "Semestre 9/Clases/Internet de las Cosas.md",
+    "Semestre 9/Clases/Arquitectura de Software.md",
     "Semestre 9/Chanchitos/S1 Arq de Software.canvas",
     "Semestre 9/Chanchitos/S1 Arq Emergentes.canvas",
     "Semestre 9/Ayudantías/AY Arquitecturas Emergentes.md",
@@ -204,11 +206,8 @@
     "Semestre 9/Imagenes/Arquitecturas Emergentes/Pasted image 20260422171134.png",
     "Semestre 9/Imagenes/Arquitecturas Emergentes/Pasted image 20260422171143.png",
     "Semestre 9/Imagenes/Arquitecturas Emergentes",
-    "Semestre 9/Imagenes/Arquitecturas Emergentes/Pasted image 20260422121233.png",
-    "Semestre 9/Imagenes/Arquitecturas Emergentes/Pasted image 20260422104447.png",
     "Sin título.base",
     "README.md",
-    "Semestre 9/Clases/Data Science.md",
     "Semestre 9/Chanchitos/S1 Data Science.canvas",
     "Semestre 9/Apuntes/Control 1 Arq Soft.md",
     "Semestre 7/Chanchitos/Chanchito SD S2.canvas",
@@ -216,9 +215,6 @@
     "Semestre 9/Chanchitos",
     "Semestre 7/Chanchitos/Chanchito GO S1.canvas",
     "Semestre 9/Clases/Arquitecturas Emergentes.md",
-    "Semestre 9/Clases/Arquitectura de Software.md",
-    "Semestre 9/Clases/Algoritmos Exactos y Metaheurísticas.md",
-    "Semestre 9/Clases/Internet de las Cosas.md",
     "Semestre 9/Apuntes/Resumen_ArquitecturaSoftware.pdf",
     "Semestre 7/Chanchitos/Chanchito Ing Software.md",
     "Semestre 8/Chanchitos/Resumen RSNS - Cap 1.md",
