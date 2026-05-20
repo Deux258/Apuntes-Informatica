@@ -905,6 +905,64 @@ Si hay un óptimo al cual llegar = 0
 
 
 
+# Clase 16
+14/05/26
+
+
+Modelos No supervisados
+## Reducción Dimensional
+
+Reduce el número de variables en un cconjunto de datos, manteniendo la mayor cantidad de información.
+
+### Motivación
+Un modelo con gran volumen de variables se vuelve cada vez más dependiente de los datoss con los que fue entrenado (sobreajuste)
+
+Cuanto menos variables tenga nuestra muestra de entrenamiento, menos supuestos hará nuestro modelo y será más sencillo o menos complejo.
+
+1. Eficiencia Computacional
+2. Visualización
+3. Disminuye
+
+
+Contengo la misma cantidad de información, encuentro patrones que a simple vista no se ven. Simplifica los datos conservando la mayor cantidad posible de información.
+
+Algoritmos:
+### PCA: Principal Component Analysis
+Método estadístico que permite simplificar la complejidad de espacios muestrales con muchas dimensiones a la vez que conserva su información.
+
+Tengo que escalar para hacer PCA e interpretarlo correctamente. JAMAS te avisa
+
+- PCA calcula bmedia y varianza de las variables, y direcciones de máxima varianza (componentes).
+- Deja de ser una tabla a un gráfico de puntos
+- PROBLEMA: *Es lineal* -> No captura todos los patrones que no sean lineales (*no lo puedo saber*)
+- Parecido a K-Means
+
+Bueno, Bonito, Balatro
+
+### T-SNE
+Calcula la probabilidad de que pares de puntos de datos en el espacio de alta dimensión estén relacionados y luego elige una incrustación de baja dimensión que produzca una distribución similar.
+
+- Destruye la forma pero permite realizar clasificaciones posteriores
+- *!! Asquerosamente lento* -> Muestra de datos
+
+EJ) T-SNE para imágenes, detección de numeros -> DBSCAN + clustering
+### Autoencoders
+Redes neuronales enseñadas a comprimir datos y luego reconstruirlos.
+
+Input $X$->Encoder -> Feature *Z* (espacio latente) -> Decoder -> Output $^X$
+
+Busco un error$E_R$ mínimo
+
+
+
+
+
+
+
+
+
+
+
 
 
 

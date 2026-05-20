@@ -60,3 +60,26 @@ Siempre activo
 	
 
 
+# Clase 15
+15/05/26
+
+## Patrones
+
+1. Capas
+2. Tubos y filtros
+3. Pizarron 
+4. Repositorio
+
+## Implementación de Patrones
+
+### Capas
+
+1. Aplicaciones de usuario
+2. Biblioteca de funciones
+3. Funciones del sistema (SCI)
+4. Kernel
+5. Driver layer
+6. Hardware layer
+
+
+

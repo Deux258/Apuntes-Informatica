@@ -27,12 +27,24 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Semestre 9/Clases/Internet de las Cosas.md",
+                "file": "Semestre 9/Clases/Algoritmos Exactos y Metaheurísticas.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Internet de las Cosas"
+              "title": "Algoritmos Exactos y Metaheurísticas"
+            }
+          },
+          {
+            "id": "f37bcaad8e96d672",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Semestre 9/Imagenes/Arquitectura de Software/Pasted image 20260325144913.png"
+              },
+              "icon": "lucide-image",
+              "title": "Pasted image 20260325144913"
             }
           }
         ],
@@ -187,28 +199,29 @@
   },
   "active": "538e96e23fdf2deb",
   "lastOpenFiles": [
-    "Semestre 9/Ayudantías/AY Arquitectura de Software.md",
+    "Pasted image 20260518150627.png",
+    "Semestre 9/Imagenes/Algoritmos exactos/Pasted image 20260518145945.png",
     "Semestre 9/Clases/Algoritmos Exactos y Metaheurísticas.md",
-    "Pasted image 20260511145626.png",
-    "Pasted image 20260511145822.png",
+    "Semestre 9/Chanchitos/S1 Data Science.canvas",
     "Semestre 9/Clases/Data Science.md",
     "Semestre 9/Clases/Internet de las Cosas.md",
     "Semestre 9/Clases/Arquitectura de Software.md",
+    "Semestre 9/Ayudantías/AY Arquitectura de Software.md",
+    "Semestre 9/Imagenes/Algoritmos exactos/Pasted image 20260514151144.png",
+    "Semestre 9/Imagenes/Algoritmos exactos/Pasted image 20260514150847.png",
+    "Semestre 9/Imagenes/Algoritmos exactos/Pasted image 20260514150215.png",
+    "Semestre 9/Imagenes/Algoritmos exactos/Pasted image 20260514150021.png",
+    "Semestre 9/Imagenes/Algoritmos exactos/Pasted image 20260514150002.png",
+    "Semestre 9/Imagenes/Arquitectura de Software/Pasted image 20260325144913.png",
+    "Semestre 9/Imagenes/Algoritmos exactos/Pasted image 20260514144343.png",
+    "Semestre 9/Imagenes/Algoritmos exactos/Pasted image 20260511145822.png",
+    "Semestre 9/Imagenes/Algoritmos exactos/Pasted image 20260511145626.png",
     "Semestre 9/Chanchitos/S1 Arq de Software.canvas",
     "Semestre 9/Chanchitos/S1 Arq Emergentes.canvas",
     "Semestre 9/Ayudantías/AY Arquitecturas Emergentes.md",
-    "Semestre 9/Imagenes/Arquitecturas Emergentes/Pasted image 20260421232059.png",
-    "Semestre 9/Imagenes/Arquitecturas Emergentes/Pasted image 20260421235224.png",
-    "Semestre 9/Imagenes/Arquitecturas Emergentes/Pasted image 20260421235348.png",
-    "Semestre 9/Imagenes/Arquitecturas Emergentes/Pasted image 20260422103539.png",
-    "Semestre 9/Imagenes/Arquitecturas Emergentes/Pasted image 20260422104234.png",
-    "Semestre 9/Imagenes/Arquitecturas Emergentes/Pasted image 20260422121820.png",
-    "Semestre 9/Imagenes/Arquitecturas Emergentes/Pasted image 20260422171134.png",
-    "Semestre 9/Imagenes/Arquitecturas Emergentes/Pasted image 20260422171143.png",
     "Semestre 9/Imagenes/Arquitecturas Emergentes",
     "Sin título.base",
     "README.md",
-    "Semestre 9/Chanchitos/S1 Data Science.canvas",
     "Semestre 9/Apuntes/Control 1 Arq Soft.md",
     "Semestre 7/Chanchitos/Chanchito SD S2.canvas",
     "Semestre 9/Chanchitos/Chanchito Algoritmos Exactos y Metaheurística.canvas",

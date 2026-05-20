@@ -954,10 +954,142 @@ Solucion de tamaño 100 y de este saco 10 individuos *conjunto de referencia* pa
 
 
 
+# Clase 12
+14/05/26
+
+## Algoritmos de Inteligencia de Enjambre
+
+Algoritmos que se inspiran en el comportamiento de especies, como *hormigas*, abejas, peces, aves, murciélago, entre otros.
+
+- Nacen del comportamiento social de estas especie para competir por la comida
+- La característica principal es la "cooperación" por *comunicación indirecta*, para así ejecutar movimientos en el espacio de búsqueda
+
+> Categoría: MH de Poblaciones
+
+- Son evolutivos -> Gen0, Gen1, ..., GenN
+- También hay componente de un *líder*, que hace de guía para el resto de animales
+
+Propuesto por James Kennedy y Russel Eberhart - Inspirado en movimientos de las bandadas de aves. Propuesto inicialmente para *problemas continuos*. La comunicación entre agentes maneja diversificación e intensificación.
 
 
+## Particle Swarm Optimization - PSO
+
+- Cada partícula $i$ es una solución candidata al problema y es representada por$x_i$
+- Tiene 2 componentes principales ($x_i, v_i$)
+	1. Posición $x_i$
+	2. Velocidad $v_i$ -> Indica la dirección de vuelo y el paso
+
+- Algoritmo cooperativo, en el sentido que las mejores partículas influyen en el comportamiento de sus compañeras.
+
+Hago una predicción del movimiento a la nueva posición de la partícula en base a la velocidad.
+
+![[Pasted image 20260514144343.png]]
 
 
+Hacia me estoy moviendo es influido por 2 cosas:
+1. Lider
+2. Lo mejor que ha hecho la partícula
 
+> El líder puede cambiar, dependiendo de la solución que encuentre la partícula (defino cantidad, no quien es el lider)
+
+Existen distintas topologías para comunicarse entre sí, pero como tal no hay formación a seguir.
+
+### Componentes
+
+1. cada partícula cambia su posición $x_i$ a través de 2 factores:
+
+	1. La mejor posición encontrada por sí misma $p_i = p_i1, p_i2, p_iD$ 
+	2. La mejor posición encontrada por el enjambre o subconjunto de ella (otra topología) $p_g = p_g1, p_g2, p_gD$
+
+2. 
+
+
+### Vecindario de Partículas
+
+Se debe definir un vecindario para cada partícula. Este vecindario denota la *componente social* entre partículas.
+
+1. Método *gbest* (mejor global)
+2. Método *lbest* (Mejor local)
+
+![[Pasted image 20260514150002.png]]
+
+### Composición
+
+1. Vector $X$ que almacena la *posición* de la particula en el espacio de búsqueda
+2. Vector $P$ *mejor solución* encontrada por partícula
+3. Vector $V$ *dirección* hacia donde irá la partícula
+
+### Tutorial
+
+En cada iteración, cada partícula realizará las siguientes acciones:
+
+1. Actualización de la velocidad
+	Define la cantidad de cambio que se le aplicará a una partícula 
+	![[Pasted image 20260514150021.png]]
+	- Velocidad = velocidad anterior + Posicion 1 * C (factor cognitivo) * (mejor solucion - posicion anterior) +  Posicion 2 * C (factor social) * (mejor solucion grupal - posicion anterior)
+	- $C1$ y $C2$ los pondero yo
+	![[Pasted image 20260514150215.png]]
+	- Le agrego un factor de inercia $w$ para ponderar la velocidad anterior (por eso se ve más pequeño la velocidad)
+2. Actualización de la posición
+	Cada partícula actualiza su posición en el espacio de búsqueda
+	$$x_i(t) = x_i (t-1) +  v_i(t)$$
+3. Actualización de lo mejor encontrado por las partículas
+	Cada partícula realizará las sgtes actualizaciones:
+	![[Pasted image 20260514150847.png]]	
+
+### Pseudocódigo
+
+![[Pasted image 20260514151144.png]]
+
+
+# Clase 13
+18/05/26
+
+##
+
+### Modelamiento de feromonas
+
+Donde haya menos feromonas hay mayor castigo que el camino donde haya mas feromonas
+
+
+- $\Delta$ 32
+	- 1 / $L_K$ si la hormiga viaja desde $i$ hasta $j$
+	- 0 para otro caso
+- Sin evaporación
+- Con evaporación ($p$ $E [0,1]$ )
+
+cuando uno tiene evaporacion es más fácil de exploración. Pueden tomar caminos malos que como se van a evaporar pueden tomar otros caminos para tener *mayor control de exploración*
+
+
+La forma de dejar feromonas en el camino es 
+-> 1 / costo de tomar el camino
+
+
+![[Pasted image 20260518150627.png]]
+
+Sin evaporación = 1/14 + 1/31
+Con evaporación = (1-p) * 3 + (1/14 + 1/31)
+
+- 3 es la feromona que ya estaba antes 
+- si quiero castigar la feromona pongo $p = 0$ 
+
+Lo ideal es usar con evaporación para problemas reales de gran tamaño
+
+
+### Cálculo de las Probabilidades
+¿Cómo yo le asigno la probabilidad de que una hormiga tome un camino?
+
+-> Tanto por la matriz de costo por la matriz de feromonas
+
+![[Pasted image 20260518145945.png]]
+
+$L_{imj}$ = Costo del camino
+$P_{i,j}$ = Probabilidad de cada camino = (Matriz de feromonas)^ * (Costo del camino)
+					Dividido por:   Sumatoria de lo mismo pero total (todos los caminos)
+
+$\alpha, \beta$ =  parámetros 
+
+-> Al final es *estocástico (aleatorio)* 
+La idea es que exploren por lo que no me interesan que vayan por solo un camino
 
 

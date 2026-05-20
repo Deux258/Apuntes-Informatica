@@ -635,10 +635,94 @@ CoAP http para IoT -> misma idea de url, puedo direccionar a un nodo determinado
 14/05/26
 
 
+## AMQP: Advanced Message Queuing Protocol
+Protocolo orientado a mensajes, estándar de OASIS -> Complemento asincrónico de HTTP
+
+- NO es pub/sub  (intermedio) -> Especificacion de mensajeria interoperable
+- Define un *wire format* -> reglas para selrializar bytes
+- Cualquier cliente AMQP interopera con cualquier MOM que lo implemente
+- Basado en un servidor de colas (*queue server*)
+
+**Implementaciones populares**: RabbitMQ y Apache ActiveMQ
+
+### Arquitectura 
+
+- *Queue*: Almacén de mensajes 
+	Persistentes (sobrevive desconexiones) o Dinámicas (creadas por consumidor)
+- *Exchange*: Router de mensajes
+- *Binding*: Enlace entre exchange y cola
+- *Routing Key*: Etiqueta con sintaxis separada por puntos
+	Soporta wildcards (\*, #)
+
+> AMQP Es más flexible pero más verboso que MQTT.
+
+Menos adecuado para dispositivos muy restringidos, pero excelente para brokers en el backend.
+
+### Casos de Uso
+
+1. Message Queue: 
+2. Fanout: Publicar a multiples consumidores simultaneamente
+3. Routing: Despacho inteligente por routing key
+4. RPC (Remote Procedure Call): Solicitud-respuesta asincrona
+5. Work Queues: Distribucion de tareas entre workers
+
+
+
+## SIP: Session Initiation Protocol
+Protocolo estándar IETF de capa de aplicación para *establecer, modificar y terminar sesiones*.
+
+- protocolo de texto, similar a HTTP
+- Modelo cliente/servidor
+- Métodos típicos: REGISTER, INVITE, BYE, ACK
+- Transporte: *UDP* por defecto, tambíen TCP, TLS, DTLS
+- Negocia parámetros de sesión con SDP
+
+### Casos de uso
+- BoIP (llamadas de voz sobre IP)
+- Videoconferencia
+- Mensajería instantanea
+- IoT con sesiones (streaming de datos)
+
+
+
+### Arquitectura SIP
+
+- *User Agent (UA)*
+	Terminal SIP. Puede ser cliente o servidor
+- *Registrar Server*
+	Recibe registros SIP. Mantiene  el binding SIP AOR -> dirección de contacto
+- *Proxy Server*
+	Intermediario que reenvía solicitudes en nombre de otros clientes
+- *Redirect Server*
+	Redirige al cliente hacia otro servidor
+- *SIP AOR*
+	Addres of Record, similar a un email
 
 
 
 
+
+
+## SDP: Session Description Protocol
+Describe los parámetros de la sesión a establecer. Se transporta como payload de los mensajes SIP
+
+En escenarios IoT, SDP puede negociar:
+- Puerto UDP para los datos del sensor
+- Formato de datos (JSON, CBOR)
+- Frecuencia de muestreo
+- Protocolo de transporte (UDP, CoAP)
+
+Esto es lo que CoSIP adapta para entornos restringidos
+
+
+#### Limitantes
+Los mensajes SIP/SDP son texto verbose, 500 bytes frente a 127 bytes soportables de IoT
+
+- Mensajes grandes (+500 bytes)
+- Alto costo de parsing
+- Mayor footprint de RAM
+
+> Inapropiado para dispositivos restringidos
 
 
 
