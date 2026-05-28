@@ -1093,3 +1093,63 @@ $\alpha, \beta$ =  parámetros
 La idea es que exploren por lo que no me interesan que vayan por solo un camino
 
 
+# PAPER
+26/05/26
+
+## Binary Bat Algorithm
+
+El codigo original BA está hecho para problemas continuos. Sin embargo, se propone más adelante una version para problemas discretos (números binarios).
+
+### Bat Algorithm
+
+Los murcielagos estan compuestos por (vectores):
+- Posición $X_i$
+- velocidad $V_i$
+- frecuencia $F_i$
+
+Parámetros como Pulses rates $r_i$, y loudness $A_i$
+
+Los murciélagos tienden a disminuir la potencia $A_i$ e incrementar el ratio del sonido ultrasonico emitido cuando cazan.
+
+$Gbest$ es un numero random de distribucion uniforme entre [0,1] usado para tener diversidad y tener la mejor solucion y garantizar *exploracion*.
+
+- Los murciélagos van comparando soluciones con $Gbest$ para ir mejorando la solución global ajustando frecuencia, actualizando velocidades y posiciones
+
+- (Si rand > $r_i$)
+	Selecciona una solucion entre las mejores soluciones aleatoriamente. Genera una solucion local alrededor de las mejores soluciones.
+
+$\epsilon$  es un numero random entre [-1, 1] 
+$A$ es el loudness/potencia del sonido emitido para mejorar exploracion en vez de explotacion.
+
+Se usan también constantes $\alpha$ y $\gamma$ como valores de enfriamiento.
+	Se actualizan cuando se encuentra una nueva solución para garantizar que el murcielago encuentre la mejor solucion
+
+
+### Binary Bat Algorithm
+
+Un espacio binario puede ser considerado como hipercubo. Las partículas pueden navegar sólo en las aristas del hipercubo.
+
+El problema radica en cómo traducir la velocidad continua en valores que van de 0 a 1. 
+
+La idea es cambiar la posición de la partícula/agente con la probabilidad de velocidad:
+
+- Una función de transferencia es necesario para mapear valores de velocidad y actualizar la posicion con probabilidades.
+- Básicamente: Define la probabilidad de cambiar la posicion del vector de 0 a 1 y viceversa.
+
+- El rango de la función de transferencia debe intercalar entre [0,1] como representación de la probabilidad de que la particula debe cambiar su posición.
+
+La gracia de la función de transferencia en forma de V es que es una gráfica periódica, es decir: la función sigmoide original llega a un punto donde si sigo aumentando la velocidad siempre será 0, en cambio con v-shaped propuesto, aunque haya una disminución mínima de velocidad puede caer entre [0,1] porque va repitiéndose la función periódicamente.
+
+En resumen:
+1. Se toma el vector de velocidad $V_i$ para usar la función de transferencia
+2. El vector de posición se toma como tal y se combina con el nuevo vector de velocidad, combinándose en una ecuación con un valor $Rand$ que va entre $[0,1]$.
+3. Se usa la ecuación (10) para la nueva posición $$
+   x_i^k(t+1) = 
+\begin{cases} 
+(x_i^k(t))^{-1} & \text{If } \text{rand} < V(v_i^k(t+1)) \\ 
+x_i^k(t) & \text{rand} \geq V(v_i^k(t+1)) 
+\end{cases}
+   $$
+4. Si se actualiza (1), si no (0) la nueva posición del vector en un *espacio discreto*
+
+

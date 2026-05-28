@@ -727,6 +727,13 @@ Los mensajes SIP/SDP son texto verbose, 500 bytes frente a 127 bytes soportables
 
 
 
+# Clase 12
+28/05/26
+
+Sistemas operativos 
+- Estándar
+- Scheduler
+- *En tiempo real*
 
 
 

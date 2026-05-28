@@ -955,18 +955,97 @@ Busco un error$E_R$ mínimo
 
 
 
+# Clase 17
+25/05/26
+
+## Validación Cruzada
+Repetir la validación en diferentes subconjuntos de los datos nos da una idea aun mejor del rendimiento del algoritmo, como un promedio pero mejor.
+
+No solo se puede tener promedio, sino también *varianza*
+
+### ¿Motivo?
+Sabemos que existe *sobreajuste* -> Mamá de un delincuente
+Según ella su hijo es superbueno (mentira)
+
+### Ajuste del Modelo
+En cualquier proceso del mundo real, siemrpe va a haber ruido, los datos no se ajustan exactamente a una tendencia.
+
+Siempre hay ruido u otras variables en la relación que no podemos medir.
+
+> Si un modelo no tiene un buen rendimiento, ¿Cómo debemos avanzar?
+
+- *Underfitting* / Subajuste -> 
 
 
+## Overfitting y Underfitting
+
+- *Overfitting* 
+	El modelo no tiene suficiente flexibilidad para considerar adecuadamente todas las características de los datos
+- *High Variance*
+	El modelo tiene tanta flexibilidad que termina considerando el ruido aleatorio que posee la distribución de los datos
+
+![[Pasted image 20260525132355.png]]
+
+Se detecta con el error fuera de base (casi desaparece)
+
+<------------------------------------------>
+Sub / Sesgo                             Sobre / Varianza
+(menos complejidad)             (más complejidad)
 
 
+> ¿Cómo se cuando está bien?
+
+### Validación de modelo
+
+![[Pasted image 20260525132813.png]]
+
+- El score para Train es en todas partes más alto que el score de Test . Es lo másesperable 
+- Una baja complejidad del modelo, los datos de entrenamiento son insuficientes . El modelo es un mal predictor tanto para Train como para Test
+- Una alta complejidad del modelo, los datos de entrenamiento se sobreajustan . Alto error en datos que el modelo no ha visto
+- Para algún valor intermedio, la curva de Test alcanza su máximo score .
 
 
+![[Pasted image 20260525133140.png]]
 
 
+![[Pasted image 20260525133256.png]]
+
+¿Dónde encontramos el valor óptimo?
+-> Grado 3 
+Importante saber que rara vez el modelo está perfectamente equilibrado, siempre esta un poco desajustado o sobreajustado
+
+- Un aspecto importante de la complejidad del modelo es que el modelo óptimo generalmente dependerá del tamaño de sus *datos de entrenamiento*
+
+![[Pasted image 20260525133904.png]]
+
+- A mayor cantidad de datos, el modelo puede soportar un modelo más complejo
+- Incluso un modelo de grado 20 no está sobreajustando seriamente los datos
+
+-> Tanto la complejidad como la cantidad de datos de entrenamiento son importantes
+
+ A menudo es útil explorar el comportamiento del modelo en función del número de puntos de entrenamiento. Se le conoce como *Learning Curve* (curva de aprendizaje)
+
+![[Pasted image 20260525134214.png]]
+
+- A menor tamaño del Train, el score para la muestra Test será bajo (sobreajuste)
+- Al aumentar el tamaño del train, el score disminuirá, pero el de Test aumentará
+- Las curvas deben seguir accercándose, pero nunca cruzarse
+
+-> Aplica para regresíon pero NO para series de tiempo (*supervisados*)
+
+Para series de tiempo Expanding/Rolling train
 
 
+### Resumen
+
+Diagnóstico valioso, porque nos da una representacion visual de como nuestro modelo responde al aumento de los datos de entrenamiento.
+
+Cuando su curva de aprendizaje ya a convergido, *añadir más daos de entrenamiento no mejorará significativamente el ajuste*.
 
 
+![[Pasted image 20260525135305.png]]
+
+*Learning curve* -> Para saber la MÍNIMA cantidad de datos que necesito para mi modelo.
 
 
 
