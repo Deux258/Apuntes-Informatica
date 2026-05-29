@@ -978,6 +978,7 @@ Siempre hay ruido u otras variables en la relación que no podemos medir.
 
 
 ## Overfitting y Underfitting
+Aprendizaje supervisado
 
 - *Overfitting* 
 	El modelo no tiene suficiente flexibilidad para considerar adecuadamente todas las características de los datos
@@ -1046,6 +1047,36 @@ Cuando su curva de aprendizaje ya a convergido, *añadir más daos de entrenamie
 ![[Pasted image 20260525135305.png]]
 
 *Learning curve* -> Para saber la MÍNIMA cantidad de datos que necesito para mi modelo.
+
+
+#### Solución de Sobreajuste
+- Modelo complejo -> Disminuir parámetros (tamaño)
+- Varianza del modelo alta
+	- Usando validacion cruzada K-fold
+	- Implementando técnicas de ensamblado
+	- Entrenando el modelo con datos suficientes
+
+# Clase 17
+28/25/26
+
+## Regularización
+Punto 5 (Evaluación del modelo)
+
+Es una técnica que reduce el error de un modelo *castigando*/evitando los errores
+
+### Beneficios
+1. Prevenimos *overfitting*
+2. Mejora la precisión del modelo
+3. *SubAdaptación* -> Tratar que el modelo encuentre qué es lo importante (seleccionar variables)
+
+
+### 1. Lasso / L1
+la complejidad C se mide como la media del valor absoluto de los coeficientes del modelo
+
+- Regularización fuerte porque *elimina variables* -> las convierte en 0
+
+
+
 
 
 

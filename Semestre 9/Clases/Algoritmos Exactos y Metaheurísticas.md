@@ -1045,7 +1045,9 @@ En cada iteración, cada partícula realizará las siguientes acciones:
 # Clase 13
 18/05/26
 
-##
+## Ant Colony Optimization
+
+Algoritmo de colonia de hormigas -> Población de soluciones.
 
 ### Modelamiento de feromonas
 
@@ -1151,5 +1153,47 @@ x_i^k(t) & \text{rand} \geq V(v_i^k(t+1))
 \end{cases}
    $$
 4. Si se actualiza (1), si no (0) la nueva posición del vector en un *espacio discreto*
+
+
+# Clase 14
+28/05/26
+
+## Optimización Multi-Objetivo
+
+En la realidad uno puede tener más de un objetivo -> La forma de proceder es la misma
+
+- Puedo tener muchas soluciones buenas
+
+EJ) Ferrari  puedo tener 2 objetivos
+- Disminuir el tiempo para alcanzar 100 km/h
+- Maximizar la autonomia del vehiculo
+
+El punto es que ahora tengo soluciones como ejes en una gráfica 
+
+![[Pasted image 20260528150934.png]]
+
+Hay 2 soluciones que no se dominan entre si porque son mejores en su propio ambito 
+-> Varias soluciones que son buenas
+### Frontera de Pareto
+
+![[Pasted image 20260528151143.png]]
+
+Todas esas soluciones son igual de buenas que el resto que aparecen en la linea.
+La idea es mejorar la frontera.
+
+Casi todo es con PSO o genético, poco explorado a través de árboles.
+
+- Las soluciones que son malas me dan diversidad para mejorar la frontera a largo plazo.
+
+## NSGA ll (Non-Dominated Sorting Genetic Algorithm)
+
+
+
+
+
+
+
+
+
 
 
