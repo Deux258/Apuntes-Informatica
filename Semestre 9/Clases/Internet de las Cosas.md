@@ -737,16 +737,153 @@ Sistemas operativos
 
 
 
+# Clase 13
+01/06/26
+
+## IIoT - Internet Industrial
+
+Es IoT *aplicado a industrias*: manufacturas, logistica, petroleo y gas, transporte, energía, mineria, aviacion.
+
+
+#### Diferencias
+1. Tiempo real
+	El IoT de consumo = pocos segundos
+	IIoT real = submilisegundos
+2. Fiabilidad extrema
+	Un fallo en la red eléctrica, control aereo o una fabrica tiene consecuencias graves. *Best-effort* NO es aceptable
+3. Vida util larga
+	Los equipos industriales se usan 15-30 años. Los protocolos deben soportar legado.
+
+PLC: Controlador Logico Programable
+
+#### Consecuencias de fallos en IIoT
+El IIoT requiere niveles de fiabilidad, seguridad y determinismo radicalmente superiores al IoT de consumo
+
+- Una red eléctrica: millones de afectados
+- Control de tráfico aéreo: riesgo de vidas
+- Fábrica  automatizada: pérdidas millonarias
+- Planta química: riesgo ambiental y humano
+
+
+### Protocolos
+
+1. Modbus (1979 - Modicon)
+	- Protocolo maestro/esclavo para comunicación con PLCs
+	- Simple, robusto, ampliamente desplegado
+	- Versiones:
+		- Modbus RTU (series) (Remote Transmition unit)
+		- Modbus TCP (Ethernet)
+
+2. OPC-UA (OPC Foundation, 2006)
+	- Open Platform Communications
+	- Framework de interoperabilidad industrial con modelo de información y seguridad integrada
+	- Agnóstico al transporte: TCP, HTTPS, MQTT, CoAP
+	- Escalable: desde sensor hasta nube empresarial
+	- Soporte de semántica: tipos de datos, metodos, eventos
+
+#### Otros protocolos industriales clave
+
+1. HART
+2. PROFIBUS
+3. PROFINET
+4. EtherNet / IP
+
+
+### IT vs OT
+
+#### IT - Information Technology
+Sistemas de información corporativa
+
+#### OT - Operational Technology
+Sistemas de control industrial
+
+
+- 802.15.4
+ Todos comparten este canal
+
+### Requisitos de teimpo real en el IIoT
+
+| Aplicación            | Latencia (ms) | Tecnología    |
+| --------------------- | ------------- | ------------- |
+| Control de movimiento | < 1           | EtherCAT, TSN |
+| Controd de proceso    | 1-10          | PROFINET      |
+| Supervision SCADA     | 10-100        | WirelessHART  |
+| Monitoreo condicion   | 100 - 1s      | IEEE 802.15.4 |
+| Telemetria datos      | 1-60s         | CoAP, MQTT    |
+| Gestion activos       | Minutos       | HTTP, REST    |
+
+### El Problema de ciberseguridad en IIoT
+
+- Los sistemas OT fueron diseñados para redes *aisladas fisicamente*. Sin cifrado ni autenticacion, sin actualizaciones
+- La convergencia IT/OT conecta estos sistemas a redes IP y eventualmente a internet
+- *Disponibilidad* es prioridad en OT (vs confidencialidad en IT)
 
 
 
 
+# LAB 1
+04/06/26
+
+## Intro
+
+Configurar una radio IEEE.802.15.4: 
+- Enviar y conseguir tramas unicast y broadcast
+- Demostrar el aislamiento por canal
+
+Inicializar RPL (enrutamiento)
+- Configurar nodo raiz
+- verificar formacion del DODAG
+- Interpretar tabla de enrutamiento
+
+Lo que debe cambiar es el Canal y PAN_ID por grupo para no colisionar paquetes
 
 
 
+# Clase 15
+08/06/26
 
+## Interoperabilidad en IoT
 
+### ¿Por qué es el desafío central de IoT?
 
+El IoT conecta dispositivos de fabricantes distintos, con protocolos distintos y datos en formatos distintos.
+
+- Sin interoperabilidad cada fabricante construye su *silo propio*. Sus dispositivos solo hablan con su nube, su app y sus servidores.
+- Esto impode la visión real de IoT: un ecosistema donde cualquier dispositivo interactúa con cualquier otro.
+
+**Consecuencias**
+- El usuario necesita una app por fabricante
+- Los datos no fluyen entre plataformas 
+- La integración entre sistemas es costosa y frágil
+
+> La interoperabilidad es el problema NO resuelto del IoT
+
+### Origen del Problema: Arquitectura Vertical
+
+Los primeros días del IoT usaron el enfoque más simple: dispositivos directamente a la nube del fabricante.
+
+1. Smart objects envian datos por MQTT/HTTP sobre TLS
+2. La plataforma cloud almacena los datos
+3. Una app del fabricante accede via HTTP
+
+**Problema:**
+- *Silos verticales*, la plataforma controla completamente los datos y las APIs
+- Los dispositivos están diseñados para hablar *solo* con esa plataforma específica
+
+#### Los 5 Problemas de las Soluciones Verticales
+
+1. Escalabilidad
+2. Disponibilidad
+3. Interoperabilidad
+4. Seguridad
+5. Evolución
+
+## Modelos de Comunicación
+
+1. Request / Response
+	Cliente inicia, Servidor responde.
+2. Publish / Subscribe
+	
 
 
 

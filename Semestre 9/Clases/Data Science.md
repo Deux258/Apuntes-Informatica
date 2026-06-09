@@ -1056,7 +1056,7 @@ Cuando su curva de aprendizaje ya a convergido, *añadir más daos de entrenamie
 	- Implementando técnicas de ensamblado
 	- Entrenando el modelo con datos suficientes
 
-# Clase 17
+# Clase 18
 28/25/26
 
 ## Regularización
@@ -1076,7 +1076,119 @@ la complejidad C se mide como la media del valor absoluto de los coeficientes de
 - Regularización fuerte porque *elimina variables* -> las convierte en 0
 
 
+# Clase 19
+01/06/26
 
+## Undersampling
+
+
+### Cluster Centroids
+Reduce la clase mayor usando los centroides de un KMeans
+
+### Random
+Elimina aleatoriamente
+
+### Tomek Links
+Elimina pares
+
+
+## Hyperparameter Tuning
+Optimización de Hiperparámetros
+
+Es el procesode buscar los valores optimos para los hiperparametros de un modelo de machine learning con el objetivo de mejorar su rendimiento general
+
+$$ f(x, H) = y + E = ŷ$$
+x = Caracteristicas
+H = Hiperparametro
+Y = Real
+E = Error
+Ŷ = Predicho
+
+### ¿Qué son los Hiperparámetros?
+
+- Números de vecinos 
+- Profundidad de un arbol
+- Tasa de aprendizaje en XGBoost (learning_rate)
+- Valor de C o alpha en regularización (SVM, Ridge)
+
+
+Modelos para encontrar hiperparámetros
+### Grid Search
+Prueba todas las combinaciones posibles de hiperparámetros (búsqueda exhaustiva).
+
+### Random Search
+Selecciona combinaciones al azar del espacio de busqueda (más eficiente que Grid).
+
+### Optimización Bayesiana
+Aprende de los experimentos anteriores para elegir de forma inteligente el próximo conjunto de hiperparámetros a evaluar
+
+> NO garantiza óptimo global
+
+Es más de exploración que de explotación, por lo que siempre llega al óptimo global
+### Algoritmo Genético
+Simula evolución natural para iterar sobre combinaciones y seleccionar las mejores.
+
+- Cruzar o mutar
+
+
+# Clase 20
+04/06/26
+
+## Optimización de Hiperparámetros
+Es el proceso de buscar los valores optimos para los hiperparámetros
+
+En la práctica, los modelos generalmente tienen más de "una perilla para girar": diferentes parámetros para probar en un espacio de valores
+
+Hacia arriba en la gráfica es algo bueno.
+
+
+Podria pasar de que la complejidad no siempre vaya hacia la derecha.
+porque pasa, porque mas a la derecha mas complejo. 
+
+
+# Clase 21
+08/06/26
+
+## Inferencia
+
+El hecho que logremos predecir correctamente, no significa que tengamos la respuesta a lo que busca el negocio.
+
+Hay que inferir en una data nueva para 
+
+
+1. Interpretacion de los modelos
+2. Modelos 
+
+Para Aprendizaje Supervisado 
+### Clasificación
+
+$$ f(x, H) = (Ŷ, P(x>t)) $$
+Ŷ = Clase
+P = Probabilidad
+
+
+Y = 01101
+Ŷ = 01010
+t = Probabilidad (entre 0 y 1)
+
+Dada esa data Ŷ es la predicción 
+
+- Histograma -> ¿Cuál es el recall del modelo?
+- Regresión Lineal -> Pésimo modelo pero 100% interpetable
+- 
+
+
+## Modelo de Decisión
+
+$g(y)$ = Modelo de decision
+$f(x) = ŷ$ = Modelo predictivo (ML)
+$f(x)$ Fraude
+$g(f(x))$ = *Decisión*
+
+-> Permiten tomar decisiones
+
+Pueden 
+Pueden tener más de 1 $f(x)$. 
 
 
 

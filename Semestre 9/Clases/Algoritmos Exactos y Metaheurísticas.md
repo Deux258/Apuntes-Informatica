@@ -1190,6 +1190,150 @@ Casi todo es con PSO o genético, poco explorado a través de árboles.
 
 
 
+# Clase 15 
+01/06/26
+
+## Multi-Objetivo Pt.2
+
+Supongamos que tenemos 2 funciones objetivo para $min \space f_1(x), f_2(x)$
+Cada función tiene un dominio en particular.
+
+- Cada solución del espacio tiene su f.o. 1 y f.o. 2
+
+### Frontera / Optimalidad de Pareto
+! Pareto es la frontera
+
+Es cuando yo tengo una solucion factible si retorna un valor mejor en alguna de sus f.o y *no empeora ninguna de las otras soluciones*.
+
+Cuando ya no las puedo mejorar más es un *Pareto óptima*
+- No garantiza encontrarla porque es muy caro computacionalmente
+
+**Soluciones dominadas** -> SI es peor o igual en cada una de las componentes de la F.O
+
+Si encuentro una mejor frontera, NO elimino las otras para proporcionar mayor diversidad.
+
+## Optimización Evolutiva
+
+Los algoritmos evolutivos funcionan bien para resolver problemas de optimización multi-objetivo, ya que pueden trabajar 
+
+1. Non-Dominated sorting genetic algorithm (NSGA-II)
+
+
+**Tutorial**
+1. Ordeno las fronteras según que tan buenas son
+2. COmparo los rankings de frentes no dominados
+	
+
+![[Pasted image 20260601150144.png]]
+
+
+### Comparación de Rankings de frentes no dominados
+
+Dado dos soluciones $i$ y $j$, la solución $i$ es preferida por sobre la solución j si $R_i < R_j$
+- Cuando dos soluciones pertenezcan al mismo frente. preferimos aquella que se encuentre en la zona menos poblada por *diversidad* (hacia abajo)
+- Esta métrica se llama *Crowding distance* -> Calcula 
+
+¿Cómo se calcula?
+
+1. Ordeno las soluciones i de una frontera en orden ascendente de $f_m$ y calcular:
+![[Pasted image 20260601151223.png]]
+2. Repetir el paso anterior para cada objetivo y encontrar la distancia crowding de la solucion i
+	![[Pasted image 20260601151236.png]]
+3. Cada dos soluciones, se "hace torneo para elegir i sobre la j si" Rr < Rj o Ri = Rj
+![[Pasted image 20260601151317.png]]
+
+
+
+### Generación de la población
+
+Existen los operadores de cruzamineto y mutación
+
+- Para la selección de individuos se utiliza torneo. El ganador se define asi:
+	- Gana el de mejor ranking (frente)
+	- En caso de empate, se decide por crowding distance
+
+### Resumen
+
+1. Generar una poblacion aleatoria P
+2. Ordenar por frente y calcular distancia crowding de cada individuo en P
+3. Generar una nueva población Q
+4. Re-ordenar
+	 Población actual P
+	 Población generada Q
+	- Ordenamiento No dominado (por función objetivo) para la nueva generación.
+
+
+# Clase Francesa
+08/06/26
+
+Gilles Trombettoni
+## Interval Methods and Applications
+
+La clave es cómo reducir el dominio del problema para ser eficiente, sin perder soluciones.
+
+- Aproximaciones de valores no representables para computador
+- Para reales aplicaciones reducimos valores continuos a aproximaciones.
+
+El  proposito principal:
+- Sistema de ecuaciones 
+- Global optimizacion
+- Estimacion de parametros
+- Sistemas dinámicos (robots)
+
+¿Qué es un intervalo? -> Conjunto de valores
+¿Qué es una caja? -> Conjunto de intervalos
+
+Cualquier operación que se haga no puede salirse de los márgenes de los números Ireales (para valores computacionales).
+
+EJ) Queremos encontrar la intersección entre 2 círculos, y quiero encontrar todas las soluciones dentro de la caja. ¿Cómo reduzco el dominio?
+
+1. Evalúo toda la caja con los dominios de cada función si pertenece al intervalo
+2. Si elijo cualquier valor dentro de la caja, la imagen del primer círculo debe ser 0
+
+Tenemos que probar que no exista ninguna solución dentro de la caja para poder descartarla
+
+Pero podemos mejorar aún más las funciones para reducir más el dominio de búsqueda. No es un exacto el resultado que obtenemos, siempre una aproximación, estos se llaman **Inclusion Functions**
+
+Less accurance -> More aproximate
+
+-> Derivar 
+
+Dado que es derivada, en el caso de ejemplo está entre [4, 31]
+Dado que son > 0 , la función siempre crece y por lo tanto puedo obtener el óptimo global con respecto a la función sin derivar.
+
+- Monotonic Inclusion Function
+Reemplazo el intervalo de x por un punto en concreto para obtener intervalos, miminizando y maximizando el intervalo final
+
+### Contraction
+Reducir el dominio o la caja sin excluir ninguna válida solucion.
+
+EJ) Gráfica de 2 funciones (azul y rojo) cruzando 2 veces.
+
+1. Reduzco el dominio donde recorre la función más pequeña
+2. Reduzco nuevamente a la función más pequeña
+3. Me detengo cuando ya no puedo reducir más por posibles soluciones por funciones completas
+4. Reduzco ahora por constrains (donde sé que $f_1$ no colisiona con $f_2$)
+5. Ahora hago busqueda combinatoria
+6. Hago lo mismo para ambos lados
+7. Sigo reduciendo el espacio hasta encontrar el punto donde puedo colisionar
+
+Sabiendo la respuesta que busco, con este metodo busco los valores que me dan este resultado
+
+### Interval Branch & Bround
+El problema de la optimización global
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
