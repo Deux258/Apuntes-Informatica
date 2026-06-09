@@ -37,7 +37,7 @@ Esta puede incluir:
 1. Capa de presentación: Interacción con el usuario
 2. Capa de lógica de negocio: Contiene las reglas, procesos y validaciones principales
 3. Capa de acceso a datos: Comuncación con base de datos o servicios externos
-4. Capa de almacenamiento: Sistema físico de persistenciade datos
+4. Capa de almacenamiento: Sistema físico de persistencia de datos
 
 Cada capa tiene su complejidad interna y entrega servicios a la capa superior.
 
@@ -163,7 +163,7 @@ Toma decisiones en base a:
 Documento central que define y describe toda la info almacenada en el pizarrón. Se asegura que todos los sistemas interpreten los datos de la misma forma
 
 - Nombres
-- tipos de datos
+- Tipos de datos
 - Formatos
 - Significado
 - Unidades
@@ -213,4 +213,276 @@ Se pide diseñar este sistema utilizando el patrón de Pizarrón.
 	- Almacena fonemas detectados
 	- Recibe las palabras propuestas
 
+
+### Patrón de Repositorio
+Centraliza el acceso y manejo de datos por un intermediario llamado repositorio. 
+NO acceden directamente a la base de datos, sino a través de este repositorio
+
+*Para*: Sistemas grandes donde multiples aplicaciones necesitan acceder y modificar grandes cantidades de datos constantemente
+*Solución*: Estructuracion multi-capa, definiendo una capa base con el nivel de abstracción más bajo, en donde el sistema ira avanzando capa por capa.
+
+- Interfaz comun para operaciones CRUD
+- Desacopla la lógica con almacenamiento fisico de datos
+- Multiples aplicaciones trabajan con informacion consistente
+- Facilita el mantenimiento por centralización de datos
+
+#### Casos de Uso
+- Consultar datos
+- Almacenar info
+- Actualizar registros
+- Eliminar datos
+
+> Los componentes no acceden directamente a las bases de datos físicas, usan una interfaz común
+
+![[Pasted image 20260609111158.png]]
+
+- [p] Centralización de Datos
+- [p] Desacoplamiento
+- [p] Mantenimiento  isi
+- [p] Reutilizacion 
+- [p] Integracion de multiples fuentes
+
+- [c] Cuello de botella
+- [c] Complejidad de implementacion: Desarrollo de interfaz comun
+- [c] Dependencia del repositorio
+- [c] Posible pérdida de rendimiento
+
+###### Ejemplo
+Una cadena de hospitales requiere modernizar su sistema de gestión clínica. Actualmente, la
+información de pacientes, médicos, exámenes y tratamientos se encuentra distribuida en distintas bases de datos y plataformas utilizadas por diferentes áreas del hospital.
+El sistema debe permitir que:
+1. El módulo de atención médica consulte historiales clínicos,
+2. El laboratorio registre resultados de exámenes,
+3. El área de farmacia actualice medicamentos entregados,
+4. El sistema administrativo gestione pagos y citas médicas.
+Todas las aplicaciones necesitan acceder y modificar información de manera consistente,
+evitando duplicación y acceso directo a las bases de datos.
+Se pide diseñar este sistema utilizando el patrón de Repositorio
+
+- Definir el Repositorio
+	El repositorio corresponde al componente central del sistema hospitalario y actúa como una capa intermedia entre las aplicaciones y las bases de datos. Su función es centralizar el acceso a la información clínica y administrativa, proporcionando una interfaz común para consultar, almacenar, actualizar y eliminar datos.
+	En el repositorio se maneja información como:
+	- Pacientes
+	- Historiales clínicos
+	- Exámenes
+	- Tratamientos
+	- Medicamentos
+	- Pagos y citas médicas
+	Los módulos del sistema no acceden directamente a las bases de datos físicas, sino únicamente mediante el repositorio, asegurando consistencia y desacoplamiento
+- Definir los Componentes
+	Los componentes corresponden a los distintos módulos del hospital que ejecutan la lógica de negocio y utilizan el repositorio para acceder a la información.
+	Por ejemplo:
+	- Atención médica consulta historiales y registra diagnósticos
+	- Laboratorio almacena resultados de exámenes
+	- Farmacia actualiza medicamentos entregados
+	- Administración gestiona pagos y citas
+	Cada componente trabaja de manera independiente, pero comparte la misma fuente lógica de información mediante el repositorio central.
+
+![[Pasted image 20260609111158.png]]
+
+
+## Patrones para Sistemas Interactivos
+
+### MVC - Modelo Vista Controlador
+
+1. Modelo: Datos y lógica esencial
+2. Vista: Comunicación con el usuario
+3. Controlador: Gestión de cambios
+
+Se aplica a *sistemas interactivos* con interfaz flexible que necesita evolucionar y cambiar con frecuencia.
+
+- Busca desacoplar la interfaz de usuario de la lógica del negocio
+- Usa al controlador como intermediario que hace posible este desacoplamiento
+
+#### Modelo
+- Funcionalidad esencial y lógica de negocio
+- Gestión de datos persistentes
+- Independencia de Vista y Controlador -> permite reutilizar codigo y bajo acoplamiento
+
+#### Vista
+- Comunicación con el usuario
+- Presentación de datos del Modelo
+- Envío de requerimientos al controlador
+- Múltiples representaciones de los datos
+
+#### Controlador
+- Administrador del comportamiento del sistema
+- Recepción de eventos desde la vista
+- Interacción con el Modelo
+- Coordinación de la actualización de la Vista
+
+##### Interacción
+1. El usuario interactúa con la Vista
+2. La vista notifica al controlador sobre la acción
+3. El controlador determina qué significa la acción y solicita al Modelo realizar la lógica necesaria
+4. El Modelo *ejecuta la lógica*
+5. El Modelo *notifica* a la Vista que sus datos han cambiado
+6. La vista solicita los datos actualizados *al modelo* y se redibuja para mostrarlos al usuario
+
+![[Pasted image 20260609112323.png]]
+
+
+
+- [p] Modelo soporta multiples vistas
+- [p] Flexible, mantenible, adaptable
+- [p] Frameworks implementan MVC
+
+- [c] Modelo acoplado con vistas y controladores
+- [c] Vistas sin acceso directo a los datos (ineficiencia)
+- [c] Complejidad: cantidad de código y coordinación entre ellos
+
+
+#### Casos de Uso
+- Sistema de comercio electrónico (ej pasteleria)
+- Sistema académico universitario
+
+###### Ejemplo
+Una pastelería de barrio quiere abrirse al comercio electrónico. Para ello, requiere el desarrollo de un sistema que cubra los siguientes requerimientos funcionales:
+- Recepción de pedidos online
+- Disponibilidad de diversos medios de pago (webpay, mercadoPago, transferencias, etc.)
+- Organización de los envíos a domicilio
+- Gestión de los repartidores
+- Estadísticas de venta, diaria, semanal, mensual, anual
+Se pide:
+1. Diseño del sistema usando el patrón MVC.
+2. Diagrama global de la solución indicando como se va a satisfacer la funcionalidad
+requerida.
+
+
+Vista
+- Administrador: Gestionar usuarios, registro de datos, control de app, estadisticas de venta
+- Cliente: Vista de pasteles, compras, estado del pedido, login
+- Repartidor: Pedidos a realizar, direcciones, historial de pedido, pedidos listoss
+Modelo
+- Estadísticas de venta: diaria, semanal, mensual, anual
+- Gestion de clientes
+- Gestion de repartidores
+- Gestion de stock
+- Envios 
+- Gestion de pedidos
+Controlador
+- Control_Pedidos
+	- Navegacion catalogo
+	- CRUD pedidos
+	- Control pagos
+	- Interfaz externa medios de pagos
+- Control_Envios
+	- CRUD envios
+	- Control repartidores
+	- CRUD repartidores
+- Control_Estadisticas
+	- Generacion estadisticas
+  
+
+![[Pasted image 20260609114855.png]]
+
+
+### Modelo PAC
+Organiza el sistema en *agentes*, que se comunican entre sí para realizar distintas tareas de la app/sistema. Cada agente es un *modulo autónomo* que encapsula una funcionalidad específica, compuesto por 3 elementos:
+
+1. Presentación -> Interfaz de usuario
+2. Abstracción -> Datos y lógica de negocio
+3. Control -> Coordinación y comunicación
+
+*Para*: Sistemas interactivos complejos, ya que permite dividir la app en *subsistemas especializados* que trabajan de forma independiente, pero colaboran entre sí
+
+- Facilita la modularidad, mantenimiento y escalabilidad del sistema
+
+#### Jerarquía PAC
+
+1. **Alto nivel** -> Funcionalidad principal e interacción global con el usuario. También coordina a los agentes intermedios para que trabajen de forma conjunta.
+
+2. **Intermedio** -> Coordinador, facilita la comunicacion entre agentes. Distribuye tareas a agentes de bajo nivel y oculta la complejidad de componentes inferiores al resto.
+
+3. **Bajo nivel** -> Tareas especificas. Interactua directamente con el usuario, dispositivos o recursos externos. Mantiene encapsulada la lógica de una tarea especifica (alcance limitdado).
+
+![[Pasted image 20260609115714.png]]
+
+
+- [p] Asigna responsabilidades específicas
+- [p] Funcionamiento independiente
+- [p] Soporta multitarea
+
+- [c] Sistema complejo
+- [c] Baja eficiencia: comunicación entre agentes y componentes internos de cada agente
+- [c] Complejo mecanismo de control: Coordinación entre agentes - Mientras más, más pajero
+
+#### Casos de Uso
+- Aplicaciones con Interfaces complejas (cada ventana puede agregarse como agente)
+- Sistemas de control y monitoreo
+- Sistemas Multiagente e IA
+
+###### Ejemplo
+Una empresa desea ampliar sus canales de venta para llegar a más clientes. Actualmente
+vende únicamente en tiendas físicas, pero quiere incorporar un sitio web, una aplicación móvil y un Call Center. Aunque cada canal debe funcionar de forma independiente y ofrecer una experiencia adaptada a sus usuarios, todos deben compartir la misma información de
+inventario, las reglas de negocio y el proceso de facturación para garantizar consistencia en
+las operaciones.
+Para resolver este problema se pide utilizar el patrón PAC.
+
+- Sistema de ventas
+- Pagina web
+- Tienda
+- Inventario
+- Call center
+
+Sistema de ventas (alto nivel)
+- Presentación 
+	- Dashboard de ventas
+	- Reportes de todos los canales
+- Abstracción 
+	- Reglas globales de negocio
+	- Facturación centralizada
+	- Gestión global de clientes
+- Control 
+	- Coordinación entre todos los agentes
+	- Distribución de solicitudes
+	- Sincronizacion de info entre canales
+
+
+
+![[Pasted image 20260609120708.png]]
+
+
+
+## Posibles preguntas
+
+- - - Control 2 - - - Analice los párrafos siguientes e indique si está de acuerdo con lo que expresan. En la eventualidad de que discrepe con lo que dicen, debe indicar cómo se corregiría.
+
+**1.** En una arquitectura orientada a servicios (SOA), la comunicación entre los servicios y los clientes se realiza a través de un bus central llamado Enterprise Service Bus (ESB). El ESB actúa como una base de datos que guarda el estado interno y persistente del negocio (como pedidos o usuarios) para permitir que los servicios se comuniquen directamente entre sí, fomentando un fuerte acoplamiento que garantiza la integridad del sistema.
+
+**2.** El patrón de Pizarrón se utiliza para resolver problemas complejos donde múltiples módulos especializados colaboran aportando a un espacio centralizado. Dado que es idéntico funcionalmente al patrón de Repositorio, en el Pizarrón es el propio espacio de almacenamiento de datos el que toma el rol de controlador, analizando los resultados intermedios y decidiendo qué módulo especializado debe ejecutarse en el siguiente paso.
+
+**3.** En el patrón de Capas, el sistema se divide en niveles jerárquicos con distintas responsabilidades. Una de las principales ventajas de este patrón es la alta eficiencia y rendimiento que otorga, dado que permite que una petición de la capa superior (como la Interfaz de Usuario) salte directamente a la capa de Datos si no requiere procesamiento en las capas intermedias, evitando así la sobrecarga de comunicación.
+
+**4.** Dentro de los patrones interactivos, en el patrón MVC (Modelo Vista Controlador) la Vista se comunica directamente con el Modelo para enviarle las interacciones del usuario y actualizar los datos. De forma similar, en el patrón PAC (Presentación Abstracción Control), el componente de Presentación contiene la lógica de negocio básica para evitar que el Control se sobrecargue con validaciones simples del usuario.
+
+---
+
+- (1) correcto. (2) Incorrecto, el ESB hace unicamente de intermediario o mensajero entre servicios, no almacena la lógica del negocio.
+- (1) correcto. (2) Falso, no es como el patrón de repositorio, no almacena datos masivamente si no que se mezclan ideas para un problema complejo, ademas de no poseer una base de datos como tal.
+- (1) correcto. (2) Falso, tiene bajo performance debido a que se tiene que comunicar verticalmente con todas las capas para poder responder. Para poder enviar un mensaje, tiene que acceder a la capa de datos, pasando por todas las capas.
+- (1) Incorrecto, el controlador hace de intermediario entre la vista y modelo. (2) Incorrecto, Abstracción es el encargado de llevar la logica del negocio.
+
+
+**1. Sobre el patrón SOA y el ESB**
+
+- **Tu respuesta:** (1) Correcto. (2) Incorrecto, el ESB hace únicamente de intermediario o mensajero entre servicios, no almacena la lógica del negocio.
+- **Corrección:** ¡Estás en lo correcto! La primera frase es cierta, pero la segunda tiene varios errores que detectaste muy bien. Efectivamente, el ESB es principalmente "stateless" (sin estado), por lo que no guarda información persistente del negocio ni implementa la lógica principal.
+- _Detalle adicional para tu estudio:_ Además de no guardar el estado del negocio, el ESB **evita** que los servicios se comuniquen directamente entre sí (conexión punto a punto), actuando como un único punto de intercambio de mensajes. Gracias a esto, el patrón SOA promueve el **bajo acoplamiento** en lugar de un fuerte acoplamiento como afirmaba el párrafo trampa.
+
+**2. Sobre el patrón Pizarrón**
+
+- **Tu respuesta:** (1) Correcto. (2) Falso, no es como el patrón de repositorio, no almacena datos masivamente si no que se mezclan ideas para un problema complejo, ademas de no poseer una base de datos como tal.
+- **Corrección:** ¡Muy bien detectado! La primera parte es correcta y la segunda es falsa. Tienes razón en que su objetivo es la colaboración de expertos (ideas) para un problema complejo sin una ruta algorítmica clara, diferenciándose así del Repositorio tradicional.
+- _Detalle adicional para tu estudio:_ El otro error grave del párrafo original era afirmar que el propio espacio de almacenamiento toma el rol de controlador. En realidad, en el patrón Pizarrón existe un componente separado llamado **Controlador Centralizado**, el cual monitorea el pizarrón y decide qué sistema especializado debe ejecutarse a continuación.
+
+**3. Sobre el patrón de Capas**
+
+- **Tu respuesta:** (1) Correcto. (2) Falso, tiene bajo performance debido a que se tiene que comunicar verticalmente con todas las capas para poder responder. Para poder enviar un mensaje, tiene que acceder a la capa de datos, pasando por todas las capas.
+- **Corrección:** ¡Totalmente correcto y completo! Diste justo en el clavo. Una de las desventajas del patrón de Capas es su "baja eficiencia" porque las solicitudes deben atravesar múltiples capas antes de obtener una respuesta. Además, una regla estricta de este patrón es que la capa _K_ solamente puede comunicarse con la capa inmediatamente inferior o superior (_K-1_ o _K+1_), por lo que **no se pueden saltar capas**.
+
+**4. Sobre los patrones interactivos (MVC y PAC)**
+
+- **Tu respuesta:** (1) Incorrecto, el controlador hace de intermediario entre la vista y modelo. (2) Incorrecto, Abstracción es el encargado de llevar la logica del negocio.
+- **Corrección:** ¡Excelente respuesta! Resolviste correctamente ambas trampas del párrafo. En MVC, la Vista y el Modelo no se comunican directamente; toda interacción pasa por el Controlador, quien funciona como administrador e intermediario. Por su parte, en el patrón PAC, la capa de Presentación **no contiene lógica de negocio** ni almacena los datos principales. Como bien indicas, esa es la función exclusiva del componente de Abstracción.
 
