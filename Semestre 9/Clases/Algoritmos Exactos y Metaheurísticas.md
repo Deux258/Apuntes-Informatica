@@ -923,7 +923,7 @@ La recombinación/cruzamiento funciona de forma distinta a GA. Este se basa en u
 - Si la nueva solucion tiene mejor fitness la remplazo y si no la mantengo
 
 
-## Algoritmos de Coevolución Cooperativa
+### Algoritmos de Coevolución Cooperativa
 
 Problema en común que beneficia a todos, donde se toma la estrategia de "evolucionar" en conjunto.
 
@@ -951,6 +951,8 @@ Solucion de tamaño 100 y de este saco 10 individuos *conjunto de referencia* pa
 	Búsqueda local
 7. Vuelvo al punto 3 
 	Se pierden las 90 soluciones que trabajé inicialmente
+
+![[Pasted image 20260614151349.png]]
 
 
 
@@ -1036,6 +1038,10 @@ En cada iteración, cada partícula realizará las siguientes acciones:
 3. Actualización de lo mejor encontrado por las partículas
 	Cada partícula realizará las sgtes actualizaciones:
 	![[Pasted image 20260514150847.png]]	
+
+
+Si se otorga un $w$ grande -> Favorece la exploración
+$w$ pequeño -> Favorece la explotación
 
 ### Pseudocódigo
 
@@ -1221,7 +1227,7 @@ Los algoritmos evolutivos funcionan bien para resolver problemas de optimizació
 
 **Tutorial**
 1. Ordeno las fronteras según que tan buenas son
-2. COmparo los rankings de frentes no dominados
+2. Comparo los rankings de frentes no dominados
 	
 
 ![[Pasted image 20260601150144.png]]
@@ -1231,7 +1237,7 @@ Los algoritmos evolutivos funcionan bien para resolver problemas de optimizació
 
 Dado dos soluciones $i$ y $j$, la solución $i$ es preferida por sobre la solución j si $R_i < R_j$
 - Cuando dos soluciones pertenezcan al mismo frente. preferimos aquella que se encuentre en la zona menos poblada por *diversidad* (hacia abajo)
-- Esta métrica se llama *Crowding distance* -> Calcula 
+- Esta métrica se llama *Crowding distance* CD -> Calcula 
 
 ¿Cómo se calcula?
 
@@ -1323,8 +1329,68 @@ Sabiendo la respuesta que busco, con este metodo busco los valores que me dan es
 El problema de la optimización global
 
 
+# Repaso Control 2
+11/06/26
+
+## 2025
+
+1. ¿Cuáles son los métodos usados para la selección de individuos en los algoritmos genéticos? Describir cada metodo, ventaja y desventaja de cada uno.
+
+	R: Torneo y Ruleta
+	Cuando es ruleta y se eligen dos
+	En el torneo se hacen 2 rondas para elegir 2
+	- Ruleta
+		Se usan 2 operadores para crear individuos
+		- Cruzamiento -> Entre individos con +fitness. ruleta con prob proporcional al fitness
+		- Mutación
+	- Torneo
+		- Uno elige una subpoblación y se elige individuo con mjr fitness
+		- Por cada torneo se elige al mejor y luego se realiza cruzamiento. Tantos torneos como individuos busque
+			- Desventaja 1ro elige cada poblacion por cada torneo y, Al ser un random puede que nunca se elija al mejor individuo de cada población
+
+2. Explique el efecto que tiene la tasa de evaporación en el algoritmo de colonia de hormigas (ACO). Además, entregue una recomencación (con justificacion) de cómo usar dicho parámetro
+
+	La idea de evaporación es que, los caminos que no sean tan buenos se evaporen porque se recorren menos que los mejores caminos.
+	La recomendación es para problemas reales de gran tamaño.
+
+	Si no tuviera evaporación la hormiga iria siempre por el mismo camino, por lo que aumentaria la explotación
+	Para explorar, aumento la evaporación
+	
+
+3. ¿Cuál es la utilidad de usar topologías para las partículas en el algoritmo PSO? Ejemplifique con dos topologías
+
+	La principal utilidad es que en cada topología, existe una formación predicha con el objetivo de comunicarse entre sí para buscar de forma organizada la mejor solución.
+	Se decide al lider a partir de:
+	- Factor de posición
+	- Mejor solución
+	- Dirección hacia dónde irá la partícula
+
+	La ventaja es que exploro más pero es más caro computacionalmente mantener unida la vecindad
+
+4. Explique la importancia de la distancia crowding (CD) en los algoritmos evolutivos, usados para la resolución  de problemas multiobjetivo
+
+	Mide que tan lejos tengo la solución para mejorar la frontera de soluciones.
+	Esto es cuando tengo dos soluciones en la misma frontera y necesito medir quién está más cercano a la solución global.
 
 
+## 2024
+
+
+1. ¿En qué consiste el elitismo en los algoritmos genéticos? ¿Favorecen la exploración o la explotación?
+
+
+
+2. Explique brevemente todas las componentes del algoritmo PSO
+
+- Posicion actual
+- Velocidad
+- Posicion nueva
+- Mejor solucion encontrada como particula
+- Mejor solución encontrada por lider
+
+3. Explique cómo el algoritmo ACO puede escapar de óptimos globales
+
+4. Suponga que el profe desea resolver una instancia de un problema de optimización NP-Hard con $m$ restricciones, en donde el número de soluciones factibles es comparable al 2% de tamaño del espacio de búsqueda. Suponga que el profe quiere usar un algoritmo evolutivo ¿Qué recomendación le daría al profesor con respecto a la función de fitness en este caso?
 
 
 
