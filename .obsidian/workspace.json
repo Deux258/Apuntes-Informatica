@@ -107,7 +107,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 244.5
+    "width": 244.5,
+    "collapsed": true
   },
   "right": {
     "id": "5c10ad70d326b028",
@@ -201,8 +202,9 @@
   },
   "active": "01d0b0945313c948",
   "lastOpenFiles": [
-    "Semestre 9/Chanchitos/Control 2 AEM.md",
     "Semestre 9/Clases/Algoritmos Exactos y Metaheurísticas.md",
+    "Semestre 9/Clases/Internet de las Cosas.md",
+    "Semestre 9/Chanchitos/Control 2 AEM.md",
     "Control 2 de rial.md",
     "2026-06-08.md",
     "Sin título 3.base",
@@ -225,7 +227,6 @@
     "Semestre 9/Chanchitos/Control 2 Arq de Soft.md",
     "Semestre 9/Ayudantías/AY Arquitectura de Software.md",
     "Semestre 9/Chanchitos/Chanchito Algoritmos Exactos y Metaheurística.canvas",
-    "Semestre 9/Clases/Internet de las Cosas.md",
     "Semestre 9/Clases/Arquitecturas Emergentes.md",
     "Semestre 9/Chanchitos/S1 Data Science.canvas",
     "Semestre 9/Chanchitos/S1 Arq de Software.canvas",
