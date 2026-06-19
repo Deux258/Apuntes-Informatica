@@ -895,7 +895,7 @@ Los primeros días del IoT usaron el enfoque más simple: dispositivos directame
 
 - [ ] REST es un estilo que define los algoritmos de cifrado que deben usar los protocolos de la capa de transporte.
 - [ ] REST es un protocolo de capa de red que permite la comunicación entre dispositivos IoT sin necesidad de IP.
-- [x] REST es un conjunto de principios de diseño para sistemas distribuidos (definido por Fielding en 2000); HTTP y CoAP son protocolos que implementan esos principios, haciendo que las aplicaciones que los usan correctamente sean RESTful.
+- [ ] REST es un conjunto de principios de diseño para sistemas distribuidos (definido por Fielding en 2000); HTTP y CoAP son protocolos que implementan esos principios, haciendo que las aplicaciones que los usan correctamente sean RESTful.
 - [ ] Ninguna de las demás respuestas.
 
 R: Es un estilo arquitectónico. HYYP y CoAP se encargan de dar soporte a estas restricciones
