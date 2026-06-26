@@ -443,6 +443,89 @@ Sistema de ventas (alto nivel)
 ![[Pasted image 20260609120708.png]]
 
 
+## Patrones para Sistemas Adaptables
+
+
+### MicroKernel
+Sistemas que deben adaptarse a constantes cambios y nuevos requerimientos.
+
+Separa las funcionalidades en:
+
+- *Nucleo Core/ Microkernel* -> Ejecuta lo mínimo para que el sistema funcione
+- *Complementos* / Pluglins -> Componentes intercambiables que expanden la funcionalidad
+
+*Para*: Evolución constante de requerimientos, alto acoplamiento y baja escalabilidad. Riesgo de mantener un monolito rígido.
+*Solución*:  Arquitectura desacoplada orientada a extensiones, bajo acomplamiento via contratos y aislamiento de fallas.
+
+#### Componentes
+
+1. Microkernel
+	- Funcionalidad básica
+	- Administracion de recursos
+	- Servicio de comunicacion entre componentes
+2. Servidores Internos
+	Servidores especificos de la plataforma
+3. Servidores Externos
+	Interfaz de acceso al núcleo
+4. Adaptadores
+	Mecanismo de comunicación cliente con server externo
+5. Clientes
+
+
+- [p] Flexibilidad, Adaptabilidad, Portabilidad, Mantenibilidad, Soportabilidad, Escalabilidad
+- [c] Diseño, implementación compleja y Baja eficiencia 
+
+
+![[Pasted image 20260625192600.png]]
+
+
+#### Dinámica
+
+1. Inicialización
+2. Descubrimiento
+3. Registro dinámico
+4. Petición de servicio
+5. Enrutamiento
+6. Ejecución aislada
+
+###### EJEMPLO - La Pasteleria
+La pastelería MVC quiere tener cobertura internacional y ha decidido abrir locales en los paises vecinos. El problema es que cada pais tiene regulaciones diferentes y se ha planteado cambiar el modelo arquitectonico a MicroKernel adaptando los requerimientos funcionales según el pais en que se esta instalando. Inicialmente requiere lo siguiente:
+
+- Recepción de pedidos online 
+- Disponibilidad de diversos medios de pago (webpay, mercadoPago, transferencias, etc.) 
+- Organización de los envíos a domicilio 
+- Gestión de los repartidores 
+- Estadísticas de venta, diaria, semanal, mensual, anual
+
+Se pide: 
+- diseño del sistema usando el patrón MicroKernel 
+- diagrama global de la solución
+
+
+###### Ejercicio - Realización
+![[Pasted image 20260625195006.png]]
+
+
+
+### Reflection
+
+Son sistemas que deben adaptarse a cambios dinamicos en los requerimientos y en la estructura de un sistema, y que logran hacerlo sin requerir invervención manual (por ej: Frameworks de desarrollo).
+
+*Para*: Sistemas donde las reglas o politicas cambian constantemente, lo que de otra forma obligaria a desarrollar modificaciones periodicas del codigo
+
+**Solución:** Separar la funcionalidad en dos niveles interactuantes que permiten modificar dinámicamente las reglas (ej. políticas de evaluación) en los departamentos afectados.
+
+#### Componentes:
+
+1. **Nivel Base:** Contiene la lógica de la aplicación y la funcionalidad principal o estable del negocio. Se encarga del flujo de los datos y, para ejecutar procesos variables, invoca los métodos disponibles en el nivel Meta.
+2. **Nivel Meta:** Define el comportamiento, manipula las propiedades del sistema y gestiona la interacción de niveles. Está encargado de la configuración dinámica (ej. cargar dinámicamente archivos, inspeccionar clases y extraer los métodos que serán utilizados por el nivel Base).
+
+ - [p] Adaptabilidad dinámica, Extensibilidad, Flexibilidad y Mantenibilidad. 
+- [c] Sistema complejo, Baja eficiencia, Seguridad comprometida y Baja soportabilidad.
+
+**Ejemplo:** Una Compañía de Seguros donde las reglas de evaluación de las pólizas cambian constantemente. Usando Reflection, el **Nivel Meta** se encarga de cargar dinámicamente los archivos con las nuevas políticas regulatorias, mientras que el **Nivel Base** mantiene la lógica estable del flujo de datos entre los departamentos de la compañía, invocando al Nivel Meta únicamente al momento de valorizar las pólizas para aplicar la regla vigente
+
+
 
 ## Posibles preguntas
 
@@ -485,4 +568,122 @@ Sistema de ventas (alto nivel)
 
 - **Tu respuesta:** (1) Incorrecto, el controlador hace de intermediario entre la vista y modelo. (2) Incorrecto, Abstracción es el encargado de llevar la logica del negocio.
 - **Corrección:** ¡Excelente respuesta! Resolviste correctamente ambas trampas del párrafo. En MVC, la Vista y el Modelo no se comunican directamente; toda interacción pasa por el Controlador, quien funciona como administrador e intermediario. Por su parte, en el patrón PAC, la capa de Presentación **no contiene lógica de negocio** ni almacena los datos principales. Como bien indicas, esa es la función exclusiva del componente de Abstracción.
+
+---
+
+# Control 2a
+
+![[Pasted image 20260625213015.png]]
+
+1. Verdadero
+2. Falso
+3. Verdadero
+
+
+![[Pasted image 20260625213407.png]]
+
+1. Verdadero
+2. Falso - Porque abstraccion es la logica de negocio, presentacion fronentd y control es el que comunica los packs entre agentes
+3. Verdadero
+
+
+![[Pasted image 20260625213655.png]]
+
+1. Verdadero
+2. Falso. No hace falta porque se comunican a traves de la pizarra
+3. Verdadero
+
+
+![[Pasted image 20260625213702.png]]
+
+
+1. Verdadero
+2. Falso
+3. Falso
+
+---
+
+# Control 2b
+
+![[Pasted image 20260625213934.png]]
+
+1. Verdadero
+2. Falso
+3. Verdadera *
+
+![[Pasted image 20260625214026.png]]
+
+1. Verdadero
+2. Falso: Es Presentacion
+3. Falso: Debe llamar al controlador
+
+
+![[Pasted image 20260625214033.png]]
+
+1. Verdadero
+2. Falso: no tienen ninguna responsabilidad
+3. Verdadera
+
+
+![[Pasted image 20260625214049.png]]
+
+1. Verdadero
+2. Falso
+3. Verdadero
+
+
+---
+
+# Solemne 2 2025-2
+
+### 5 ventajas y desventajas
+
+De uso de patrones de arquitectura en el diseño de los sistemas de software (3pts cada una).
+
+| #   | Ventaja                                  | Desventaja                             |
+| --- | ---------------------------------------- | -------------------------------------- |
+| 1   | Abstraccion de logica                    | Complejidad de implementacion          |
+| 2   | Consolidada, respaldada en documentacion | Rigidez anclada por el patron          |
+| 3   | Universal, independiente al lenguaje     | Dependencia                            |
+| 4   | Marco de trabajo establecido             | Curva de aprendizaje                   |
+| 5   | Flujos de trabajo en equipo versatiles   | Sobrecomplejidad en casos innecesarios |
+
+
+### Pregunta 2
+
+Comente frase a frase los sgtes parrafos, justificando sus comentarios
+
+
+![[Pasted image 20260625220129.png]]
+
+
+1. Verdadero
+2. Falso, los envia al controlador
+3. Verdadero
+4. Falso
+5. Falso: son componentes independientes
+
+
+![[Pasted image 20260625220326.png]]
+
+1. V
+2. V
+3. F
+4. Falsa: La meta solo tiene informacion para que cambie la capa base
+5. Falsa: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
