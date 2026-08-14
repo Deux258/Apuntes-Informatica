@@ -1,0 +1,12 @@
+{
+	"nodes":[
+		{"id":"2345648e03957ded","type":"text","text":"# Torres","x":-260,"y":-440,"width":300,"height":260},
+		{"id":"416bee3d44fdf04f","type":"text","text":"# Alas","x":-60,"y":-60,"width":250,"height":60},
+		{"id":"3f0ddc2ed5ab5765","x":-260,"y":120,"width":250,"height":60,"type":"text","text":"# Departamentos"},
+		{"id":"e3af0be4ab62d881","x":175,"y":218,"width":250,"height":60,"type":"text","text":"# Usuarios"},
+		{"id":"d7c7c2aa2ede2073","x":140,"y":400,"width":250,"height":60,"type":"text","text":"# Visitas"},
+		{"id":"e34c54b0b3adf6de","x":-240,"y":400,"width":250,"height":60,"type":"text","text":"# Residentes"},
+		{"id":"04797f9883e22119","type":"text","text":"# Pisos","x":-260,"y":-160,"width":250,"height":60}
+	],
+	"edges":[]
+}
