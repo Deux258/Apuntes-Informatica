@@ -44,7 +44,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Semestre 10/Procesamiento Digital de Señales.md",
+                "file": "Semestre 10/Clases/Procesamiento Digital de Señales.md",
                 "mode": "source",
                 "source": false
               },
@@ -58,7 +58,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Sist Procesamiento para Big Data.md",
+                "file": "Semestre 10/Clases/Sist Procesamiento para Big Data.md",
                 "mode": "source",
                 "source": false
               },
@@ -72,7 +72,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Algoritmos de Ruteo.md",
+                "file": "Semestre 10/Clases/Algoritmos de Ruteo.md",
                 "mode": "source",
                 "source": false
               },
@@ -86,7 +86,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Tics 2.md",
+                "file": "Semestre 10/Clases/Tics 2.md",
                 "mode": "source",
                 "source": false
               },
@@ -246,13 +246,15 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "717f474fca6a8cb7",
+  "active": "faf976156dedae6c",
   "lastOpenFiles": [
-    "Algoritmos de Ruteo.md",
-    "Tics 2.md",
-    "Sist Procesamiento para Big Data.md",
-    "Semestre 10/Procesamiento Digital de Señales.md",
+    "Semestre 10/Clases",
+    "Semestre 10/Clases/Sist Procesamiento para Big Data.md",
+    "README.md",
     "apuntes reu.md",
+    "Semestre 10/Clases/Tics 2.md",
+    "Semestre 10/Clases/Algoritmos de Ruteo.md",
+    "Semestre 10/Clases/Procesamiento Digital de Señales.md",
     "Cosas/Porteria Digital.canvas",
     "Cosas/Porteria Digital.md",
     "Semestre 9/Apuntes/Resultados Categorias.md",
@@ -260,7 +262,6 @@
     "Entrevista Cata.md",
     "Semestre 9/Apuntes/Control 1 Arq Soft.md",
     "Semestre 10",
-    "README.md",
     "Semestre 8/Imágenes/Inteligencia Artificial/Pasted image 20251125104505.png",
     "Semestre 9/Imagenes/Iot Lab 2/Pasted image 20260618170611.png",
     "Semestre 9/Imagenes/Iot Lab 2/Pasted image 20260618170603.png",
@@ -298,7 +299,6 @@
     "Semestre 9/Apuntes/Arqui Emergente - Apuntes.md",
     "Semestre 8/Imágenes/Laboratorio/LAB Criptografía en Seguridad.md",
     "Semestre 8/Chanchitos/C4 IA.md",
-    "Semestre 8/Chanchitos/Cripto - C2 Chanchito.md",
     "Semestre 8/Chanchitos/Chanchito S2 TI.canvas",
     "Semestre 7/Chanchitos/Chanchito SD S2.canvas",
     "Semestre 7/Chanchitos/Chanchito GO S1.canvas",
