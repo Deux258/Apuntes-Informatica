@@ -8,34 +8,17 @@
         "type": "tabs",
         "children": [
           {
-            "id": "d873a0214b02e737",
-            "type": "leaf",
-            "state": {
-              "type": "canvas",
-              "state": {
-                "file": "Cosas/Porteria Digital.canvas",
-                "viewState": {
-                  "x": 43,
-                  "y": -61.80000000000004,
-                  "zoom": 0
-                }
-              },
-              "icon": "lucide-layout-dashboard",
-              "title": "Porteria Digital"
-            }
-          },
-          {
-            "id": "65b6c5d6a0c8e61e",
+            "id": "f9b16a0671d54ab9",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "apuntes reu.md",
+                "file": "Semestre 10/Clases/Deep Learning.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "apuntes reu"
+              "title": "Deep Learning"
             }
           },
           {
@@ -86,16 +69,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Semestre 10/Clases/Tics 2.md",
+                "file": "Semestre 10/Apuntes/Apuntes Tabu cache.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Tics 2"
+              "title": "Apuntes Tabu cache"
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -246,13 +229,17 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "faf976156dedae6c",
+  "active": "717f474fca6a8cb7",
   "lastOpenFiles": [
+    "Semestre 10/Clases/Tics 2.md",
+    "Semestre 10/Clases/Deep Learning.md",
+    "Pasted image 20260817121717.png",
+    "Pasted image 20260817120148.png",
+    "Semestre 10/Apuntes/Apuntes Tabu cache.md",
+    "Semestre 10/Apuntes",
     "Semestre 10/Clases",
     "Semestre 10/Clases/Sist Procesamiento para Big Data.md",
     "README.md",
-    "apuntes reu.md",
-    "Semestre 10/Clases/Tics 2.md",
     "Semestre 10/Clases/Algoritmos de Ruteo.md",
     "Semestre 10/Clases/Procesamiento Digital de Señales.md",
     "Cosas/Porteria Digital.canvas",
@@ -270,15 +257,12 @@
     "Semestre 9/Imagenes/Iot Lab 2/Pasted image 20260618164757.png",
     "Semestre 9/Imagenes/Iot Lab 2/Pasted image 20260618164518.png",
     "Semestre 9/Imagenes/Iot Lab 2/Pasted image 20260618164514.png",
-    "Semestre 9/Imagenes/Iot Lab 2/Pasted image 20260618164507.png",
-    "Semestre 9/Imagenes/Iot Lab 2/Pasted image 20260618164456.png",
     "Semestre 9/Imagenes/Iot Lab 2",
     "Semestre 9/Imagenes/Iot Lab 2.2",
     "Semestre 9/Imagenes/Internet de las cosas",
     "Semestre 9/Imagenes/Data Science",
     "Semestre 9/Imagenes/Arquitecturas Emergentes",
     "Semestre 9/Imagenes/Arquitectura de Software",
-    "Semestre 9/Imagenes/Algoritmos exactos",
     "Semestre 9/Clases/Internet de las Cosas.md",
     "Semestre 9/Clases/Data Science.md",
     "Semestre 9/Clases/Arquitecturas Emergentes.md",
@@ -294,11 +278,9 @@
     "Semestre 9/Ayudantías/AY Arquitecturas Emergentes.md",
     "Semestre 9/Ayudantías/AY Arquitectura de Software.md",
     "Semestre 9/Apuntes/SmartRoller.md",
-    "Semestre 9/Apuntes/Resumen_ArquitecturaSoftware.pdf",
     "Semestre 9/Apuntes/Lab 2 IoT.md",
     "Semestre 9/Apuntes/Arqui Emergente - Apuntes.md",
     "Semestre 8/Imágenes/Laboratorio/LAB Criptografía en Seguridad.md",
-    "Semestre 8/Chanchitos/C4 IA.md",
     "Semestre 8/Chanchitos/Chanchito S2 TI.canvas",
     "Semestre 7/Chanchitos/Chanchito SD S2.canvas",
     "Semestre 7/Chanchitos/Chanchito GO S1.canvas",
