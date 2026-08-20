@@ -69,12 +69,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Semestre 10/Apuntes/Apuntes Tabu cache.md",
+                "file": "Semestre 10/Clases/Procesamiento Digital de Señales.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Apuntes Tabu cache"
+              "title": "Procesamiento Digital de Señales"
             }
           }
         ],
@@ -103,7 +103,7 @@
                 "searchQuery": ""
               },
               "icon": "lucide-folder-closed",
-              "title": "Files"
+              "title": "Explorador de archivos"
             }
           },
           {
@@ -220,28 +220,28 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "bases:Create new base": false,
-      "switcher:Open quick switcher": false,
-      "graph:Open graph view": false,
-      "canvas:Create new canvas": false,
-      "daily-notes:Open today's daily note": false,
-      "templates:Insert template": false,
-      "command-palette:Open command palette": false
+      "switcher:Abrir selector rápido": false,
+      "graph:Abrir vista gráfica": false,
+      "canvas:Crear nuevo lienzo": false,
+      "daily-notes:Abrir la nota de hoy": false,
+      "templates:Insertar plantilla": false,
+      "command-palette:Abrir paleta de comandos": false,
+      "bases:Crear nueva base": false
     }
   },
   "active": "717f474fca6a8cb7",
   "lastOpenFiles": [
-    "Semestre 10/Clases/Tics 2.md",
     "Semestre 10/Clases/Deep Learning.md",
+    "Semestre 10/Clases/Tics 2.md",
+    "Semestre 10/Clases/Sist Procesamiento para Big Data.md",
+    "Semestre 10/Clases/Procesamiento Digital de Señales.md",
+    "Semestre 10/Clases/Algoritmos de Ruteo.md",
+    "Semestre 10/Apuntes/Apuntes Tabu cache.md",
     "Pasted image 20260817121717.png",
     "Pasted image 20260817120148.png",
-    "Semestre 10/Apuntes/Apuntes Tabu cache.md",
     "Semestre 10/Apuntes",
     "Semestre 10/Clases",
-    "Semestre 10/Clases/Sist Procesamiento para Big Data.md",
     "README.md",
-    "Semestre 10/Clases/Algoritmos de Ruteo.md",
-    "Semestre 10/Clases/Procesamiento Digital de Señales.md",
     "Cosas/Porteria Digital.canvas",
     "Cosas/Porteria Digital.md",
     "Semestre 9/Apuntes/Resultados Categorias.md",

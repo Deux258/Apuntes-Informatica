@@ -50,3 +50,56 @@ Cuerpo organizacional que gestiona centralizada y cordina proyectos bajo su domi
 3. Desarrollar politicas, plantillas y procedimientos estandares
 4. Coordinar comunicacion entre proyectos
 5. Gestionar recursos compartidos entre todos los proyectos
+
+# Clase 2
+18/06/26
+
+## Proyecto - Definición
+
+### Mapa de Procesos
+
+1. Inicio
+2. Planificacion
+3. Ejecucion
+4. Control
+5. Cierre
+
+#### 1. Inicio
+Se suele concluir con una oferta. Defiene los objetivos del proyecto
+
+#### 2. Planificacion
+Determinar el alcance y refinar los objetivos del proyecto. El equipo sera el responsable del plan guia del proyecto. El plan se adapta al propio proyecto
+
+#### 3. Ejecución y Control
+PM -> Responsable de la coordinacion de recursos para la implementacion
+
+- Necesario implementar el control de cronograma, coste, alcance y calidad de los recursos internos y externos
+
+
+### Equilibro de la Triple Restricción
+El triangulo esta equilibrado cuando el *alcance* esta igualado a la combinacion del *costo* y el *tiempo*.
+
+
+**Tasa Interna de Retorno**
+
+
+### Costo
+- Costos del proyecto
+- Salarios
+- Costos de equipamiento
+- De las instalaciones
+- Reparaciones
+- Materiales
+
+### Riesgo
+Algunos pueden ser positivos o negativo.
+Por ej una nueva tecnologia que te ayude a terminar mas rapido -> *Oportunidades*
+
+Riesgo que esta en todo proyecto -> Personas
+
+Para mitigar -> Documentar código
+
+### Calidad
+- Falta de comunicacion interna
+- HAbilidades deficientes de diseño o desarrollo
+- Demasiados cambios en el proyecto
