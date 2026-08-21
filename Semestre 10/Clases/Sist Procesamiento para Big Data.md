@@ -49,7 +49,11 @@ Si es antiguo puede haber servido de base para proyectos a futuro
 *Tabu based Cache to Improve Latency and Load Balancing on Prefix Trees*
 
 
+# Clase 3
+21/08/26
 
+### **A realizar**
+Elegir paper para realizar 
 
 
 

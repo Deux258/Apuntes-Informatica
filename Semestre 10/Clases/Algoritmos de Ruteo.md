@@ -120,12 +120,101 @@ Scamper pero en formato json
 - Traceroute sirve para un comienzo pero NO para topología.
  
 
+# Clase 3
+
+## Paper a Realizar
+Usar api para obtener metadata. Contexto de drones - La idea es buscar algun paper 
+
+Para la prox clase tener los grupos conformados
+
+Basicamente buscar la mejor ruta para un dron en x contexto
+Por ej: Operaciones militares, incendios forestales, etc
+
+- Parecido a tics 1
+- Que sea api que de verdad me de informacion
+- Agarrarse de un paper para nutrirlo con un contexto
+- No necesariamente chilena, puede ser global
+
+## Metadata
+
+Extracción de datos del entorno - Permite categorizar de mejor forma nuestros intereses. 
+
+- Necesitamos saber donde esta ubicada la topologia y que amenazas pueden existir para evitar fallas a futuro.
+- Amenazas: Metadata dentro del sistema, pero *no está todo el tiempo*
+
+### Scamper
+Podemos hacer una traza pero sólo tenemos IPs.
+
+Baf -> Banda ancha fija
+Para maquinas que funcionan 24/7
 
 
+![[{6AFAE02D-AD31-47CA-A721-C1EEEE76A5B0}.png]]
+
+- Destinos con quien ha tenido conectividad
+- Tuvo ataques de MSSQL Login y SMBvl Crawler
+- Un atacante puede suplir una ip
+
+Los buscadores que existian no eran especializados en buscar informacion de redes sino indexar paginas web.
+
+>La idea es que tanto puedo obtener de una ip para mi traceroute
+
+- **Censys** App para buscar ips disponibles 
+- **ZoomEy**:
+
+![[{80DCE44E-31BF-4EBC-A210-61A5A6111C9A}.png]]
+
+Entrega incluso cual es el servidor web que usa (de ahi que saca que es ubuntu). 
+>La info se entrega en codigo apache, si lo modifico puedo colocar cualquier otra cosa
+
+Desde un punto en particular podria mapear toda la red, tanto la interna como la externa. *Buen inicio para auditoria de red*
+
+A traves de la ip puedo saber a que entidad pertenece, por ej UDP, incluso sabiendo la localizacion de donde se conecta la red
 
 
+#### IP2Location
+![[{1649A7E7-5859-48A3-9930-6DEDD367E758}.png]]
+
+![[{8FFE2924-D721-44BE-B763-F0737F001946}.png]]
+
+Sabemos que tenemos que usar info del contexto, y saber buscar apis.
+Google no sirve para esto, el que si por ej es **RAPID API**
+
+> NO TODA LA INFO ESTA ACTUALIZADA
+
+### Shodan Search Engine
+Por tener mail udp, tenemos mucho mas acceso que la cuenta gratis.
+Podemos ver hasta exploids y vulnerabilidades
+
+### Vulners 
+Buscador para vulnerabilidades de ciertas ips en X rango de tiempo
+
+![[{D854E924-813A-468D-8A09-1B46B79625E1}.png]]
+
+Debieramos decir que podemos modificar el software/codigo fuente para que en wireshark se vea otro tipo de servidor.
+
+- !! No todo servicio es fiable - En qué confio?
+- A partir de una unica ip podemos saber las vulnerabilidades, ubicacion, quien es el responsable
 
 
+## Ruteo / Resiliencia para UAV
+
+Levantar info con respecto a una problematica donde se aplique ruteo para x amenaza en drones. Ahi es donde entra la metadata para recopilar informacion, 
+
+![[{74432757-8538-448E-9F78-A6323D10CF7B}.png]]
 
 
+- EJ) La distancia o seguridad es mi problema principal?
 
+- Hay una api para conocer la altura de los edificios y sus tipos 
+- 
+
+### Papers
+Buscar a traves de keys (por ej risk uav path)
+La idea es colocar el algoritmo realizado en un dron para poder jugar con el
+
+https://scholar.google.com/?hl=es
+https://ieeexplore.ieee.org/Xplore/home.jsp
+https://www.elsevier.com/es-mx !! con problemitas
+
+https://sci-hub.box/ Con url para buscar 
