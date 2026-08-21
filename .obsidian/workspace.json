@@ -77,8 +77,7 @@
               "title": "Procesamiento Digital de Señales"
             }
           }
-        ],
-        "currentTab": 4
+        ]
       }
     ],
     "direction": "vertical"
@@ -229,19 +228,28 @@
       "bases:Crear nueva base": false
     }
   },
-  "active": "717f474fca6a8cb7",
+  "active": "f9b16a0671d54ab9",
   "lastOpenFiles": [
+    "Pasted image 20260820121833.png",
+    "Pasted image 20260820121523.png",
+    "Pasted image 20260820120516.png",
+    "README.md",
     "Semestre 10/Clases/Deep Learning.md",
+    "Semestre 10/Fotos/Deep Learning/Pasted image 20260817120148.png",
+    "Semestre 10/Fotos/Deep Learning/Pasted image 20260817121717.png",
+    "Semestre 10/Fotos/Procesamiento de Señales/Pasted image 20260820110727.png",
+    "Semestre 10/Fotos/Deep Learning/Pasted image 20260820114517.png",
+    "Semestre 10/Fotos/Deep Learning/Pasted image 20260820115916.png",
+    "Semestre 10/Fotos/Deep Learning",
+    "Semestre 10/Fotos/Procesamiento de Señales",
+    "Semestre 10/Fotos",
+    "Semestre 10/Clases/Procesamiento Digital de Señales.md",
     "Semestre 10/Clases/Tics 2.md",
     "Semestre 10/Clases/Sist Procesamiento para Big Data.md",
-    "Semestre 10/Clases/Procesamiento Digital de Señales.md",
     "Semestre 10/Clases/Algoritmos de Ruteo.md",
     "Semestre 10/Apuntes/Apuntes Tabu cache.md",
-    "Pasted image 20260817121717.png",
-    "Pasted image 20260817120148.png",
     "Semestre 10/Apuntes",
     "Semestre 10/Clases",
-    "README.md",
     "Cosas/Porteria Digital.canvas",
     "Cosas/Porteria Digital.md",
     "Semestre 9/Apuntes/Resultados Categorias.md",
@@ -252,17 +260,9 @@
     "Semestre 8/Imágenes/Inteligencia Artificial/Pasted image 20251125104505.png",
     "Semestre 9/Imagenes/Iot Lab 2/Pasted image 20260618170611.png",
     "Semestre 9/Imagenes/Iot Lab 2/Pasted image 20260618170603.png",
-    "Semestre 9/Imagenes/Iot Lab 2/Pasted image 20260618165359.png",
-    "Semestre 9/Imagenes/Iot Lab 2/Pasted image 20260618165342.png",
-    "Semestre 9/Imagenes/Iot Lab 2/Pasted image 20260618164757.png",
-    "Semestre 9/Imagenes/Iot Lab 2/Pasted image 20260618164518.png",
-    "Semestre 9/Imagenes/Iot Lab 2/Pasted image 20260618164514.png",
     "Semestre 9/Imagenes/Iot Lab 2",
     "Semestre 9/Imagenes/Iot Lab 2.2",
     "Semestre 9/Imagenes/Internet de las cosas",
-    "Semestre 9/Imagenes/Data Science",
-    "Semestre 9/Imagenes/Arquitecturas Emergentes",
-    "Semestre 9/Imagenes/Arquitectura de Software",
     "Semestre 9/Clases/Internet de las Cosas.md",
     "Semestre 9/Clases/Data Science.md",
     "Semestre 9/Clases/Arquitecturas Emergentes.md",
