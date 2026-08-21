@@ -103,3 +103,12 @@ Para mitigar -> Documentar código
 - Falta de comunicacion interna
 - HAbilidades deficientes de diseño o desarrollo
 - Demasiados cambios en el proyecto
+
+# Clase 4 
+
+Objetivos 
+
+
+
+
+

@@ -11,12 +11,14 @@
             "id": "538e96e23fdf2deb",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "Semestre 10/Fotos/Algoritmos de Ruteo/{6AFAE02D-AD31-47CA-A721-C1EEEE76A5B0}.png"
+                "file": "Semestre 10/Clases/Tics 2.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-image",
-              "title": "{6AFAE02D-AD31-47CA-A721-C1EEEE76A5B0}"
+              "icon": "lucide-file",
+              "title": "Tics 2"
             }
           },
           {
@@ -90,7 +92,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 244.5
+    "width": 244.5,
+    "collapsed": true
   },
   "right": {
     "id": "5c10ad70d326b028",
@@ -182,18 +185,18 @@
       "bases:Crear nueva base": false
     }
   },
-  "active": "faf976156dedae6c",
+  "active": "538e96e23fdf2deb",
   "lastOpenFiles": [
+    "Semestre 10/Clases/Algoritmos de Ruteo.md",
+    "Semestre 10/Clases/Sist Procesamiento para Big Data.md",
+    "Semestre 10/Fotos/Algoritmos de Ruteo/{8FFE2924-D721-44BE-B763-F0737F001946}.png",
+    "Semestre 10/Fotos/Algoritmos de Ruteo/{6AFAE02D-AD31-47CA-A721-C1EEEE76A5B0}.png",
     "Semestre 10/Fotos/Algoritmos de Ruteo/{D854E924-813A-468D-8A09-1B46B79625E1}.png",
     "Semestre 10/Fotos/Algoritmos de Ruteo",
-    "Semestre 10/Fotos/Algoritmos de Ruteo/{6AFAE02D-AD31-47CA-A721-C1EEEE76A5B0}.png",
-    "Semestre 10/Fotos/Algoritmos de Ruteo/{8FFE2924-D721-44BE-B763-F0737F001946}.png",
-    "Semestre 10/Clases/Algoritmos de Ruteo.md",
     "Semestre 10/Fotos/Algoritmos de Ruteo/{74432757-8538-448E-9F78-A6323D10CF7B}.png",
     "Semestre 10/Fotos/Algoritmos de Ruteo/{1649A7E7-5859-48A3-9930-6DEDD367E758}.png",
     "Semestre 10/Fotos/Algoritmos de Ruteo/{80DCE44E-31BF-4EBC-A210-61A5A6111C9A} 1.png",
     "Semestre 10/Fotos/Algoritmos de Ruteo/{80DCE44E-31BF-4EBC-A210-61A5A6111C9A}.png",
-    "Semestre 10/Clases/Sist Procesamiento para Big Data.md",
     "Semestre 10/Clases/Procesamiento Digital de Señales.md",
     "Semestre 10/Fotos/Deep Learning/Pasted image 20260820120516.png",
     "Semestre 10/Fotos/Deep Learning/Pasted image 20260820121833.png",

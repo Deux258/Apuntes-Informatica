@@ -218,3 +218,6 @@ https://ieeexplore.ieee.org/Xplore/home.jsp
 https://www.elsevier.com/es-mx !! con problemitas
 
 https://sci-hub.box/ Con url para buscar 
+
+
+https://www.openstreetmap.org/#map=12/-33.4966/-70.7588
