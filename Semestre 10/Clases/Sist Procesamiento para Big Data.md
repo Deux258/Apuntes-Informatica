@@ -56,6 +56,54 @@ Si es antiguo puede haber servido de base para proyectos a futuro
 Elegir paper para realizar 
 
 
+# Clase 4
+25/08/26
 
+## Ambiente de Big Data
 
+¿Cómo sacarle provecho?
+
+- Netflix wants to generate recommendations based on billions of viewing records
+- A fintech company wants to detect fraud in real time as transactions occur
+- A network of industrial sensors generates every 100 ms
+- A university wants to analyze 10 years of academic data from 20,000 students
+
+1. SI es un escenario de big data -> Volumen alto, restricciones de tiempo, datos 
+2. SI -> Depende de responder en *tiempo real*
+3. Depende -> Restricciones de tiempo, pero falta información (cuantas transacciones requiere)
+4. NO -> Se puede hacer con una máquina
+
+> Es big data cuando hay escenarios desafiantes y no se pueda resolver a partir de una sola máquina
+
+Normalmente la complejidad de análisis es multidimensional
+
+#### 3V:
+- Alto volumen
+- Alta velocidad
+- Alta variedad de información
+Ahora:
+- Veracidad
+- Valor
+
+#### Fases típicas
+1. Adquisicion
+2. Extraccion
+3. Integracion
+4. Análisis
+hasta ahí llega el informático normalmente
+5. Interpretación
+6. Decisión
+
+#### Desafíos
+- Performance
+- Escalabilidad
+- Calidad de servicio
+- Heterogeneidad 
+- Flexibilidad
+- Privacidad
+- Costos
+
+Lo que más demora es en preparar los datos para su uso correcto.
+
+> Siempre hay que curar los datos de la mejor forma y de ahi pensar en el algoritmo
 

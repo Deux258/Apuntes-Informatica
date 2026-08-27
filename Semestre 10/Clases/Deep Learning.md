@@ -203,4 +203,252 @@ Si nos encontramos resolviendo un problema complejo y con relaciones no lineales
 Por eso se usan funciones de activación no lineales
 
 
+# Clase 3
+24/08/26
 
+## Tarea
+
+Uso de red neuronal -> Usar modelos clasicos de 1er curso
+
+1ra parte
+- No tiene que funcionar tan bien
+- La idea es usar 2 modelos clásicos y a partir de eso analizar el problema y con eso implementar una red neuronal
+	- !!! Cuando dice implementar una red neuronal, es buscar uno a partir de experimentos, el que tenga mejor resultado es el que se usara.
+- Todas las decisiones de diseño debe estar en el código
+
+2da parte
+- 2 herramientas para mejorar el funcoonamiento de busqueda de hiperparámetros
+	- Arquitecture search (NAS) y AutoML
+
+3ra parte
+- Generar data sintética
+
+Hacer video con presentación del código - 20m estándar
+De que se trata el problema 
+
+
+## Ajuste de Hiperparámetros
+
+El ajuste de hiperparámetros es clave para el exito
+### Back Propagation
+
+Equivalente a lo visto en clase 2 pero retrocede por nivel
+- Se realiza el proceso de vectorización para aprovechar el hardware disponible
+
+El problema es que si tengo millones de datos se complica la ejecucion del programa.
+- Se divide por lotes para ajustar los datos. 
+- *1 epoca*/iteración es cuando paso por todos los datos
+- PROBLEMA -> Tiene que ser un buen muestreo pq si tengo solo un tipo de ejemplo pierdo información
+
+- Si divido los lotes en espacios más pequeños, *gradiente estocástico*,  se ajusta demasiado y retorna ruido basicamente. No asegura convergencia
+
+### DNN: Red neuronal profunda
+Tengo muchas capas ocultas, eso es todo (normalmente más de 5)
+
+1. Entrenamiento
+2. Validación -> Uso otro conjunto de datos no usado previamente para validar si da error o no
+
+
+Underfitting -> El modelo tiene que ser complejizado, hay un error más de fondo
+Overfitting -> Ajuste de hiperparámetros
+Error excesivo -> Estás en problemas
+
+### Parámetros vs Hiperparámetros
+
+Parámetros = Pesos del modelo, los que se ajustan a partir de los datos
+HIperparametros = Valores definidos por el que está creando el modelo
+- Tasa de aprendizaje, capas ocultas, neuronas ocultas, funciones de activación a usar
+
+*A aprender*: Momentum, tamaño de batch, parámetros de regularización, entre otros
+
+Dado x problema, ¿Qué hiperparámetros debo utilizar?
+
+Algo que se hace comunmente, es entrenar a valores cercanos e ir cambiando los valores
+Me voy quedando con la conf que me de el resultado más cercano perturbando los valores iniciales de a poco 
+$$ (x,y) => (x', y')$$
+
+![[Pasted image 20260824120536.png]]
+
+Eje y: Función de costo
+Eje x: Epocas
+
+La idea es minimizar el costo -> PROBLEMA gasta mucho tiempo en prueba y error. 
+
+Optimizador famoso -> *Adam* Estándar de deep learning 
+
+### Entrenamiento, Validación, Prueba
+El conjunto de datos se separa en 3 conjuntos 
+
+ML tradicional -> 60/20/20 % pensando para 10.000 ejemplos
+	Para 1.000.000 20% puede ser excesivo
+Deep Learning -> 98/1/1 % o una variante de esto
+
+- El conjunto debe tener un orignel igual o similar (misma distribución)
+	Si son de fuentes distintas, puede funcionar bien en x contexto y mal en otro
+
+1. Entrenamiento 
+	Se entrenan diferentes modelos (distintos hiperparámetros) con el conjunto de entrenamiento y se usa el conjuunto de validación para ver cuál funciona mejor.
+
+
+![[Pasted image 20260824121859.png]]
+
+
+Ejemplos:
+- Error de entrenamiento 1%, Error de validación 15% *overfitting*
+- Error de entrenamiento 15%, Error de validación 16% *underfitting*
+- Error de entrenamiento 15%, Error de validación 30% *Mezcla de escenarios*
+- Error de entrenamiento 0.5%, Error de validación 1% *Tamos bien*
+
+[!!!] Depende mucho de lo que yo esté evaluando el porcentaje de error está bien o no
+
+### Flujo de ML/DL
+
+1. En el peor caso de underfitting -> Tengo que cambiar el modelo/arquitectura
+2. Overfitting -> Hartas formas de arreglar eso
+3. Ideal tener hartos datos -> Con pocos es más posible tener overfitting
+4. Si no tenemos ninguno -> Bkn
+
+#### Regularización
+Mitigar el *overfitting*
+
+**Función de costo**: Penaliza los errores
+
+Los dos tipos de regularización más conocidas
+- L1 -> Vector $\theta$ queda sparse (cae casi a 0)
+- L2  (mas usado) decaen los pesos
+
+A los $\theta_0$ NUNCA se le aplica costo o cambio
+
+#### Dropout
+
+![[Pasted image 20260824123037.png]]
+
+Ciertas conexiones basadas en una probabilidad de la red no son consideraras.
+- *Solo entrenamiento*, en otras fases genera ruido
+- *Funciona* debido a que no hay dependencia con algunas pocas características, los pesos se distribuyen.
+
+Otros tipos de regularización
+##### Aumento de Datos
+![[Pasted image 20260824123315.png]]
+
+##### Early Stopping
+
+![[Pasted image 20260824123337.png]]
+
+
+# Clase 4
+27/08/26
+
+Clase pasada
+- Proceso de entrenamiento, validación y testeo en DNNs
+- Overfitting vs underfitting
+## Entrenamiento y Optimizadores
+
+### Normalización de los conjuntos de entrenamiento
+
+1. Restar el promedio, calcular = $1/m \sum x^(i)$ y luego $x = x-\mu$ 
+2. Normalizar con varianza, calcular 
+
+*Basicamente*
+Uno calcula el promedio de los datos y centro los datos en el promedio
+En vez de tener una estructura cualquiera, todos se centran de manera regular
+
+> Yo normalizo pero *sólo en entrenamiento*
+
+Es como si estuviera datos sin probarlos realmente, ajustando el modelo a mi ventaja
+	Validación y test NO se pueden tocar
+
+![[Pasted image 20260827114151.png]]
+
+Hay otro con min-max pero usaremos este que se vió en clase.
+- Normalizar conjunto de datos para la tarea
+
+### Inicialización de los Pesos
+Dependiendo de las funciones de activación que yo use, es cómo se inicializan los datos para x capa.
+
+Por ej para ReLU -> desaparición y exploción de gradiente. 
+	Para evitar eso, debo probar bien los pesos y parámetros para que no ocurran estos problemas
+
+### Algoritmos de optimización
+Buscamos la mejor velocidad de entrenamiento. La vectorización ayuda a paralelizar los datos, pero qué pasa si $m >> 10.000.000$? 
+
+**Solución** -> Dividir el conjunto  de entrenamiento en "*mini-batches*", por ej de $2.000$ datos
+1 época permitiría realizar 5.000 gradientes descendentes
+
+![[Pasted image 20260827115056.png]]
+
+- SGD = mini-batch
+
+> La 2da gráfica teóricamente es mejor que lo de la izquierda. ¿Por qué?
+
+1. La tendencia siempre baja en la 1ra, mucho más probable que uno se estanque en un óptimo local
+2. En el 2do, un ruido bueno puede escapar de un óptimo local (no asegura converger) pero ayuda a avanzar mejor con 
+
+### EWAs Exponentially Weighted Averages
+Para entrenamiento
+
+![[Pasted image 20260827115605.png]]
+
+Saca la tendencia de los datos ponderando los datos + el pasado.
+
+- Se calcula $Vt = βv_{t-1} + (1-β)x_t$ 
+- La idea es sacar promedio ponderando lo que tenga más peso recientemente
+
+$\beta$ = hiperparámetro -> Importancia de los datos
+$x$ = Dato que estoy analizando
+$V_0$ = Condición inicial 
+	Si $V_0$ = 0 -> $V_1$ = $βv_0 + (1-β)x_1$ 
+
+
+El pasado lo vas olvidando pero sigue acumulándose
+Idealmente NO usar $V_0$ = 0 (depende del caso pero mi tendencia debe partir casi a la misma altura que mis datos)
+
+#### Para la mejora
+En vez de x guarde mis datos, almacene los gradientes 
+
+Si sigo la tendencia de los gradeintes, los recientes tendrán más peso que los pasados, para en el fondo seguir una tendencia hacia el mínimo local en vez de tener algo muy loco
+
+![[Pasted image 20260827120806.png]]
+
+Anterior, el rojo
+El mejorado guardando el gradiente el amarillo
+
+Corrección: $ṽt =vt /(1-β)t$
+
+### Gradiente acelerado de Nesterov
+La gracia es que es muy parecido, pero mira hacia delante. 
+
+![[Pasted image 20260827121212.png]]
+
+Para no hacer error, calculo mi paso próximo calculndo el error y aplico correxión al punto donde saltaría más adelante para llegar más rápido al mínimo local.
+
+### RMSprop
+Muy parecido al anterior, pero con la diferencia de que guarda la magnitud de los gradientes (antes guardaba la dirección), para ver cuánto tengo que moverme en *cada dimensión del espacio*.
+
+![[Pasted image 20260827121326.png]]
+
+- Para aquellos que tienen gradientes grandes, los pasos son más pequeños
+- En cambio un gradiente pequeño, el efecto que aplica es que va a aumentar el paso en esa dimensión 
+- NO dependo del $\alpha$ para calcular el próximo paso
+
+### ADAM
+Mezcla tanto del momentum con el algoritmo anterior
+
+Guarda la dirección + cantidad del gradiente
+Momentum -> RMSprop -> corección -> actualización de peso
+
+![[Pasted image 20260827121640.png]]
+
+Quizás no sea el mejor pero depende del caso
+
+
+### Decaimiento de la tasa de aprendizaje
+
+
+![[Pasted image 20260827122036.png]]
+
+### BatchNorm
+Normalizar por lotes
+¿Qué hago yo si tengo lotes para entrenar? Tendria que sacar un $\mu, \sigma$ por cada lote
+
+¿Qué valor de $\mu, sigma$ uso para validación y test? -> PROMEDIO
