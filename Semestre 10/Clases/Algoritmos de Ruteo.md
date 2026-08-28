@@ -221,3 +221,30 @@ https://sci-hub.box/ Con url para buscar
 
 
 https://www.openstreetmap.org/#map=12/-33.4966/-70.7588
+
+
+# Clase 4
+
+Herramientas para visualizar la red (donde hay covertura)
+- Nperf
+- Yafün -> Proyecto de u de chile que realizo infraestructura de fibra optica de chile.
+	- La idea era aumentar la resiliencia para zonas donde tengan un único punto de falla
+
+- Wigle
+	Indexa la red geográficamente, desde el año 2000 con el mismo MAC:Adress
+
+- Open buildings
+	Muestra la estructura "vectorial" de los edificios 
+- Bosques -> Global Forest Watch
+- ResourceWatch -> Observador de recursos
+- Contaminación lumínica -> Importante para proyectos militares por ej
+- Google Earth
+- ArcGIS REST Services -> API para ver las rutas (más usado por los no informaticos)
+
+> Distintas apis que trazan la ruta para el dron. NO solo una api me basta para concluir qué ruta usar.
+
+
+Muchas veces tenemos la información visual, pero no en formato json o texto para nutrir los datos. No siempre son filedignas
+
+
+
