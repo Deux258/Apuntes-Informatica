@@ -452,3 +452,111 @@ Normalizar por lotes
 ¿Qué hago yo si tengo lotes para entrenar? Tendria que sacar un $\mu, \sigma$ por cada lote
 
 ¿Qué valor de $\mu, sigma$ uso para validación y test? -> PROMEDIO
+
+
+# Clase 5
+31/08/26
+
+Cositas 
+
+## Redes Convolucionales
+
+![[Pasted image 20260831115030.png]]
+
+
+Mapa de caracteristicas = (N - Filtro + 1) * (N - filtro + 1)
+	N = Tamaño matriz
+
+Kernel 3x3 Temina siendo *Parámetros del modelo*
+Es lo que se va a ajustar
+
+![[Pasted image 20260831115208.png]]
+
+- Lo que hace es detectar cosas, por ej bordes verticales
+- El valor 0 (por ej) es ausencia de color
+- El borde vendría siendo la transición entre 10 y 0
+- El resultado indica dónde ocurre la transición
+
+![[Pasted image 20260831115306.png]]
+
+El signo me puede indicar también en qué dirección ocurrió la transición
+
+![[Pasted image 20260831115413.png]]
+
+Aqui ocurre una transición horizontal, pero no nos sirve tanto, sólo para entrenamiento
+
+### Tipos de Kernels para bordes
+
+- Laplaciano: Detecta cambios bruscos en todas direcciones. 
+	- Ejemplo: ([0,-1,0],[-1,4,-1],[0,-1,0])
+- Prewitt: Horizontal/Vertical (el de las slides anteriores)
+- Sobel: Horizontal/Vertical, ejemplo: ([-1,-2,-1],[0,0,0],[1,2,1])
+- Scharr:Horizontal/Vertical, ejemplo: ([-3,-10,-3],[0,0,0],[3,10,3])
+
+### Aprendizaje de Kernels
+Se pueden aprender a través del proceso de backpropagation.
+- Los valores se inicializan aleatoriamente
+- Se hace el paso forward (hacia delante), calculando el error
+- Backpropagation, y ajuste de parámetros
+
+### Padding
+Cada vez que se aplica un operador convolucional, la imagen se hace más pequeña
+Ataca un problema que cada vez que aplico la convolución, la imagen de entrada se hace más pequeña,  *pierdo info*.
+
+- Hay ciertos pixeles se procesan menos veces que otros
+- La idea es agregar 0 a la imagen
+	- Cambia la imagen, pasando a ser (n+2)\*(n+2)
+	- El resultado queda del mismo tamaño que la imagen original, donde *"no pierde información"*
+
+![[Pasted image 20260831120153.png]]
+
+¿Por qué el kernel es de 3x3? -> Estándar, se puede cambiar su tamaño pero en el fondo es el que resume mejor
+
+- P(1) = Agregue 1 vez un 0, puedo modificar este valor
+- De este modo, los pixeles originales se procesan la misma cantidad de veces (sobre todo los bordes)
+
+#### VALID/SAME convolution
+
+- **VALID** = No hay padding
+- **SAME** = Aplico padding, la salida es igual a la entrada de tamaño
+- **FULL/WIDE** = Hay padding, pero aumenta el tamaño de la imagen
+
+### Convoluciones con Paso (Stride)
+Es un hiperparámetro que mide cuánto se mueve el kernel
+
+![[Pasted image 20260831120725.png]]
+
+En vez de moverme 1 solo paso, me muevo 2 pasos.
+- Lo que me permite es hacer menos cómputo al procesar menos veces la convolución
+- Me permite reducir el mapa de características
+
+**PRECAUCIÓN**: No pasarme del tamaño -> Se puede pero mejor evitarlo
+
+¿Cuál es el valor permitido de saltos que puedo reducir?
+El módulo de n debe ser = 0 (mod = 0)
+
+## Convoluciones sobre Volúmenes
+
+Estaaremos trabajando con RGB
+
+![[Pasted image 20260831121136.png]]
+
+El problema de los kernels es que se hace de la misma dimensión. Si yo tengo una imagen con los 3 canales del RGB, yo debiera tener 3 kernels.
+
+De base tengo que ajustar 27 parámetros con 3 kernels de 3x3 +1 = 28
+
+Puedo tener varios kernels al mismo tiempo y con ello puedo obtener distintos patrones en las imagenes.
+
+- La idea de tener varios kernels, tendré canales distintos que me den distintos resultados
+- Hay un MLP al final que procesa toda la info en forma plana
+
+La ventaja es que tengo un conjunto de parámetros que está trabajando sobre la imagen, *mucho menor* a trabajar pixel por pixel que generaria un costo computacional a considerar
+
+¿Para qué sirve convolucionar sobre volúmen?
+- Videos
+- Medicina
+
+
+
+
+

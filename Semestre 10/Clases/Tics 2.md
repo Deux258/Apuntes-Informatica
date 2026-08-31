@@ -104,11 +104,26 @@ Para mitigar -> Documentar código
 - HAbilidades deficientes de diseño o desarrollo
 - Demasiados cambios en el proyecto
 
-# Clase 4 
 
-Objetivos 
+# Clase 5
 
+## Fase 1: Inicio
 
+### Elementos
+- Nombre o rol
+- Clasificación
+- Necesidades y expectativas especóificas
+- Nivel de impacto, influencia o interes
+- Acciones o estrategias de respuesta
+
+## Fase 2: Planificación
+
+Planificar el proyecto. 
+- Alcance
+- Cronograma
+- Riesgos
+- Stateholders
+- Carta gantt
 
 
 

@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Semestre 10/Clases/Tics 2.md",
+                "file": "Semestre 10/Clases/Deep Learning.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Tics 2"
+              "title": "Deep Learning"
             }
           }
         ]
@@ -174,22 +174,23 @@
   },
   "active": "d873a0214b02e737",
   "lastOpenFiles": [
+    "Semestre 10/Fotos/Deep Learning/Pasted image 20260831121136.png",
+    "Semestre 10/Clases/Deep Learning.md",
+    "Semestre 10/Fotos/Deep Learning/Pasted image 20260831120725.png",
+    "Semestre 10/Fotos/Deep Learning/Pasted image 20260831120153.png",
+    "Semestre 10/Fotos/Deep Learning/Pasted image 20260831115413.png",
+    "Semestre 10/Fotos/Deep Learning/Pasted image 20260831115306.png",
+    "Semestre 10/Fotos/Deep Learning/Pasted image 20260831115208.png",
+    "Semestre 10/Fotos/Deep Learning/Pasted image 20260831115030.png",
+    "Semestre 10/Clases/Tics 2.md",
+    "Semestre 10/Apuntes/Apuntes Tics 2.md",
     "Semestre 10/Clases/Algoritmos de Ruteo.md",
     "Semestre 10/Clases/Sist Procesamiento para Big Data.md",
     "Semestre 10/Clases/Procesamiento Digital de Señales.md",
-    "Semestre 10/Clases/Deep Learning.md",
     "Semestre 10/Fotos/Deep Learning/Pasted image 20260827114151.png",
     "Semestre 10/Fotos/Deep Learning/Pasted image 20260827122036.png",
     "Semestre 10/Fotos/Deep Learning/Pasted image 20260827121640.png",
-    "Semestre 10/Fotos/Deep Learning/Pasted image 20260827121326.png",
-    "Semestre 10/Fotos/Deep Learning/Pasted image 20260827121212.png",
-    "Semestre 10/Fotos/Deep Learning/Pasted image 20260827120806.png",
-    "Semestre 10/Fotos/Deep Learning/Pasted image 20260827115605.png",
-    "Semestre 10/Fotos/Deep Learning/Pasted image 20260827115056.png",
-    "Semestre 10/Fotos/Procesamiento de Señales/Pasted image 20260827104629.png",
-    "Semestre 10/Fotos/Procesamiento de Señales/Pasted image 20260827103749.png",
     "Semestre 10/Ayudantía",
-    "Semestre 10/Clases/Tics 2.md",
     "Semestre 9/Imagenes/Iot Lab 2.2",
     "Semestre 9/Imagenes/Iot Lab 2",
     "Semestre 9/Imagenes/Internet de las cosas",
@@ -223,7 +224,6 @@
     "Semestre 10/Apuntes/Apuntes Tabu cache.md",
     "Cosas/Porteria Digital.canvas",
     "Semestre 8/Chanchitos/Cripto - C2 Chanchito.md",
-    "Semestre 8/Clases/Criptografía en Seguridad y Redes.md",
     "Semestre 8/Chanchitos/Chanchito S2 TI.canvas",
     "Semestre 7/Chanchitos/Chanchito SD S2.canvas",
     "Semestre 7/Chanchitos/Chanchito GO S1.canvas",
