@@ -8,7 +8,7 @@
 
 ## 1. Arquitectura
 Diseñar un sistema e implementar todas las apis para un buen funcionamiento
-
+mult
 Controla como interactuan los subsistemas entre si, bajo que reglas interactúan y es en esta etapa donde se toman decisiones de diseño.
 
 ## 2. Modelo 4+1

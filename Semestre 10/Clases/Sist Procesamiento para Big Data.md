@@ -213,3 +213,7 @@ Simplemente se reportan los recursos y estos se planifican a través de un maest
 Está el Global ResourceManager **RM** que envía paquetes a los Node Manager
 
 RM -> Node Manager -> Container
+
+
+
+

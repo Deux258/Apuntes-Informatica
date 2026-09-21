@@ -557,6 +557,171 @@ La ventaja es que tengo un conjunto de parámetros que está trabajando sobre la
 - Medicina
 
 
+# Clase 6
+
+## Motivación de CNN
+
+### Número de Parámetros
+
+Suponga que tiene 8 filtros cada uno de 3x3x3 ¿Cuántos parámetros $\theta_0$ tengo?
+(3x3x3x8 + 1)x8 parámetros
+
+¿Por qué es tan importante? -> Hay que saber leer la tabla de resumen del paper
+
+Si aumento el stride, disminuyo la imagen final
 
 
+### Notación
+Si la capa $I$ es una capa convolucional:
+f = tamaño del kernel/filtro
+p = padding (cantidad de 0)
+s = tamaño del stride
+$n_c$ = Número de kernels/filtros/canales. Cada filtro es de tamaño 
+Input = $n_h^{[I-1]} xn_w^{[I-1]}xn_c^{[I-1]}$ 
+- H es el alto
+- W ancho
 
+Para saber el tamaño del resultado
+$$\frac{n-f}{s}+1$$
+Para saber los parámetros del ejemplo
+$(5\cdot5\cdot10 +1)\cdot20$
+
+### Otras capas Típicas en una CNN
+
+- Capa de pooling
+- Capa completamente conectada FC
+- Capas residuales
+- Capas de normalización
+
+Podrian existir otras en la literatura
+
+### Capas de Pooling
+Nos ayuda a achicar la imagen. Elimina el ruido, bajando la dimensionalidad y haciendo un resumen con las características relevantes en la salida del operador.
+
+- Mitica (no siempre) el overfitting
+- Se aplica *independiente por canal*.
+- Los poolings layers *NO tienen parámetros*
+
+#### Max Pooling
+Ventaja -> GD no tiene nada que ajustar, simplemente reduce
+
+#### Average pooling
+No se usa tanto, ya que se podrái reeemplazar por un filtro con elementos $1/n$ con $n$ número de elementos del filtro
+
+Normalmente se usa 
+Convolucional -> Pooling -> Convolucional -> Pooling
+
+### BatchNorm
+Normalización -> Lo hace por canal. En vez de pasar el input a la sgte capa
+Saca el promedio del canal, desviación estándar y normalizo
+
+- ¿Por que me interesa tanto saber los parametros que tengo?
+	Costo computacional y cantidad de datos necesarios para entrenar el modelo
+
+- ¿Si pongo un kernel grande? 
+	La imagen se reducirá de forma más drástica
+	Se pierde cierta información
+
+- Si tengo pocas convoluciones
+	puedo detectar sólo patrones superficiales
+
+
+# Clase 6
+
+## Convolución 1x1
+
+Simplemente disminuye la cantidad de canales, manteniendo el tamaño de imagen. Al final lo que hace es reducir la dimensión de los filtros. Más que perder, hace una compresión de la información.
+
+EJ) 
+- Arquitectura 1: input (256 canales) → conv 1×1 (64 canales) → conv 4×4 (256 canales)
+- Arquitectura 2: input (256 canales) → conv 4×4 (256 canales)
+
+NxNx256 -> NxNx64 canales
+
+num parametros)
+Arquitectura 1
+	\#1 = 1x1x256x64
+	#2 = 4x4x64x256
+Arquitectura 2
+	= 4x4x256x256
+
+La diferencia es que el cómputo será mucho menor que el ej 2.
+A pesar de que lleguen al mismo resultado, la arquitectura 1 genera menor cantidad de parámetros.
+
+![[Pasted image 20260907115012.png]]
+
+## Inception Nettworks
+
+La idea es aplicar distintas convoluciones en una misma capa. Me da como respuesta distintas imagenes que despues se pueden concatenar al tener el mismo tamaño
+
+![[Pasted image 20260907115153.png]]
+
+
+Hay una propiedad que se debe cumplir -> *La entrada debe ser del mismo tamaño*
+
+La idea es evitar casarte con una sola convolución. El problema es el cómputo.
+
+> Tamaño del output x tamaño input (cantidad de multiplicaciones)
+
+28x28x256 -> kernel 3x3x256
+Multiplicaciones = (9x256) x (28x28x96)
+
+Para reducir el costo de multiplicaciones, puedo agregar una convolución de 1x1 intermedio y después aplico la convolución de 3x3 con 96 canales 
+
+EJ)
+
+![[Pasted image 20260907120244.png]]
+
+Multiplicación reducida con convolución 1x1
+$$(28\cdot28\cdot32\cdot1\cdot1\cdot256) + (28\cdot28\cdot96\cdot3\cdot3\cdot32)$$
+$= 28M$ comparado con $173M$ de multiplicaciones
+
+> Inception porque se le agregan distintos tipos de convoluciones y se puede concatenar
+
+Perdidas auxiliares hacen, si la red llega hasta aqui, cómo lo está haciendo la red.
+El error con back propagation también me puede ayudar a detectar qué estoy haciendo mal
+
+![[Pasted image 20260907120714.png]]
+
+
+## Desvanecimiento / Explosión del gradiente
+
+Estos se ven muy notorios cuando yo tengo muchas capas. Si el modelo se vuelve inestable (los errores no cambian mucho), aplicaron una mejora llamado modelo residuales
+
+La idea es reformular la salida que se espera, agregando una función que tiene que ver con la entrada.
+- Entrega una salida y le sumo lo que se procesó en la entrada
+
+### RetNets
+
+![[Pasted image 20260907121023.png]]
+
+*¿Qué sentido tiene eso?*
+- Matemáticamen<te, si mi F(x) es muy pequeño genera desvanecimiento y al derivar, ese +1 ayuda al ajuste de parámetros
+- También ayuda a mitigar el filtro de los bloques internos (si lo hacen mal, mitiga este error)
+
+Esto fue la clave del éxito para pasar de redes de 10-20 capas a más de 100 capas
+
+
+## Entrenamiento - Escasez de Datos
+
+Técnicas para aumentar la cantidad de datos
+
+### Transfer Learning
+La idea es tomar un modelo ya pre entrenado en un gran conjunto de datos, y usarlo en un dataset más pequeño relacionado para una tarea menor
+
+![[Pasted image 20260907121951.png]]
+
+#### **Multitask Learning**
+La idea es usar un mismo modelo para hacer varias tareas de forma simultánea. Útil para multi-etiqueta
+
+![[Pasted image 20260907122320.png]]
+#### **Transfer Learning**
+El entrenamiento es descentralizado, entre varios equipos o servidores con información local
+
+![[Pasted image 20260907122238.png]]
+
+### Data Augmentation
+
+Trabajar con lo que uno ya tiene. Se puede hacer variaciones en la imagen, como agregar ruido
+
+![[Pasted image 20260907122427.png]]
