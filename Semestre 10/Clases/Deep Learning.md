@@ -434,7 +434,7 @@ Muy parecido al anterior, pero con la diferencia de que guarda la magnitud de lo
 ### ADAM
 Mezcla tanto del momentum con el algoritmo anterior
 
-Guarda la dirección + cantidad del gradiente
+Guarda la dirección + cantidad del gradientew
 Momentum -> RMSprop -> corección -> actualización de peso
 
 ![[Pasted image 20260827121640.png]]
