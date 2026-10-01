@@ -35,8 +35,7 @@
               "title": "Tics 2 - Solemne 1"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -188,10 +187,10 @@
       "bases:Crear nueva base": false
     }
   },
-  "active": "2eacb99e33655971",
+  "active": "bfcad16f39df5b08",
   "lastOpenFiles": [
-    "Semestre 10/Clases/Tics 2.md",
     "Semestre 10/Apuntes/Tics 2 - Solemne 1.md",
+    "Semestre 10/Clases/Tics 2.md",
     "Pasted image 20260929172251.png",
     "Semestre 10/Clases/Sist Procesamiento para Big Data.md",
     "Cosas/Kubobi.md",

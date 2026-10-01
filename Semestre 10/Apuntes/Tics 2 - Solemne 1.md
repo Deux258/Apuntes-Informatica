@@ -51,7 +51,7 @@ Objetivos específicos
 - Reducción de tiempo: Disminuir un 70% en el tiempo total de traslado
 - Cumplimiento normativo
 - Disminuir costes de traslado en 30%
-- Despliegue de  10 unidades de drones en paralelo simultáneamente
+- Despliegue de 10 unidades de drones en paralelo simultáneamente
 
 Beneficios
 - Menor tiempo de traslado
@@ -73,6 +73,8 @@ Alcance
 	- Almacenamiento del dron para otras cosas que no sean muestras o medicamentos críticos
 	- Algoritmo de ruteo con respuesta en tiempo real
 	- Extensión de servicio a otras sedes adicionales
+	- Mantenimiento
+	- No mejoras de servicios externos - Operacion o BAU
 
 | Entregables                                | Criterio de aceptación                                                                                                                      |
 | ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -126,7 +128,7 @@ Roles
 4. Regulaciones y seguridad
 	1. Regulación de permisos 
 	2. Protocolo de seguridad y custodia
-5. Documentación y Capacitacióm
+5. Documentación y Capacitación
 	1. Prueba de vuelo técnico sin carga
 	2. Simulación de vuelo con carga
 	3. Capacitación a personal médico y de laboratorios
@@ -157,7 +159,7 @@ Restricciones:
 4. Roles del Proyecto.
 5. Estructura de Desglose del Trabajo (EDT / WBS).
 6. Cronograma e Hitos (8 Semanas).
-7. Identificación y Redacción Formal de 3 Riesgos (Causa -> Evento -> Impacto).
+7. Identificación y Redacción Formal de 3 Riesgos (Causa -> Evento -> Impacto -> Mitigación).
 
 RESPUESTAS:
 
@@ -217,4 +219,6 @@ EDT
 6. Producción
 
 
-Riesgo: Causa -> Evento -> Impacto
+Riesgo: Causa -> Evento -> Impacto -> Mitigación
+
+

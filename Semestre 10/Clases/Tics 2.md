@@ -301,6 +301,8 @@ Todo proyecto nace de una relación comercial estructurada en 4 etapas:
 
 Para el exito, el PM debe incorporar una buena perspectiva de todos los procesos, que además sea global.
 
+Inicializacion - Planificacion - Ejecucion - Control - Cierre
+
 ![[Pasted image 20260928192200.png]]
 
 1. Acta constitución (Inicio)
